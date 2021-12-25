@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class lineManager : MonoBehaviour
+public class LineManager : MonoBehaviour
 {
-    [SerializeField] private line[] verticalLines;
-    [SerializeField] private line[] horizontalLines;
+    [SerializeField] private Line[] verticalLines;
+    [SerializeField] private Line[] horizontalLines;
+    [SerializeField] private GameManager gameManager;
 
 
     private int clickCounter = 0;
@@ -19,6 +20,12 @@ public class lineManager : MonoBehaviour
     {
         SetLevel(levelNum);
     }
+
+    public void ChangeGravityDirection(Transform transform, bool isVertical)
+    {
+        gameManager.ChangeGravityDirection(transform, isVertical);
+    }
+    
     public void SetLevel(int levelNum)
     {
         switch (levelNum)

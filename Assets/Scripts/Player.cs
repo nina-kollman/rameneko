@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField] private Transform mPlayer;
     [SerializeField] private float mMoveSpeed = 1;
