@@ -5,20 +5,18 @@ using UnityEngine;
 
 public class LinePart : MonoBehaviour
 {
-    [SerializeField] private Line lineParent;
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    private Line lineParent;
+    private SpriteRenderer spriteRenderer;
     
     [SerializeField] private Vector2 top;
     [SerializeField] private Vector2 bottom;
     
-    private bool isVertical;
-
     private void Awake()
     {
         lineParent = GetComponentInParent<Line>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        isVertical = lineParent.GetVertical();
 
+        // TODO: not working...
         Bounds bounds = GetComponent<BoxCollider2D>().bounds;
         top = new Vector2(bounds.max.x, bounds.max.y);
         top = new Vector2(bounds.min.x, bounds.min.y);
