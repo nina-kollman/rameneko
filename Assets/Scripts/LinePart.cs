@@ -18,6 +18,10 @@ public class LinePart : MonoBehaviour
         lineParent = GetComponentInParent<Line>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         isVertical = lineParent.GetVertical();
+
+        Bounds bounds = GetComponent<BoxCollider2D>().bounds;
+        top = new Vector2(bounds.max.x, bounds.max.y);
+        top = new Vector2(bounds.min.x, bounds.min.y);
     }
 
     private void OnMouseDown()
