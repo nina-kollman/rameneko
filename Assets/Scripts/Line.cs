@@ -6,53 +6,52 @@ using UnityEngine;
 
 public class Line : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer rend;
-    [SerializeField] private bool active;
-    [SerializeField] private BoxCollider2D myCollider;
     [SerializeField] private LineManager lineMng;
+    [SerializeField] private List<LinePart> lineParts;
     [SerializeField] private bool isVertical;
-    [SerializeField] public int index;
-    [SerializeField] private Vector3 basePos;
-    [SerializeField] private Line myLine1;
-    [SerializeField] private Line myLine2;
-    
+    [SerializeField] private EraseDirection eraseDirection;
 
-    public void SetBasePosition()
+    private Vector2 top;
+    private Vector2 bottom;
+
+    private void Awake()
     {
-        this.transform.position = basePos;
+        // init full line top and bottom by his parts
+        top = lineParts[-1].GetTop();
+        bottom = lineParts[0].GetBottom();
     }
 
-    public void SetActive(bool val)
+    /**
+     * create the effect of clicking on line
+     */
+    public void ClickOnPart()
     {
-        active = val;
-
-        if (active)
+        // 1. add one more click to click count
+        lineMng.AddClick();
+        // 2. activate all of the line
+        foreach (LinePart part in lineParts)
         {
-            rend.color = Color.white;
-            SetBasePosition();
-            myCollider.isTrigger = false;
+            part.ActivateCommandPart(true); 
         }
-        else
-        {
-            rend.color = Color.gray;
-            myCollider.isTrigger = true;
-        }
-    }
-
-    private void OnMouseDown()
-    {
-        lineMng.PlusClick();
-        SetActive(true);
-        myLine1.SetActive(true);
-        myLine2.SetActive(true);
-        lineMng.SetScreen(isVertical, index);
+        // 3. destroy all the other lines (that needed to be destroyed by nina's new rule)
+        lineMng.ChangeOtherLines(top, bottom, eraseDirection);
+        // 4. change gravity direction
         lineMng.ChangeGravityDirection(transform, isVertical);
     }
 
-    public void SetPosition(int x, int y)
+    /**
+     * going through his parts, change each part according to the given coordinates
+     */
+    public void ChangePartsOnOtherClick(Vector2 clickedTop, Vector2 clickedBottom, EraseDirection eraseDirection)
     {
-        Vector3 pos = new Vector3(x, y, 0);
-        this.transform.position = pos;
+        foreach (LinePart part in lineParts)
+        {
+            part.PartChangeByOtherClick(clickedTop, clickedBottom, eraseDirection);
+        }
     }
-    
+
+    public bool GetVertical()
+    {
+        return isVertical;
+    }
 }

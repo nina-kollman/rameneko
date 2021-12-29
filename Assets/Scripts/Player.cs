@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        // TODO: stop the player movement if it's low
+        
+        // TODO: do we want to clear the arrows? well, yes.
         if (Input.GetKey(KeyCode.UpArrow))
         {
             mPlayer.Translate(Vector2.up * mMoveSpeed * Time.deltaTime);
@@ -37,6 +40,7 @@ public class Player : MonoBehaviour
         if (other.tag == "Goal")
         {
             Debug.Log("Win");
+            Time.timeScale = 0;
         }
     }
 }
