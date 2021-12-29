@@ -1,5 +1,4 @@
-﻿
-public enum EraseDirection
+﻿public enum EraseDirection
 {
     Xminus = 0,
     Xplus = 1,
