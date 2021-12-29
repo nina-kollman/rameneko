@@ -290,15 +290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 127172960}
-  active: 0
-  myCollider: {fileID: 127172959}
   lineMng: {fileID: 1882500799}
   isVertical: 1
-  index: 33
-  basePos: {x: -8.8, y: -3.5, z: 0}
-  myLine1: {fileID: 1881321752}
-  myLine2: {fileID: 859256302}
 --- !u!1 &177789176
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,15 +416,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 177789179}
-  active: 0
-  myCollider: {fileID: 177789178}
   lineMng: {fileID: 1882500799}
   isVertical: 0
-  index: 31
-  basePos: {x: -6, y: 4.9, z: 0}
-  myLine1: {fileID: 1846450235}
-  myLine2: {fileID: 417802265}
 --- !u!1 &207890278
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,15 +542,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 207890281}
-  active: 0
-  myCollider: {fileID: 207890280}
   lineMng: {fileID: 1882500799}
   isVertical: 1
-  index: 12
-  basePos: {x: -3, y: 0, z: 0}
-  myLine1: {fileID: 641661965}
-  myLine2: {fileID: 402240840}
 --- !u!1 &316597543
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,15 +590,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 316597547}
-  active: 0
-  myCollider: {fileID: 316597546}
   lineMng: {fileID: 1882500799}
   isVertical: 1
-  index: 42
-  basePos: {x: 8.8, y: 0, z: 0}
-  myLine1: {fileID: 1205781779}
-  myLine2: {fileID: 1472026186}
 --- !u!61 &316597546
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -822,15 +794,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 402240839}
-  active: 0
-  myCollider: {fileID: 402240838}
   lineMng: {fileID: 1882500799}
   isVertical: 1
-  index: 13
-  basePos: {x: -3, y: -3.5, z: 0}
-  myLine1: {fileID: 641661965}
-  myLine2: {fileID: 207890282}
 --- !u!1 &417802261
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,15 +920,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 417802264}
-  active: 0
-  myCollider: {fileID: 417802263}
   lineMng: {fileID: 1882500799}
   isVertical: 0
-  index: 33
-  basePos: {x: 6, y: 4.9, z: 0}
-  myLine1: {fileID: 177789180}
-  myLine2: {fileID: 1846450235}
 --- !u!1 &492937803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,15 +1046,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 492937806}
-  active: 0
-  myCollider: {fileID: 492937805}
   lineMng: {fileID: 1882500799}
   isVertical: 0
-  index: 11
-  basePos: {x: -6, y: 2, z: 0}
-  myLine1: {fileID: 738095808}
-  myLine2: {fileID: 2063916953}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,15 +1256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 601148155}
-  active: 0
-  myCollider: {fileID: 601148154}
   lineMng: {fileID: 1882500799}
   isVertical: 0
-  index: 23
-  basePos: {x: 6, y: -2, z: 0}
-  myLine1: {fileID: 1700718195}
-  myLine2: {fileID: 1879545834}
 --- !u!1 &641262890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,15 +1382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 641262893}
-  active: 0
-  myCollider: {fileID: 641262892}
   lineMng: {fileID: 1882500799}
   isVertical: 1
-  index: 22
-  basePos: {x: 3, y: 0, z: 0}
-  myLine1: {fileID: 717988174}
-  myLine2: {fileID: 1717107301}
 --- !u!1 &641661961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,15 +1508,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 641661964}
-  active: 0
-  myCollider: {fileID: 641661963}
   lineMng: {fileID: 1882500799}
   isVertical: 1
-  index: 11
-  basePos: {x: -3, y: 3.5, z: 0}
-  myLine1: {fileID: 207890282}
-  myLine2: {fileID: 402240840}
 --- !u!1 &717988170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,15 +1634,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 717988173}
-  active: 0
-  myCollider: {fileID: 717988172}
   lineMng: {fileID: 1882500799}
   isVertical: 1
-  index: 21
-  basePos: {x: 3, y: 3.5, z: 0}
-  myLine1: {fileID: 641262894}
-  myLine2: {fileID: 1717107301}
 --- !u!1 &738095804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,15 +1760,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 738095806}
-  active: 0
-  myCollider: {fileID: 738095805}
   lineMng: {fileID: 1882500799}
   isVertical: 0
-  index: 12
-  basePos: {x: 0, y: 2, z: 0}
-  myLine1: {fileID: 492937807}
-  myLine2: {fileID: 2063916953}
 --- !u!1 &776542559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,15 +1886,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 776542562}
-  active: 0
-  myCollider: {fileID: 776542561}
   lineMng: {fileID: 1882500799}
   isVertical: 0
-  index: 41
-  basePos: {x: -6, y: -4.9, z: 0}
-  myLine1: {fileID: 1850860252}
-  myLine2: {fileID: 1900929329}
 --- !u!1 &831899875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,15 +2045,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 859256304}
-  active: 0
-  myCollider: {fileID: 859256303}
   lineMng: {fileID: 1882500799}
   isVertical: 1
-  index: 32
-  basePos: {x: -8.8, y: 0, z: 0}
-  myLine1: {fileID: 1881321752}
-  myLine2: {fileID: 127172961}
 --- !u!61 &859256303
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2347,15 +2249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 1205781778}
-  active: 0
-  myCollider: {fileID: 1205781777}
   lineMng: {fileID: 1882500799}
   isVertical: 1
-  index: 41
-  basePos: {x: 8.8, y: 3.5, z: 0}
-  myLine1: {fileID: 316597545}
-  myLine2: {fileID: 1472026186}
 --- !u!1 &1231545143
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,15 +2393,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 1472026188}
-  active: 0
-  myCollider: {fileID: 1472026187}
   lineMng: {fileID: 1882500799}
   isVertical: 1
-  index: 43
-  basePos: {x: 8.8, y: -3.5, z: 0}
-  myLine1: {fileID: 1205781779}
-  myLine2: {fileID: 316597545}
 --- !u!61 &1472026187
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2631,6 +2519,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineMng: {fileID: 1882500799}
   player: {fileID: 1994726144}
+  levelNum: 3
+  maxClicksInLevel: 6
 --- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0
@@ -2770,15 +2660,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 1700718194}
-  active: 0
-  myCollider: {fileID: 1700718193}
   lineMng: {fileID: 1882500799}
   isVertical: 0
-  index: 21
-  basePos: {x: -6, y: -2, z: 0}
-  myLine1: {fileID: 1879545834}
-  myLine2: {fileID: 601148156}
 --- !u!1 &1717107297
 GameObject:
   m_ObjectHideFlags: 0
@@ -2903,15 +2786,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 1717107300}
-  active: 0
-  myCollider: {fileID: 1717107299}
   lineMng: {fileID: 1882500799}
   isVertical: 1
-  index: 23
-  basePos: {x: 3, y: -3.5, z: 0}
-  myLine1: {fileID: 717988174}
-  myLine2: {fileID: 641262894}
 --- !u!1 &1846450233
 GameObject:
   m_ObjectHideFlags: 0
@@ -2958,15 +2834,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 1846450237}
-  active: 0
-  myCollider: {fileID: 1846450236}
   lineMng: {fileID: 1882500799}
   isVertical: 0
-  index: 32
-  basePos: {x: 0, y: 4.9, z: 0}
-  myLine1: {fileID: 177789180}
-  myLine2: {fileID: 417802265}
 --- !u!61 &1846450236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3091,15 +2960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 1850860254}
-  active: 0
-  myCollider: {fileID: 1850860253}
   lineMng: {fileID: 1882500799}
   isVertical: 0
-  index: 42
-  basePos: {x: 0, y: -4.9, z: 0}
-  myLine1: {fileID: 776542563}
-  myLine2: {fileID: 1900929329}
 --- !u!61 &1850860253
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3302,15 +3164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 1879545833}
-  active: 0
-  myCollider: {fileID: 1879545832}
   lineMng: {fileID: 1882500799}
   isVertical: 0
-  index: 22
-  basePos: {x: 0, y: -2, z: 0}
-  myLine1: {fileID: 1700718195}
-  myLine2: {fileID: 601148156}
 --- !u!1 &1881321748
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,15 +3290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 1881321751}
-  active: 0
-  myCollider: {fileID: 1881321750}
   lineMng: {fileID: 1882500799}
   isVertical: 1
-  index: 31
-  basePos: {x: -8.8, y: 3.5, z: 0}
-  myLine1: {fileID: 859256302}
-  myLine2: {fileID: 127172961}
 --- !u!1 &1882500796
 GameObject:
   m_ObjectHideFlags: 0
@@ -3548,15 +3396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 1900929331}
-  active: 0
-  myCollider: {fileID: 1900929330}
   lineMng: {fileID: 1882500799}
   isVertical: 0
-  index: 43
-  basePos: {x: 6, y: -4.9, z: 0}
-  myLine1: {fileID: 776542563}
-  myLine2: {fileID: 1850860252}
 --- !u!61 &1900929330
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3955,12 +3796,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 2063916952}
-  active: 0
-  myCollider: {fileID: 2063916951}
   lineMng: {fileID: 1882500799}
   isVertical: 0
-  index: 13
-  basePos: {x: 6, y: 2, z: 0}
-  myLine1: {fileID: 492937807}
-  myLine2: {fileID: 738095808}

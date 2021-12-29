@@ -50,4 +50,14 @@ public class LinePart : MonoBehaviour
              
         }
     }
+
+    public Transform GetTop()
+    {
+        return top;
+    }
+    
+    public Transform GetBottom()
+    {
+        return bottom;
+    }
 }

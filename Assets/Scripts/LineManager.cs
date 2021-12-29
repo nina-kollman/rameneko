@@ -18,8 +18,19 @@ public class LineManager : MonoBehaviour
         gameManager.ChangeGravityDirection(transform, isVertical);
     }
 
+    
     public void ChangeOtherLines(Transform top, Transform bottom, bool isVertical)
     {
-        
+        // isVertical => if the original line is vertical
+        // change horizontal lines
+        if (isVertical)
+        {
+            
+        }
+        // change vertical lines
+        else
+        {
+            
+        }
     }
 }
