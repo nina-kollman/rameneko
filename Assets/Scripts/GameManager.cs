@@ -9,26 +9,26 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private LineManager lineMng;
     [SerializeField] private Player player;
-    private int levelNum;
-
-    [SerializeField] private Transform FullBoardObject;
+    [SerializeField] private int levelNum;
+    [SerializeField] private int maxClicksInLevel;
+    private int clickCounter;
 
     private void Start()
     {
-        levelNum = 1; 
-        lineMng.SetLevel(levelNum);
+        clickCounter = 0;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Home))
+        PlayTestKeyPress();
+    }
+    
+    public void AddClick()
+    {
+        clickCounter++;
+        if (clickCounter > maxClicksInLevel)
         {
-            lineMng.Restart(levelNum);
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            Physics2D.gravity = new Vector2(0, -9.81f);
+            // Lose game / raise warning
         }
     }
 
@@ -65,6 +65,27 @@ public class GameManager : MonoBehaviour
                 Physics2D.gravity = new Vector2(0, -9.81f);
                 // FullBoardObject.Rotate(0, 0, 0f);
 
+            }
+        }
+    }
+
+    /**
+     * Change the level by number keys - for a quick play-test feel
+     */
+    private void PlayTestKeyPress()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Physics2D.gravity = new Vector2(0, -9.81f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        for (int i = 0; i < 10; ++i)
+        {
+            if (Input.GetKeyDown(i.ToString()))
+            {
+                Debug.Log(i);
+                // Physics2D.gravity = new Vector2(0, -9.81f);
+                // SceneManager.LoadScene(i);
             }
         }
     }
