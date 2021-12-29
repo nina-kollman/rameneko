@@ -17,7 +17,7 @@ public class Line : MonoBehaviour
     private void Awake()
     {
         // init full line top and bottom by his parts
-        top = lineParts[-1].GetTop();
+        top = lineParts[lineParts.Count - 1].GetTop();
         bottom = lineParts[0].GetBottom();
     }
 

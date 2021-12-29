@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class LinePart : MonoBehaviour
 {
-    private Line lineParent;
-    private SpriteRenderer spriteRenderer;
+    [SerializeField] private Line lineParent;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     
     [SerializeField] private Vector2 top;
     [SerializeField] private Vector2 bottom;
@@ -15,9 +15,9 @@ public class LinePart : MonoBehaviour
 
     private void Awake()
     {
-        isVertical = lineParent.GetVertical();
         lineParent = GetComponentInParent<Line>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        isVertical = lineParent.GetVertical();
     }
 
     private void OnMouseDown()
@@ -31,13 +31,13 @@ public class LinePart : MonoBehaviour
         {
             // activate part
             spriteRenderer.color = Color.white;
-            GetComponent<BoxCollider2D>().isTrigger = true;
+            GetComponent<BoxCollider2D>().isTrigger = false;
         }
         else
         {
             // deactivate part
             spriteRenderer.color = Color.grey;
-            GetComponent<BoxCollider2D>().isTrigger = false;
+            GetComponent<BoxCollider2D>().isTrigger = true;
         }
     }
     
