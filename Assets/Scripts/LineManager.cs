@@ -18,13 +18,13 @@ public class LineManager : MonoBehaviour
     }
 
     
-    public void ChangeOtherLines(Transform top, Transform bottom)
+    public void ChangeOtherLines(Vector2 top, Vector2 bottom, EraseDirection eraseDirection)
     {
         foreach (Line line in lineList)
         {
             // go through each line - and check for needed changes
             // change logic - in LinePart
-            line.ChangePartsOnOtherClick(top, bottom);
+            line.ChangePartsOnOtherClick(top, bottom, eraseDirection);
         }
     }
 }
