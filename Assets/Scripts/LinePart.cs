@@ -11,13 +11,15 @@ public class LinePart : MonoBehaviour
     [SerializeField] private Vector2 top;
     [SerializeField] private Vector2 bottom;
     
-    private bool isVertical;
-
     private void Awake()
     {
-        isVertical = lineParent.GetVertical();
         lineParent = GetComponentInParent<Line>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // TODO: not working...
+        Bounds bounds = GetComponent<BoxCollider2D>().bounds;
+        top = new Vector2(bounds.max.x, bounds.max.y);
+        top = new Vector2(bounds.min.x, bounds.min.y);
     }
 
     private void OnMouseDown()
@@ -31,13 +33,13 @@ public class LinePart : MonoBehaviour
         {
             // activate part
             spriteRenderer.color = Color.white;
-            GetComponent<BoxCollider2D>().isTrigger = true;
+            GetComponent<BoxCollider2D>().isTrigger = false;
         }
         else
         {
             // deactivate part
             spriteRenderer.color = Color.grey;
-            GetComponent<BoxCollider2D>().isTrigger = false;
+            GetComponent<BoxCollider2D>().isTrigger = true;
         }
     }
     

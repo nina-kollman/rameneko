@@ -40,13 +40,11 @@ public class GameManager : MonoBehaviour
             {
                 // gravity to the right
                 Physics2D.gravity = new Vector2(9.81f, 0);
-                // FullBoardObject.Rotate(0, 0, 270f);
             }
             else
             {
                 // gravity to the left
                 Physics2D.gravity = new Vector2(-9.81f, 0);
-                // FullBoardObject.Rotate(0, 0, 90f);
 
             }
         }
@@ -56,15 +54,12 @@ public class GameManager : MonoBehaviour
             {
                 // gravity up
                 Physics2D.gravity = new Vector2(0, 9.81f);
-                // FullBoardObject.Rotate(0, 0, 180f);
 
             }
             else
             {
                 // gravity down
                 Physics2D.gravity = new Vector2(0, -9.81f);
-                // FullBoardObject.Rotate(0, 0, 0f);
-
             }
         }
     }
