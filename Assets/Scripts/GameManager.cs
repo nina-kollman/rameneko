@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine. SceneManagement;
 using Object = System.Object;
 
 public class GameManager : MonoBehaviour
@@ -23,6 +24,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Home))
         {
             lineMng.Restart(levelNum);
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Physics2D.gravity = new Vector2(0, -9.81f);
         }
     }
 

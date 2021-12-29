@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
         if (other.tag == "Goal")
         {
             Debug.Log("Win");
+            Time.timeScale = 0;
         }
     }
 }
