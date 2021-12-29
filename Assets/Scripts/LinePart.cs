@@ -39,16 +39,13 @@ public class LinePart : MonoBehaviour
         }
     }
 
-    public void DeActivateByPosition(Transform clickedTop, Transform clickedBottom)
+    /**
+     * When clicking on another line, activate this function for each line part on the board.
+     * Check if this parts is need to deactivate, if so - do that.
+     */
+    public void ChangeByPosition(Transform clickedTop, Transform clickedBottom)
     {
-        if (isVertical)
-        {
-            
-        }
-        else
-        {
-             
-        }
+        
     }
 
     public Transform GetTop()

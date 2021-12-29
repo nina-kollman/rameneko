@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class LineManager : MonoBehaviour
 {
-    [SerializeField] private Line[] verticalLines;
-    [SerializeField] private Line[] horizontalLines;
+    [SerializeField] private List<Line> lineList;
     [SerializeField] private GameManager gameManager;
     
     public void AddClick()
@@ -19,18 +18,13 @@ public class LineManager : MonoBehaviour
     }
 
     
-    public void ChangeOtherLines(Transform top, Transform bottom, bool isVertical)
+    public void ChangeOtherLines(Transform top, Transform bottom)
     {
-        // isVertical => if the original line is vertical
-        // change horizontal lines
-        if (isVertical)
+        foreach (Line line in lineList)
         {
-            
-        }
-        // change vertical lines
-        else
-        {
-            
+            // go through each line - and check for needed changes
+            // change logic - in LinePart
+            line.ChangePartsOnOtherClick(top, bottom);
         }
     }
 }

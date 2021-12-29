@@ -7,7 +7,7 @@ using UnityEngine;
 public class Line : MonoBehaviour
 {
     [SerializeField] private LineManager lineMng;
-    [SerializeField] private LinePart[] lineParts;
+    [SerializeField] private List<LinePart> lineParts;
     [SerializeField] private bool isVertical;
 
     private Transform top;
@@ -33,7 +33,7 @@ public class Line : MonoBehaviour
             part.ActivateCommandPart(true); 
         }
         // 3. destroy all the other lines (that needed to be destroyed by nina's new rule)
-        lineMng.ChangeOtherLines(top, bottom, isVertical);
+        lineMng.ChangeOtherLines(top, bottom);
         // 4. change gravity direction
         lineMng.ChangeGravityDirection(transform, isVertical);
     }
@@ -45,7 +45,7 @@ public class Line : MonoBehaviour
     {
         foreach (LinePart part in lineParts)
         {
-            part.DeActivateByPosition(clickedTop, clickedBottom);
+            part.ChangeByPosition(clickedTop, clickedBottom);
         }
     }
 
