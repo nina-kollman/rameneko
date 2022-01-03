@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Win");
             Time.timeScale = 0;
+            
         }
     }
 }
