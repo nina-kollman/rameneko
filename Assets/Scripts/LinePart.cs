@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class LinePart : MonoBehaviour
 {
@@ -10,10 +12,14 @@ public class LinePart : MonoBehaviour
     
     [SerializeField] private Vector2 top;
     [SerializeField] private Vector2 bottom;
+    [SerializeField] private Sprite disablesBamboo;
+    [SerializeField] private Sprite enabledBamboo;
     private Collider2D myCollider;
     private bool mouseOver;
     private Color lastColor;
+    private Sprite lastSprite;
     private bool lineMarked;
+    private Stopwatch stopWatch;
     
     private void Awake()
     {
@@ -40,7 +46,19 @@ public class LinePart : MonoBehaviour
     private void OnMouseOver()
     {
         Debug.Log(this);
-    
+        
+        // waiting for a second - for certainty
+        // stopWatch.Start();
+        // bool wait = true;
+        // while (wait)
+        // {
+        //     if (stopWatch.Elapsed.TotalMilliseconds >= 1000)
+        //         wait = false;
+        // }
+        // Debug.Log("after watch");
+        // stopWatch.Stop();
+        // stopWatch.Reset();
+        
         if (!mouseOver)
         {
             mouseOver = true;
@@ -64,13 +82,16 @@ public class LinePart : MonoBehaviour
         if (activateCommand)
         {
             // activate part
-            spriteRenderer.color = Color.white;
+            spriteRenderer.sprite = enabledBamboo;
+            //spriteRenderer.color = new Color(1, 1, 1, 255);
             myCollider.isTrigger = false;
         }
         else
         {
             // deactivate part
-            spriteRenderer.color = Color.grey;
+            spriteRenderer.sprite = disablesBamboo;
+            spriteRenderer.color = Color.white;
+            //spriteRenderer.color = new Color(104, 104, 104, 100);
             myCollider.isTrigger = true;
         }
     }
@@ -90,15 +111,28 @@ public class LinePart : MonoBehaviour
             lineMarked = true;
             Debug.Log("Mark this");
             lastColor = spriteRenderer.color;
-            if(!myCollider.isTrigger) // line part is white and active
-                spriteRenderer.color = Color.magenta;
+            lastSprite = spriteRenderer.sprite;
+            if (!myCollider.isTrigger) // line part is white and active
+            {
+                var opacityColor = spriteRenderer.color;
+                for (int i = 255; i >= 0; i--)
+                {
+                    spriteRenderer.color = new Color(1, 1, 1, i);
+                }
+            }
+                
+                //spriteRenderer.color = Color.magenta;
         }
         else if (lineMarked)
         {
             lineMarked = false;
             Debug.Log("Reset Mark");
-            if(!myCollider.isTrigger) // Set back the active line to white
-                spriteRenderer.color = lastColor;
+            if (!myCollider.isTrigger)// Set back the active line to white
+            {
+                spriteRenderer.sprite = lastSprite;
+                spriteRenderer.color = new Color(255, 255, 255, 255);
+            }
+            // spriteRenderer.color = new Color(1,1,1,255);
         }
     }
     
