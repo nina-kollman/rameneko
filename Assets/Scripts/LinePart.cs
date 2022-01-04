@@ -85,19 +85,17 @@ public class LinePart : MonoBehaviour
         if (activateCommand)
         {
             // activate part
-            //spriteRenderer.sprite = enabledBamboo;
             spriteRenderer.color = whiteColor;
+            spriteRenderer.sortingOrder = 2;
             //Debug.Log($"object: {this} , color: {spriteRenderer.color}");
             myCollider.isTrigger = false;
         }
         else
         {
             // deactivate part
-            //spriteRenderer.sprite = disablesBamboo;
-           // spriteRenderer.color = Color.white;
-           spriteRenderer.color = greyColor;
+            spriteRenderer.color = greyColor;
           // Debug.Log($"object: {this} , color: {spriteRenderer.color}");
-           
+          spriteRenderer.sortingOrder = 1;
             myCollider.isTrigger = true;
         }
     }

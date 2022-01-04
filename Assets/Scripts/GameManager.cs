@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int levelNum;
     [SerializeField] private int maxClicksInLevel;
     [SerializeField] private GameObject nextLevelScreen;
+    [SerializeField] private int lastBuildIndex;
+
     private int clickCounter;
 
     private void Awake()
@@ -129,7 +131,14 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel(int buildNum)
     {
-        SceneManager.LoadScene((buildNum + 1));
+        if (buildNum == lastBuildIndex)
+        {
+            
+        }
+        else
+        {
+            SceneManager.LoadScene((buildNum + 1));
+        }
     }
 
     public void SetScreen()

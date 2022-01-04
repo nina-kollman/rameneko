@@ -38,11 +38,20 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"player Collide with {other.tag}");
+        Debug.Log($"player Triger with {other.tag}");
         if (other.tag == "Goal")
         {
             Debug.Log("Win");
-            //Time.timeScale = 0; // Netzer Why? 
+            gameManager.SetScreen();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log($"player Collide with {other}");
+        if (other.gameObject.tag == "Goal")
+        {
+            Debug.Log("Win");
             gameManager.SetScreen();
         }
     }
