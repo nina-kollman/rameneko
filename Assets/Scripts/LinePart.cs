@@ -22,7 +22,7 @@ public class LinePart : MonoBehaviour
     private Stopwatch stopWatch;
     private Color whiteColor = new Color(1f, 1f, 1f ,1f);
     private Color greyColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-    
+    private ParticleSystem poof;
     
     private void Awake()
     {
@@ -36,6 +36,11 @@ public class LinePart : MonoBehaviour
         // Bounds bounds = GetComponent<BoxCollider2D>().bounds;
         // top = new Vector2(bounds.max.x, bounds.max.y);
         // top = new Vector2(bounds.min.x, bounds.min.y);
+    }
+
+    private void Start()
+    {
+        poof = this.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
     }
 
     private void OnMouseDown()
@@ -95,6 +100,8 @@ public class LinePart : MonoBehaviour
         {
             // deactivate part
             spriteRenderer.color = greyColor;
+            Debug.Log("poof");
+            poof.Play(); 
           // Debug.Log($"object: {this} , color: {spriteRenderer.color}");
           spriteRenderer.sortingOrder = 1;
             myCollider.isTrigger = true;
@@ -120,7 +127,7 @@ public class LinePart : MonoBehaviour
             if (!myCollider.isTrigger) // line part is white and active
             {
                 var opacityColor = spriteRenderer.color;
-                spriteRenderer.color = greyColor;
+                //spriteRenderer.color = greyColor;
                 // for (int i = 255; i >= 0; i--)
                 // {
                 //     spriteRenderer.color = new Color(1, 1, 1, i);
