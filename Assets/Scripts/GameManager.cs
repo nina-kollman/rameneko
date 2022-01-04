@@ -11,17 +11,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private int levelNum;
     [SerializeField] private int maxClicksInLevel;
+    [SerializeField] private GameObject nextLevelScreen;
     private int clickCounter;
 
     private void Awake()
     {
         //Gravity Down
+        Debug.Log("Gravity was set");
         Physics2D.gravity = new Vector2(0, -9.81f);
     }
 
     private void Start()
     {
         clickCounter = 0;
+        nextLevelScreen.SetActive(false);
     }
 
     private void Update()
@@ -122,6 +125,16 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(9);
         }
         
+    }
+
+    public void NextLevel(int buildNum)
+    {
+        SceneManager.LoadScene((buildNum + 1));
+    }
+
+    public void SetScreen()
+    {
+        nextLevelScreen.SetActive(true);
     }
     
     // for (int i = 0; i < 10; ++i)

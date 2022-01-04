@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Transform mPlayer;
     [SerializeField] private float mMoveSpeed = 1;
+    [SerializeField] private GameManager gameManager;
 
 
     void Update()
@@ -37,11 +38,12 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log($"player Collide with {other.tag}");
         if (other.tag == "Goal")
         {
             Debug.Log("Win");
-            Time.timeScale = 0;
-            
+            //Time.timeScale = 0; // Netzer Why? 
+            gameManager.SetScreen();
         }
     }
 }

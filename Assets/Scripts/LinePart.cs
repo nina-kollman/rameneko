@@ -12,14 +12,17 @@ public class LinePart : MonoBehaviour
     
     [SerializeField] private Vector2 top;
     [SerializeField] private Vector2 bottom;
-    [SerializeField] private Sprite disablesBamboo;
-    [SerializeField] private Sprite enabledBamboo;
+    //[SerializeField] private Sprite disablesBamboo;
+    //[SerializeField] private Sprite enabledBamboo;
     private Collider2D myCollider;
     private bool mouseOver;
     private Color lastColor;
     private Sprite lastSprite;
     private bool lineMarked;
     private Stopwatch stopWatch;
+    private Color whiteColor = new Color(1f, 1f, 1f ,1f);
+    private Color greyColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+    
     
     private void Awake()
     {
@@ -45,7 +48,7 @@ public class LinePart : MonoBehaviour
      */
     private void OnMouseOver()
     {
-        Debug.Log(this);
+       // Debug.Log(this);
         
         // waiting for a second - for certainty
         // stopWatch.Start();
@@ -72,7 +75,7 @@ public class LinePart : MonoBehaviour
      */
     private void OnMouseExit()
     {
-        Debug.Log("in mouse exit");
+        //Debug.Log("in mouse exit");
         mouseOver = false;
         lineParent.MarkLines(false);
     }
@@ -82,16 +85,19 @@ public class LinePart : MonoBehaviour
         if (activateCommand)
         {
             // activate part
-            spriteRenderer.sprite = enabledBamboo;
-            //spriteRenderer.color = new Color(1, 1, 1, 255);
+            //spriteRenderer.sprite = enabledBamboo;
+            spriteRenderer.color = whiteColor;
+            //Debug.Log($"object: {this} , color: {spriteRenderer.color}");
             myCollider.isTrigger = false;
         }
         else
         {
             // deactivate part
-            spriteRenderer.sprite = disablesBamboo;
-            spriteRenderer.color = Color.white;
-            //spriteRenderer.color = new Color(104, 104, 104, 100);
+            //spriteRenderer.sprite = disablesBamboo;
+           // spriteRenderer.color = Color.white;
+           spriteRenderer.color = greyColor;
+          // Debug.Log($"object: {this} , color: {spriteRenderer.color}");
+           
             myCollider.isTrigger = true;
         }
     }
@@ -104,12 +110,12 @@ public class LinePart : MonoBehaviour
     public void MarkPartToBeDeleted(bool toDelete)
     {
         Color myColor = spriteRenderer.color;
-        Debug.Log("in Mark");
+       // Debug.Log("in Mark");
         
         if (toDelete)
         {
             lineMarked = true;
-            Debug.Log("Mark this");
+          //  Debug.Log("Mark this");
             lastColor = spriteRenderer.color;
             lastSprite = spriteRenderer.sprite;
             if (!myCollider.isTrigger) // line part is white and active
@@ -126,11 +132,11 @@ public class LinePart : MonoBehaviour
         else if (lineMarked)
         {
             lineMarked = false;
-            Debug.Log("Reset Mark");
+           // Debug.Log("Reset Mark");
             if (!myCollider.isTrigger)// Set back the active line to white
             {
                 spriteRenderer.sprite = lastSprite;
-                spriteRenderer.color = new Color(255, 255, 255, 255);
+                spriteRenderer.color = whiteColor;
             }
             // spriteRenderer.color = new Color(1,1,1,255);
         }
@@ -172,7 +178,7 @@ public class LinePart : MonoBehaviour
         {
             if (hover)
             {
-                Debug.Log("part change by click");
+               // Debug.Log("part change by click");
                 MarkPartToBeDeleted(true);
             }
             else // On Click 
