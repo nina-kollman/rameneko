@@ -127,6 +127,17 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(9);
         }
         
+        if (Input.GetKeyDown(KeyCode.Minus))
+        {
+            SceneManager.LoadScene(10);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Plus))
+        {
+            SceneManager.LoadScene(11);
+        }
+        
+        
     }
 
     public void NextLevel(int buildNum)

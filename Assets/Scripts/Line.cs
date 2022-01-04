@@ -10,6 +10,9 @@ public class Line : MonoBehaviour
     [SerializeField] private List<LinePart> lineParts;
     [SerializeField] private bool isVertical;
     [SerializeField] private EraseDirection eraseDirection;
+    [SerializeField] private GameObject leftMarkSquare;
+    [SerializeField] private GameObject rightMarkSquare;
+
 
     private Vector2 top;
     private Vector2 bottom;
@@ -40,6 +43,9 @@ public class Line : MonoBehaviour
 
         // 3. destroy all the other lines (that needed to be destroyed by nina's new rule)
         lineMng.ChangeOtherLines(top, bottom, eraseDirection, hover);
+        if (hover)
+            MarkSquares(true);
+        
         // 4. change gravity direction
         if(!hover)
             lineMng.ChangeGravityDirection(linePartTransform, isVertical);
@@ -79,5 +85,11 @@ public class Line : MonoBehaviour
         {
             lineMng.MarkLines();
         }
+    }
+
+    public void MarkSquares(bool active)
+    {
+        leftMarkSquare.SetActive(active);
+        rightMarkSquare.SetActive(active);
     }
 }

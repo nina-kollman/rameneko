@@ -78,6 +78,7 @@ public class LinePart : MonoBehaviour
         //Debug.Log("in mouse exit");
         mouseOver = false;
         lineParent.MarkLines(false);
+        lineParent.MarkSquares(false);
     }
 
     public void ActivateCommandPart(bool activateCommand)
@@ -119,10 +120,11 @@ public class LinePart : MonoBehaviour
             if (!myCollider.isTrigger) // line part is white and active
             {
                 var opacityColor = spriteRenderer.color;
-                for (int i = 255; i >= 0; i--)
-                {
-                    spriteRenderer.color = new Color(1, 1, 1, i);
-                }
+                spriteRenderer.color = greyColor;
+                // for (int i = 255; i >= 0; i--)
+                // {
+                //     spriteRenderer.color = new Color(1, 1, 1, i);
+                // }
             }
                 
                 //spriteRenderer.color = Color.magenta;
