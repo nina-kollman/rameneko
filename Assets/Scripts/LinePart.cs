@@ -41,7 +41,7 @@ public class LinePart : MonoBehaviour
 
     private void OnMouseDown()
     {
-        lineParent.ClickOnPart(this.transform, false);
+        lineParent.ClickOnPart(transform, false);
     }
 
     /**
@@ -49,20 +49,6 @@ public class LinePart : MonoBehaviour
      */
     private void OnMouseOver()
     {
-       // Debug.Log(this);
-        
-        // waiting for a second - for certainty
-        // stopWatch.Start();
-        // bool wait = true;
-        // while (wait)
-        // {
-        //     if (stopWatch.Elapsed.TotalMilliseconds >= 1000)
-        //         wait = false;
-        // }
-        // Debug.Log("after watch");
-        // stopWatch.Stop();
-        // stopWatch.Reset();
-        
         if (!mouseOver)
         {
             mouseOver = true;
@@ -92,10 +78,11 @@ public class LinePart : MonoBehaviour
         }
         else
         {
+            if (myCollider.isTrigger != true)
+                poof.Play();
             // deactivate part
             spriteRenderer.color = greyColor;
             Debug.Log("poof");
-            poof.Play(); 
             spriteRenderer.sortingOrder = 1;
             myCollider.isTrigger = true;
         }
@@ -175,7 +162,6 @@ public class LinePart : MonoBehaviour
         {
             if (hover)
             {
-               // Debug.Log("part change by click");
                 MarkPartToBeDeleted(true);
             }
             else // On Click 

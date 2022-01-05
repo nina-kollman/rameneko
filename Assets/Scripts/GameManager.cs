@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         // Gravity Down
-        Debug.Log("Gravity was set");
         Physics2D.gravity = new Vector2(0, -9.81f);
     }
 
@@ -54,12 +53,13 @@ public class GameManager : MonoBehaviour
             {
                 // gravity to the right
                 Physics2D.gravity = new Vector2(9.81f, 0);
+                player.ChangeMovementConstraints(false);
             }
             else
             {
                 // gravity to the left
                 Physics2D.gravity = new Vector2(-9.81f, 0);
-
+                player.ChangeMovementConstraints(false);
             }
         }
         else
@@ -68,12 +68,13 @@ public class GameManager : MonoBehaviour
             {
                 // gravity up
                 Physics2D.gravity = new Vector2(0, 9.81f);
-
+                player.ChangeMovementConstraints(true);
             }
             else
             {
                 // gravity down
                 Physics2D.gravity = new Vector2(0, -9.81f);
+                player.ChangeMovementConstraints(true);
             }
         }
     }
@@ -139,8 +140,6 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(11);
         }
-        
-        
     }
 
     public void SetScreen()

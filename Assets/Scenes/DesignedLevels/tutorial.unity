@@ -5803,6 +5803,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 641661962}
     m_Modifications:
+    - target: {fileID: 1780986617628030485, guid: 8f87d0550020db34cb629e74ca475638, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2135994580544101705, guid: 8f87d0550020db34cb629e74ca475638, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7031,8 +7035,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e6a8f2dc4212647ad8983186760b89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mPlayer: {fileID: 1994726143}
-  mMoveSpeed: 3
   gameManager: {fileID: 1636344178}
 --- !u!50 &1994726145
 Rigidbody2D:

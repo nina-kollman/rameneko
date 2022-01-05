@@ -7,11 +7,9 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
 
-    public Rigidbody2D rb;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -22,5 +20,10 @@ public class Player : MonoBehaviour
             Debug.Log("Win");
             gameManager.SetScreen();
         }
+    }
+
+    public void ChangeMovementConstraints(bool isVertical)
+    {
+        GetComponent<Rigidbody2D>().constraints = isVertical ?  RigidbodyConstraints2D.FreezePositionX : RigidbodyConstraints2D.FreezePositionY;
     }
 }
