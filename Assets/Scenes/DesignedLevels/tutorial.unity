@@ -5596,7 +5596,6 @@ MonoBehaviour:
   levelNum: 3
   maxClicksInLevel: 0
   nextLevelScreen: {fileID: 1107341513}
-  lastBuildIndex: 3
 --- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0
