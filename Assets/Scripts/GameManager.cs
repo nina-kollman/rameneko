@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     {
         //Gravity Down
         Debug.Log("Gravity was set");
-        Physics2D.gravity = new Vector2(0, -9.81f);
+        Physics2D.gravity = new Vector2(0, -200f);
     }
 
     private void Start()
@@ -50,12 +50,12 @@ public class GameManager : MonoBehaviour
             if (transform.position.x > player.transform.position.x)
             {
                 // gravity to the right
-                Physics2D.gravity = new Vector2(9.81f, 0);
+                Physics2D.gravity = new Vector2(200f, 0);
             }
             else
             {
                 // gravity to the left
-                Physics2D.gravity = new Vector2(-9.81f, 0);
+                Physics2D.gravity = new Vector2(-200f, 0);
 
             }
         }
@@ -64,13 +64,13 @@ public class GameManager : MonoBehaviour
             if (transform.position.y > player.transform.position.y)
             {
                 // gravity up
-                Physics2D.gravity = new Vector2(0, 9.81f);
+                Physics2D.gravity = new Vector2(0, 200f);
 
             }
             else
             {
                 // gravity down
-                Physics2D.gravity = new Vector2(0, -9.81f);
+                Physics2D.gravity = new Vector2(0, -200f);
             }
         }
     }
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Physics2D.gravity = new Vector2(0, -9.81f);
+            Physics2D.gravity = new Vector2(0, -200f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
