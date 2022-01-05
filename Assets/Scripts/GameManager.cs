@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine. SceneManagement;
 using Object = System.Object;
@@ -8,17 +9,17 @@ using Object = System.Object;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private LineManager lineMng;
+    [SerializeField] private TextMeshProUGUI stepsCounterUI;
     [SerializeField] private Player player;
     [SerializeField] private int levelNum;
     [SerializeField] private int maxClicksInLevel;
     [SerializeField] private GameObject nextLevelScreen;
-    [SerializeField] private int lastBuildIndex;
 
     private int clickCounter;
 
     private void Awake()
     {
-        //Gravity Down
+        // Gravity Down
         Debug.Log("Gravity was set");
         Physics2D.gravity = new Vector2(0, -9.81f);
     }
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         clickCounter = 0;
+        stepsCounterUI.text = "Remaining Steps: " + clickCounter;
         nextLevelScreen.SetActive(false);
     }
 
@@ -37,9 +39,10 @@ public class GameManager : MonoBehaviour
     public void AddClick()
     {
         clickCounter++;
+        stepsCounterUI.text = "Remaining Steps: " + clickCounter.ToString();
         if (clickCounter > maxClicksInLevel)
         {
-            // Lose game / raise warning
+            Debug.Log("YOU LOST!");
         }
     }
 
@@ -140,32 +143,10 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void NextLevel(int buildNum)
-    {
-        if (buildNum == lastBuildIndex)
-        {
-            
-        }
-        else
-        {
-            SceneManager.LoadScene((buildNum + 1));
-        }
-    }
-
     public void SetScreen()
     {
         nextLevelScreen.SetActive(true);
     }
-    
-    // for (int i = 0; i < 10; ++i)
-        // {
-        //     if (Input.GetKeyDown(i.ToString()))
-        //     {
-        //         Debug.Log(i);
-        //         // Physics2D.gravity = new Vector2(0, -9.81f);
-        //         // SceneManager.LoadScene(i);
-        //     }
-        // }
     
     
 }

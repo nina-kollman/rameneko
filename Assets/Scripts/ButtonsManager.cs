@@ -10,7 +10,7 @@ public class ButtonsManager : MonoBehaviour
 
     private void OnMouseDown()
     {
-        gameManager.NextLevel(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     
     
