@@ -18,13 +18,24 @@ public class LineManager : MonoBehaviour
     }
 
     
-    public void ChangeOtherLines(Vector2 top, Vector2 bottom, EraseDirection eraseDirection)
+    public void ChangeOtherLines(Vector2 top, Vector2 bottom, EraseDirection eraseDirection, bool hover)
     {
         foreach (Line line in lineList)
         {
             // go through each line - and check for needed changes
             // change logic - in LinePart
-            line.ChangePartsOnOtherClick(top, bottom, eraseDirection);
+            line.ChangePartsOnOtherClick(top, bottom, eraseDirection, hover);
+        }
+    }
+
+    /**
+     * Resets all the marked lines
+     */
+    public void MarkLines()
+    {
+        foreach (Line line in lineList)
+        {
+            line.MarkLines(true);
         }
     }
 }
