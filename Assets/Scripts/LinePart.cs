@@ -32,10 +32,6 @@ public class LinePart : MonoBehaviour
         mouseOver = false;
         lineMarked = false;
         lastColor = spriteRenderer.color;
-        // TODO: not working...
-        // Bounds bounds = GetComponent<BoxCollider2D>().bounds;
-        // top = new Vector2(bounds.max.x, bounds.max.y);
-        // top = new Vector2(bounds.min.x, bounds.min.y);
     }
 
     private void Start()
@@ -45,7 +41,7 @@ public class LinePart : MonoBehaviour
 
     private void OnMouseDown()
     {
-        lineParent.ClickOnPart(this.transform, false);
+        lineParent.ClickOnPart(transform, false);
     }
 
     /**
@@ -53,20 +49,6 @@ public class LinePart : MonoBehaviour
      */
     private void OnMouseOver()
     {
-       // Debug.Log(this);
-        
-        // waiting for a second - for certainty
-        // stopWatch.Start();
-        // bool wait = true;
-        // while (wait)
-        // {
-        //     if (stopWatch.Elapsed.TotalMilliseconds >= 1000)
-        //         wait = false;
-        // }
-        // Debug.Log("after watch");
-        // stopWatch.Stop();
-        // stopWatch.Reset();
-        
         if (!mouseOver)
         {
             mouseOver = true;
@@ -80,7 +62,6 @@ public class LinePart : MonoBehaviour
      */
     private void OnMouseExit()
     {
-        //Debug.Log("in mouse exit");
         mouseOver = false;
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
@@ -93,17 +74,16 @@ public class LinePart : MonoBehaviour
             // activate part
             spriteRenderer.color = whiteColor;
             spriteRenderer.sortingOrder = 2;
-            //Debug.Log($"object: {this} , color: {spriteRenderer.color}");
             myCollider.isTrigger = false;
         }
         else
         {
+            if (myCollider.isTrigger != true)
+                poof.Play();
             // deactivate part
             spriteRenderer.color = greyColor;
             Debug.Log("poof");
-            poof.Play(); 
-          // Debug.Log($"object: {this} , color: {spriteRenderer.color}");
-          spriteRenderer.sortingOrder = 1;
+            spriteRenderer.sortingOrder = 1;
             myCollider.isTrigger = true;
         }
     }
@@ -116,12 +96,10 @@ public class LinePart : MonoBehaviour
     public void MarkPartToBeDeleted(bool toDelete)
     {
         Color myColor = spriteRenderer.color;
-       // Debug.Log("in Mark");
         
         if (toDelete)
         {
             lineMarked = true;
-          //  Debug.Log("Mark this");
             lastColor = spriteRenderer.color;
             lastSprite = spriteRenderer.sprite;
             if (!myCollider.isTrigger) // line part is white and active
@@ -134,13 +112,12 @@ public class LinePart : MonoBehaviour
                 // }
             }
                 
-                //spriteRenderer.color = Color.magenta;
+            //spriteRenderer.color = Color.magenta;
         }
         else if (lineMarked)
         {
             lineMarked = false;
-           // Debug.Log("Reset Mark");
-            if (!myCollider.isTrigger)// Set back the active line to white
+            if (!myCollider.isTrigger) // Set back the active line to white
             {
                 spriteRenderer.sprite = lastSprite;
                 spriteRenderer.color = whiteColor;
@@ -185,7 +162,6 @@ public class LinePart : MonoBehaviour
         {
             if (hover)
             {
-               // Debug.Log("part change by click");
                 MarkPartToBeDeleted(true);
             }
             else // On Click 
