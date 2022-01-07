@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Physics2D.gravity = new Vector2(0, -9.81f);
+            Physics2D.gravity = new Vector2(0, -300f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
