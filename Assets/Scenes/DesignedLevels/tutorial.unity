@@ -5594,7 +5594,7 @@ MonoBehaviour:
   stepsCounterUI: {fileID: 383910201}
   player: {fileID: 1994726144}
   levelNum: 3
-  maxClicksInLevel: 0
+  maxClicksInLevel: 6
   nextLevelScreen: {fileID: 1107341513}
 --- !u!4 &1636344179
 Transform:

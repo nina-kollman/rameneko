@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         clickCounter = 0;
-        stepsCounterUI.text = "Remaining Steps: " + clickCounter;
+        stepsCounterUI.text = "Remaining Steps: " + (maxClicksInLevel - clickCounter).ToString();
         nextLevelScreen.SetActive(false);
     }
 
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     public void AddClick()
     {
         clickCounter++;
-        stepsCounterUI.text = "Remaining Steps: " + clickCounter.ToString();
+        stepsCounterUI.text = "Remaining Steps: " + (maxClicksInLevel - clickCounter).ToString();
         if (clickCounter > maxClicksInLevel)
         {
             Debug.Log("YOU LOST!");
