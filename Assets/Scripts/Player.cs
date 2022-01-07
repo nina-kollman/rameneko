@@ -5,38 +5,25 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Transform mPlayer;
-    [SerializeField] private float mMoveSpeed = 1;
+    [SerializeField] private GameManager gameManager;
 
 
-    void Update()
+    private void Awake()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log($"player Collide with {other}");
+        if (other.gameObject.CompareTag("Goal"))
         {
-            mPlayer.Translate(Vector2.up * mMoveSpeed * Time.deltaTime);
-        }
-        
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            mPlayer.Translate(Vector2.down * mMoveSpeed * Time.deltaTime);
-        }
-        
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            mPlayer.Translate(Vector2.right * mMoveSpeed * Time.deltaTime);
-        }
-        
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            mPlayer.Translate(Vector2.left * mMoveSpeed * Time.deltaTime);
+            Debug.Log("Win");
+            gameManager.SetScreen();
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void ChangeMovementConstraints(bool isVertical)
     {
-        if (other.tag == "Goal")
-        {
-            Debug.Log("Win");
-        }
+        GetComponent<Rigidbody2D>().constraints = isVertical ?  RigidbodyConstraints2D.FreezePositionX : RigidbodyConstraints2D.FreezePositionY;
     }
 }

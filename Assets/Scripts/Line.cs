@@ -6,53 +6,90 @@ using UnityEngine;
 
 public class Line : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer rend;
-    [SerializeField] private bool active;
-    [SerializeField] private BoxCollider2D myCollider;
     [SerializeField] private LineManager lineMng;
+    [SerializeField] private List<LinePart> lineParts;
     [SerializeField] private bool isVertical;
-    [SerializeField] public int index;
-    [SerializeField] private Vector3 basePos;
-    [SerializeField] private Line myLine1;
-    [SerializeField] private Line myLine2;
-    
+    [SerializeField] private EraseDirection eraseDirection;
+    [SerializeField] private GameObject leftMarkSquare;
+    [SerializeField] private GameObject rightMarkSquare;
 
-    public void SetBasePosition()
+
+    private Vector2 top;
+    private Vector2 bottom;
+
+    private void Awake()
     {
-        this.transform.position = basePos;
+        // init full line top and bottom by his parts
+        top = lineParts[lineParts.Count - 1].GetTop();
+        bottom = lineParts[0].GetBottom();
     }
 
-    public void SetActive(bool val)
+    /**
+     * create the effect of clicking on line
+     */
+    public void ClickOnPart(Transform linePartTransform, bool hover)
     {
-        active = val;
-
-        if (active)
+        // 1. add one more click to click count
+        if (!hover)
         {
-            rend.color = Color.white;
-            SetBasePosition();
-            myCollider.isTrigger = false;
+            lineMng.AddClick();
+
+            // 2. activate all of the line
+            foreach (LinePart part in lineParts)
+            {
+                part.ActivateCommandPart(true);
+            }
+        }
+
+        // 3. destroy all the other lines (that needed to be destroyed by nina's new rule)
+        lineMng.ChangeOtherLines(top, bottom, eraseDirection, hover);
+        if (hover)
+            MarkSquares(true);
+        
+        // 4. change gravity direction
+        if(!hover)
+            lineMng.ChangeGravityDirection(linePartTransform, isVertical);
+    }
+
+    /**
+     * going through his parts, change each part according to the given coordinates
+     */
+    public void ChangePartsOnOtherClick(Vector2 clickedTop, Vector2 clickedBottom, EraseDirection eraseDirection, bool hover)
+    {
+        foreach (LinePart part in lineParts)
+        {
+            part.PartChangeByOtherClick(clickedTop, clickedBottom, eraseDirection, hover);
+        }
+    }
+
+    public bool GetVertical()
+    {
+        return isVertical;
+    }
+
+    
+    /**
+     * toMark:true - Marks all the line that will be deleted upon selecting the line.
+     * toMark:false - Sets the MarkLines function from the line manager 
+     */
+    public void MarkLines(bool toMark)
+    {
+        if (toMark)
+        {
+            foreach (var part in lineParts)
+            {
+                part.MarkPartToBeDeleted(false);
+            }
         }
         else
         {
-            rend.color = Color.gray;
-            myCollider.isTrigger = true;
+            lineMng.MarkLines();
         }
     }
 
-    private void OnMouseDown()
+    public void MarkSquares(bool active)
     {
-        lineMng.PlusClick();
-        SetActive(true);
-        myLine1.SetActive(true);
-        myLine2.SetActive(true);
-        lineMng.SetScreen(isVertical, index);
-        lineMng.ChangeGravityDirection(transform, isVertical);
+        leftMarkSquare.SetActive(active);
+        rightMarkSquare.SetActive(active);
     }
-
-    public void SetPosition(int x, int y)
-    {
-        Vector3 pos = new Vector3(x, y, 0);
-        this.transform.position = pos;
-    }
-    
 }

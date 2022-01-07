@@ -4,111 +4,38 @@ using UnityEngine;
 
 public class LineManager : MonoBehaviour
 {
-    [SerializeField] private Line[] verticalLines;
-    [SerializeField] private Line[] horizontalLines;
+    [SerializeField] private List<Line> lineList;
     [SerializeField] private GameManager gameManager;
-
-
-    private int clickCounter = 0;
-
-    public void PlusClick()
+    
+    public void AddClick()
     {
-        clickCounter++;
-    }
-
-    public void Restart(int levelNum)
-    {
-        SetLevel(levelNum);
+        gameManager.AddClick();
     }
 
     public void ChangeGravityDirection(Transform transform, bool isVertical)
     {
         gameManager.ChangeGravityDirection(transform, isVertical);
     }
-    
-    public void SetLevel(int levelNum)
-    {
-        switch (levelNum)
-        {
-            case 1:
-                //level 1 - only h2 is active
-                foreach (var vLine in verticalLines)
-                {
-                    vLine.SetActive(false);
-                    vLine.SetBasePosition();
-                }
 
-                foreach (var hLine in horizontalLines)
-                {
-                    if (hLine.index / 10 != 2) //not h2
-                        hLine.SetActive(false);
-                    else // is h2
-                        hLine.SetActive(true);
-                    
-                    hLine.SetBasePosition();
-                    
-                }
-                break;
+    
+    public void ChangeOtherLines(Vector2 top, Vector2 bottom, EraseDirection eraseDirection, bool hover)
+    {
+        foreach (Line line in lineList)
+        {
+            // go through each line - and check for needed changes
+            // change logic - in LinePart
+            line.ChangePartsOnOtherClick(top, bottom, eraseDirection, hover);
         }
     }
 
-     public void SetScreen(bool vertical, int index)
-     {
-         int num = index / 10;
-         if (vertical)
-         {
-             switch (num)
-             {
-                 case 1:
-                     for (int i = 0; i < 3; i++)
-                     {
-                         verticalLines[i].SetActive(false);
-                     }
-                     horizontalLines[0].SetActive(false);
-                     horizontalLines[3].SetActive(false);
-                     horizontalLines[6].SetActive(false);
-                     horizontalLines[9].SetActive(false);
-                     break;
-                 case 2:
-                     for (int i = 9; i < 12; i++)
-                     {
-                         verticalLines[i].SetActive(false);
-                     }
-                     horizontalLines[2].SetActive(false);
-                     horizontalLines[5].SetActive(false);
-                     horizontalLines[8].SetActive(false);
-                     horizontalLines[11].SetActive(false);
-                     break;
-             }
-         }
-         else // is horizontal
-         {
-             switch (num)
-             {
-                 case 1:
-                     for (int i = 0; i < 3; i++)
-                     {
-                         horizontalLines[i].SetActive(false);
-                     }
-                     verticalLines[0].SetActive(false);
-                     verticalLines[3].SetActive(false);
-                     verticalLines[6].SetActive(false);
-                     verticalLines[9].SetActive(false);
-                     break;
-                 case 2:
-                     for (int i = 9; i < 12; i++)
-                     {
-                         horizontalLines[i].SetActive(false);
-                     }
-                     verticalLines[2].SetActive(false);
-                     verticalLines[5].SetActive(false);
-                     verticalLines[8].SetActive(false);
-                     verticalLines[11].SetActive(false);
-                     break;
-             }
-         }
-
-     }
-    
-  
+    /**
+     * Resets all the marked lines
+     */
+    public void MarkLines()
+    {
+        foreach (Line line in lineList)
+        {
+            line.MarkLines(true);
+        }
+    }
 }
