@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8739b82edcfa93a4fb0c953ed772ad89
+guid: 6f56aae60d071df4dae7073005650a5d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 112
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,59 +100,47 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bamboo2_0
+      name: bamboo straight_0
       rect:
         serializedVersion: 2
-        x: 199
-        y: 338
-        width: 30
-        height: 442
+        x: 35
+        y: 132
+        width: 638
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 150aeb958950d9e46adb3e363c48bb01
-      internalID: -1946469000
+      spriteID: df7795319bf3f4f46be60b596fa23327
+      internalID: -734569944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bamboo2_1
+      name: bamboo straight_3
       rect:
         serializedVersion: 2
-        x: 394
-        y: 340
-        width: 30
-        height: 442
+        x: 34
+        y: 38
+        width: 635
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 147c385c7dfbf7549b50cb02f02a4e4f
-      internalID: -1394747552
+      spriteID: 7dfce2dd42e323e47affe90d2974b753
+      internalID: 1389534534
       vertices: []
       indices: 
       edges: []
@@ -168,8 +156,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bamboo2_0: -1946469000
-      Bamboo2_1: -1394747552
+      bamboo straight_1: 474764136
+      bamboo straight_3: 1389534534
+      bamboo straight_0: -734569944
+      bamboo straight_2: -1509945461
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

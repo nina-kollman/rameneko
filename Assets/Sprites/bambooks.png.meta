@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4250346098207334190945b9994fc596
+guid: 89fb66fccbf22a54c8c3f5548ac01ef3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 112
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,29 +100,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_0599_0
+      name: bambooks_0
       rect:
         serializedVersion: 2
-        x: 199
-        y: 338
-        width: 30
-        height: 442
+        x: 415
+        y: 753
+        width: 74
+        height: 312
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faa3c0777b4e9534383d149669f0c639
-      internalID: 1488187277
+      spriteID: 03ddb16404f1b114a9375b7dd912a8e1
+      internalID: -109720961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0599_1
+      name: bambooks_1
       rect:
         serializedVersion: 2
-        x: 394
-        y: 340
-        width: 30
-        height: 442
+        x: 894
+        y: 758
+        width: 72
+        height: 314
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 873cc4e26f7230a458eaeaf635c07b3f
-      internalID: 1324371108
+      spriteID: 478df2ac7dbd4ac488421ca4096d18ea
+      internalID: 1893155587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0599_2
+      name: bambooks_2
       rect:
         serializedVersion: 2
-        x: 1293
-        y: 595
-        width: 606
-        height: 30
+        x: 1191
+        y: 774
+        width: 662
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa2d3499c0ee03e4eac736137f7edfb9
-      internalID: 1723843055
+      spriteID: 86bf064f312234d4882c38aadfe2753c
+      internalID: -152050218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0599_3
+      name: bambooks_3
       rect:
         serializedVersion: 2
-        x: 1293
-        y: 471
-        width: 606
-        height: 30
+        x: 1201
+        y: 869
+        width: 659
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7e43b59046a06e4985c99d823395431
-      internalID: -744748893
+      spriteID: 60360058875ff6949a52682ab39d11f1
+      internalID: 2015467920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0599_4
+      name: bambooks_4
       rect:
         serializedVersion: 2
-        x: 1291
-        y: 309
-        width: 606
-        height: 29
+        x: 414
+        y: 315
+        width: 78
+        height: 411
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,8 +202,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ad99eca109462442b15dc0b0db2103a
-      internalID: -440367152
+      spriteID: d8cbc9a0581887b4ebcd04618ebcdcd1
+      internalID: -1512154254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bambooks_5
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 327
+        width: 76
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4e0ce002c6b6504db5b87107171f488
+      internalID: -82695982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bambooks_6
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 676
+        width: 658
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aab33c819e29664cb9060092f120c59
+      internalID: -471193339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bambooks_7
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 550
+        width: 634
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e1e33987835fd340b1bd2c8a1e1dc8e
+      internalID: -1995037291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bambooks_8
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 451
+        width: 634
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eab4f4fbc99289e4c8b773c6eb250324
+      internalID: 1846960712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bambooks_9
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 365
+        width: 634
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1e8eb10f82fe34088c476e7c1c9e31
+      internalID: -321955410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bambooks_10
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 10
+        width: 82
+        height: 337
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f34e528ad2007d48a5fc56d7d3b1195
+      internalID: 1551586639
       vertices: []
       indices: 
       edges: []
@@ -231,11 +345,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IMG_0599_0: 1488187277
-      IMG_0599_2: 1723843055
-      IMG_0599_4: -440367152
-      IMG_0599_1: 1324371108
-      IMG_0599_3: -744748893
+      bambooks_6: -471193339
+      bambooks_1: 1893155587
+      bambooks_8: 1846960712
+      bambooks_3: 2015467920
+      bambooks_0: -109720961
+      bambooks_2: -152050218
+      bambooks_5: -82695982
+      bambooks_7: -1995037291
+      bambooks_9: -321955410
+      bambooks_10: 1551586639
+      bambooks_4: -1512154254
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
