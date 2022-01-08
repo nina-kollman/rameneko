@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5464519533947758364}
   - component: {fileID: 5464519533947758365}
+  - component: {fileID: 3252992734776774894}
   m_Layer: 0
   m_Name: cloud-small
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0.9706318, w: -0.24057038}
   m_LocalPosition: {x: 0.8026457, y: -0.81, z: 0}
   m_LocalScale: {x: 0.4430838, y: 0.45407775, z: 0.5010528}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -84,3 +85,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3252992734776774894
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5464519533947758355}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 814d95362087e844a8520eb257d5542d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
