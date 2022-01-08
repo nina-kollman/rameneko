@@ -12,8 +12,10 @@ public class LinePart : MonoBehaviour
     
     [SerializeField] private Vector2 top;
     [SerializeField] private Vector2 bottom;
-    //[SerializeField] private Sprite disablesBamboo;
-    //[SerializeField] private Sprite enabledBamboo;
+    [SerializeField] private Sprite disablesBamboo;
+    [SerializeField] private Sprite enabledBamboo;
+
+    private Animator myAnimator;
     private Collider2D myCollider;
     private bool mouseOver;
     private Color lastColor;
@@ -29,6 +31,7 @@ public class LinePart : MonoBehaviour
         lineParent = GetComponentInParent<Line>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         myCollider = GetComponent<BoxCollider2D>();
+        myAnimator = GetComponent<Animator>();
         mouseOver = false;
         lineMarked = false;
         lastColor = spriteRenderer.color;
@@ -72,7 +75,9 @@ public class LinePart : MonoBehaviour
         if (activateCommand)
         {
             // activate part
-            spriteRenderer.color = whiteColor;
+            //spriteRenderer.color = whiteColor;
+            spriteRenderer.sprite = enabledBamboo;
+            myAnimator.Play("appear");
             spriteRenderer.sortingOrder = 2;
             myCollider.isTrigger = false;
         }
@@ -81,7 +86,9 @@ public class LinePart : MonoBehaviour
             if (myCollider.isTrigger != true)
                 poof.Play();
             // deactivate part
-            spriteRenderer.color = greyColor;
+            //spriteRenderer.color = greyColor;
+            spriteRenderer.sprite = disablesBamboo;
+            myAnimator.Play("disappear");
             Debug.Log("poof");
             spriteRenderer.sortingOrder = 1;
             myCollider.isTrigger = true;

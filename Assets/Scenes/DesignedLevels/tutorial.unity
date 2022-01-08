@@ -532,6 +532,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 0, y: 1}
   bottom: {x: 0, y: 0}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 0}
 --- !u!95 &127172962
 Animator:
   serializedVersion: 4
@@ -685,6 +687,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 3}
   bottom: {x: 0, y: 3}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &177789181
 Animator:
   serializedVersion: 4
@@ -838,6 +842,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 2}
   bottom: {x: 1, y: 1}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &207890283
 Animator:
   serializedVersion: 4
@@ -1230,6 +1236,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 2}
   bottom: {x: 3, y: 1}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &316597549
 Animator:
   serializedVersion: 4
@@ -1623,6 +1631,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 1}
   bottom: {x: 1, y: 0}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &402240841
 Animator:
   serializedVersion: 4
@@ -1771,6 +1781,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 3}
   bottom: {x: 2, y: 3}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &417802266
 Animator:
   serializedVersion: 4
@@ -1976,6 +1988,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 2}
   bottom: {x: 0, y: 2}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &492937808
 Animator:
   serializedVersion: 4
@@ -2648,6 +2662,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 1}
   bottom: {x: 2, y: 1}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &601148157
 Animator:
   serializedVersion: 4
@@ -2811,6 +2827,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 2}
   bottom: {x: 2, y: 1}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &641262895
 Animator:
   serializedVersion: 4
@@ -2959,6 +2977,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 3}
   bottom: {x: 1, y: 2}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &641661966
 Animator:
   serializedVersion: 4
@@ -3112,6 +3132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 3}
   bottom: {x: 2, y: 2}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &717988175
 Animator:
   serializedVersion: 4
@@ -3322,6 +3344,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 2}
   bottom: {x: 1, y: 2}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &738095809
 Animator:
   serializedVersion: 4
@@ -3485,6 +3509,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 0}
   bottom: {x: 0, y: 0}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &776542564
 Animator:
   serializedVersion: 4
@@ -3954,6 +3980,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 0, y: 2}
   bottom: {x: 0, y: 1}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 0}
 --- !u!95 &859256306
 Animator:
   serializedVersion: 4
@@ -5018,6 +5046,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 3}
   bottom: {x: 3, y: 2}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1205781780
 Animator:
   serializedVersion: 4
@@ -6017,6 +6047,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 1}
   bottom: {x: 3, y: 0}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1472026191
 Animator:
   serializedVersion: 4
@@ -6340,6 +6372,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 1}
   bottom: {x: 0, y: 1}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1700718196
 Animator:
   serializedVersion: 4
@@ -6549,6 +6583,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 1}
   bottom: {x: 2, y: 0}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1717107302
 Animator:
   serializedVersion: 4
@@ -6753,6 +6789,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 3}
   bottom: {x: 1, y: 3}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1846450239
 Animator:
   serializedVersion: 4
@@ -6901,6 +6939,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 0}
   bottom: {x: 1, y: 0}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1850860256
 Animator:
   serializedVersion: 4
@@ -7049,6 +7089,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 1}
   bottom: {x: 1, y: 1}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1879545835
 Animator:
   serializedVersion: 4
@@ -7197,6 +7239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 0, y: 3}
   bottom: {x: 0, y: 2}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1881321753
 Animator:
   serializedVersion: 4
@@ -7506,6 +7550,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 0}
   bottom: {x: 2, y: 0}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1900929334
 Animator:
   serializedVersion: 4
@@ -8020,6 +8066,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 2}
   bottom: {x: 2, y: 2}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &2063916954
 Animator:
   serializedVersion: 4
