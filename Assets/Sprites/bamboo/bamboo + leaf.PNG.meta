@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8739b82edcfa93a4fb0c953ed772ad89
+guid: 98dd5baab3f5d8a499084e79fd80b31e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 115
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,7 +101,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -116,43 +116,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bamboo2_0
+      name: bamboo + leaf_1
       rect:
         serializedVersion: 2
-        x: 199
-        y: 338
+        x: 724
+        y: 802
         width: 30
-        height: 442
+        height: 109
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 150aeb958950d9e46adb3e363c48bb01
-      internalID: -1946469000
+      spriteID: 9f431c4f62cc8a3429a5ed1c5b56f31e
+      internalID: 523090820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bamboo2_1
+      name: bamboo + leaf_6
       rect:
         serializedVersion: 2
-        x: 394
-        y: 340
-        width: 30
-        height: 442
+        x: 655
+        y: 696
+        width: 41
+        height: 149
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 147c385c7dfbf7549b50cb02f02a4e4f
-      internalID: -1394747552
+      spriteID: 5de5d2da3d238b04aaef1b96e76f32cb
+      internalID: 1610208526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bamboo + leaf_9
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 537
+        width: 122
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 597354b2fb1db4d409461cdf44163263
+      internalID: -1016496694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bamboo + leaf_11
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 369
+        width: 60
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d2699d312fe8140b6a6632f8290d7f
+      internalID: 2091920895
       vertices: []
       indices: 
       edges: []
@@ -168,8 +210,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bamboo2_0: -1946469000
-      Bamboo2_1: -1394747552
+      bamboo + leaf_1: 523090820
+      bamboo + leaf_7: -97504230
+      bamboo + leaf_3: -1891156644
+      bamboo + leaf_14: 1477044104
+      bamboo + leaf_4: 1921267722
+      bamboo + leaf_6: 1610208526
+      bamboo + leaf_0: 1633200101
+      bamboo + leaf_13: -780317115
+      bamboo + leaf_2: -591441968
+      bamboo + leaf_5: -1310978010
+      bamboo + leaf_11: 2091920895
+      bamboo + leaf_12: 1749766220
+      bamboo + leaf_10: 1648177236
+      bamboo + leaf_9: -1016496694
+      bamboo + leaf_8: 1330952384
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

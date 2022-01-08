@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4250346098207334190945b9994fc596
+guid: a4da58a52816fbc4283be32248f3962e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 125
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,7 +101,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_0599_0
+      name: Restart_0
       rect:
         serializedVersion: 2
-        x: 199
-        y: 338
-        width: 30
-        height: 442
+        x: 68
+        y: 923
+        width: 129
+        height: 127
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,92 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faa3c0777b4e9534383d149669f0c639
-      internalID: 1488187277
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_0599_1
-      rect:
-        serializedVersion: 2
-        x: 394
-        y: 340
-        width: 30
-        height: 442
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 873cc4e26f7230a458eaeaf635c07b3f
-      internalID: 1324371108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_0599_2
-      rect:
-        serializedVersion: 2
-        x: 1293
-        y: 595
-        width: 606
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa2d3499c0ee03e4eac736137f7edfb9
-      internalID: 1723843055
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_0599_3
-      rect:
-        serializedVersion: 2
-        x: 1293
-        y: 471
-        width: 606
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7e43b59046a06e4985c99d823395431
-      internalID: -744748893
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_0599_4
-      rect:
-        serializedVersion: 2
-        x: 1291
-        y: 309
-        width: 606
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ad99eca109462442b15dc0b0db2103a
-      internalID: -440367152
+      spriteID: 38b10427a797cc54c87c2e95e675f598
+      internalID: 1957908447
       vertices: []
       indices: 
       edges: []
@@ -231,11 +147,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IMG_0599_0: 1488187277
-      IMG_0599_2: 1723843055
-      IMG_0599_4: -440367152
-      IMG_0599_1: 1324371108
-      IMG_0599_3: -744748893
+      Restart_0: 1957908447
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
