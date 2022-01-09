@@ -44,7 +44,7 @@ public class LinePart : MonoBehaviour
 
     private void OnMouseDown()
     {
-        lineParent.ClickOnPart();
+        lineParent.ClickOnPart(transform);
     }
 
     /**

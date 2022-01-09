@@ -29,7 +29,7 @@ public class Line : MonoBehaviour
     /**
      * create the effect of clicking on line
      */
-    public void ClickOnPart()
+    public void ClickOnPart(Transform partTransform)
     {
         // 1. add one more click to click count
         if (isClicked)
@@ -50,7 +50,7 @@ public class Line : MonoBehaviour
         
         // 4. change gravity direction
         if(isClicked)
-            lineMng.ChangeGravityDirection(transform, isVertical);
+            lineMng.ChangeGravityDirection(partTransform, isVertical);
         // 5. change isClicked
         isClicked = !isClicked;
     }
