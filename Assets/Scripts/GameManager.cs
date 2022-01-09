@@ -9,7 +9,7 @@ using Object = System.Object;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private LineManager lineMng;
-    [SerializeField] private TextMeshProUGUI stepsCounterUI;
+    [SerializeField] private TextMeshPro stepsCounterUI;
     [SerializeField] private Player player;
     [SerializeField] private int levelNum;
     [SerializeField] private int maxClicksInLevel;
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         clickCounter = 0;
-        stepsCounterUI.text = "Remaining Steps: " + (maxClicksInLevel - clickCounter).ToString();
+        stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
         nextLevelScreen.SetActive(false);
     }
 
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     public void AddClick()
     {
         clickCounter++;
-        stepsCounterUI.text = "Remaining Steps: " + (maxClicksInLevel - clickCounter).ToString();
+        stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
         if (clickCounter > maxClicksInLevel)
         {
             Debug.Log("YOU LOST!");
