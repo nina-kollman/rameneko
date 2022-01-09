@@ -44,19 +44,7 @@ public class LinePart : MonoBehaviour
 
     private void OnMouseDown()
     {
-        lineParent.ClickOnPart(transform, false);
-    }
-
-    /**
-     * Called when the player hovers on the line. Marks all the line parts that will be deleted upon selecting the line
-     */
-    private void OnMouseOver()
-    {
-        if (!mouseOver)
-        {
-            mouseOver = true;
-            lineParent.ClickOnPart(this.transform, true); 
-        }
+        lineParent.ClickOnPart();
     }
 
     /**
@@ -112,14 +100,8 @@ public class LinePart : MonoBehaviour
             if (!myCollider.isTrigger) // line part is white and active
             {
                 var opacityColor = spriteRenderer.color;
-                //spriteRenderer.color = greyColor;
-                // for (int i = 255; i >= 0; i--)
-                // {
-                //     spriteRenderer.color = new Color(1, 1, 1, i);
-                // }
             }
                 
-            //spriteRenderer.color = Color.magenta;
         }
         else if (lineMarked)
         {
@@ -129,7 +111,6 @@ public class LinePart : MonoBehaviour
                 spriteRenderer.sprite = lastSprite;
                 spriteRenderer.color = whiteColor;
             }
-            // spriteRenderer.color = new Color(1,1,1,255);
         }
     }
     
