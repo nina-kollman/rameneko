@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine. SceneManagement;
+using UnityEngine.SceneManagement;
 using Object = System.Object;
 
 public class GameManager : MonoBehaviour
@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject nextLevelScreen;
 
     private int clickCounter;
+    private GameObject lastClickedLine;
 
     private void Awake()
     {
@@ -33,8 +34,43 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         PlayTestKeyPress();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Click");
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+            
+            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+
+            if (hit.collider)
+            {
+                Debug.Log("Clicked on " + hit.collider.gameObject.name);
+                if (lastClickedLine.name == hit.collider.gameObject.name)
+                {
+                    Debug.Log("Clicked on the same line @");
+                    lastClickedLine.GetComponent<LinePart>().ClickOnPart();
+                    lastClickedLine = null;
+                }
+                else
+                {
+                    lastClickedLine.GetComponent<LinePart>().UnClickPart();
+                    if (hit.collider.gameObject.GetComponent<LinePart>())
+                    {
+                        Debug.Log("Clicked on another line !");
+                        lastClickedLine = hit.collider.gameObject;
+                    }
+                }
+            }
+            else
+            {
+                Debug.Log("Clicked on no line #");
+                lastClickedLine.GetComponent<LinePart>().UnClickPart();
+                lastClickedLine = null;
+            }
+        }
     }
-    
+
     public void AddClick()
     {
         clickCounter++;
@@ -94,48 +130,57 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SceneManager.LoadScene(1);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             SceneManager.LoadScene(2);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             SceneManager.LoadScene(3);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             SceneManager.LoadScene(4);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             SceneManager.LoadScene(5);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             SceneManager.LoadScene(6);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha7))
         {
             SceneManager.LoadScene(7);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha8))
         {
             SceneManager.LoadScene(8);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha9))
         {
             SceneManager.LoadScene(9);
         }
-        
+
         if (Input.GetKeyDown(KeyCode.Minus))
         {
             SceneManager.LoadScene(10);
         }
-        
+
         if (Input.GetKeyDown(KeyCode.Plus))
         {
             SceneManager.LoadScene(11);
@@ -146,6 +191,4 @@ public class GameManager : MonoBehaviour
     {
         nextLevelScreen.SetActive(true);
     }
-    
-    
 }

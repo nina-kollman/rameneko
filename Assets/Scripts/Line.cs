@@ -29,7 +29,7 @@ public class Line : MonoBehaviour
     /**
      * create the effect of clicking on line
      */
-    public void ClickOnPart(Transform partTransform)
+    public void ClickOnLine(Transform partTransform)
     {
         // 1. add one more click to click count
         if (isClicked)

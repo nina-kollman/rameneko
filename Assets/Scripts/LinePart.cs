@@ -17,7 +17,6 @@ public class LinePart : MonoBehaviour
 
     private Animator myAnimator;
     private Collider2D myCollider;
-    private bool mouseOver;
     private Color lastColor;
     private Sprite lastSprite;
     private bool lineMarked;
@@ -32,7 +31,6 @@ public class LinePart : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         myCollider = GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
-        mouseOver = false;
         lineMarked = false;
         lastColor = spriteRenderer.color;
     }
@@ -42,18 +40,17 @@ public class LinePart : MonoBehaviour
         poof = this.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
     }
 
-    private void OnMouseDown()
+    public void ClickOnPart()
     {
-        lineParent.ClickOnPart(transform);
+        lineParent.ClickOnLine(transform);
     }
 
     /**
-     * Called when the player stops hovering on the line.
-     * Rests all the lines that were marked when hovered on the line. 
+     * Called when the player clicked on another point on the board.
+     * Rests all the lines that were marked when clicked on the line for the first time. 
      */
-    private void OnMouseExit()
+    public void UnClickPart()
     {
-        mouseOver = false;
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
     }
