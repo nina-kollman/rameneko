@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        lastClickedLine = null;
         clickCounter = 0;
         stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
         nextLevelScreen.SetActive(false);
@@ -37,37 +38,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Click");
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-            
-            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-
-            if (hit.collider)
-            {
-                Debug.Log("Clicked on " + hit.collider.gameObject.name);
-                if (lastClickedLine.name == hit.collider.gameObject.name)
-                {
-                    Debug.Log("Clicked on the same line @");
-                    lastClickedLine.GetComponent<LinePart>().ClickOnPart();
-                    lastClickedLine = null;
-                }
-                else
-                {
-                    lastClickedLine.GetComponent<LinePart>().UnClickPart();
-                    if (hit.collider.gameObject.GetComponent<LinePart>())
-                    {
-                        Debug.Log("Clicked on another line !");
-                        lastClickedLine = hit.collider.gameObject;
-                    }
-                }
-            }
-            else
-            {
-                Debug.Log("Clicked on no line #");
-                lastClickedLine.GetComponent<LinePart>().UnClickPart();
-                lastClickedLine = null;
-            }
+            ClickOnScreen();
         }
     }
 
@@ -112,6 +83,57 @@ public class GameManager : MonoBehaviour
                 Physics2D.gravity = new Vector2(0, -9.81f);
                 player.ChangeMovementConstraints(true);
             }
+        }
+    }
+
+    /**
+     * when clicking on the screen - analyze the click place and check for on-line-part's click.
+     */
+    private void ClickOnScreen()
+    {
+        Debug.Log("Click");
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+            
+        RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+
+        if (hit.collider)
+        {
+            // if we clicked on the same line as before = double click
+            if (lastClickedLine && lastClickedLine.name == hit.collider.gameObject.name)
+            {
+                // click on the line for the second time
+                lastClickedLine.GetComponent<LinePart>().ClickOnPart();
+                // after the second time - clear the 'hover' indication
+                lastClickedLine.GetComponent<LinePart>().UnClickPart();
+                lastClickedLine = null;
+            }
+            // if we clicked on another line
+            else
+            {
+                if (lastClickedLine)
+                {
+                    // un-click the previous line
+                    lastClickedLine.GetComponent<LinePart>().UnClickPart();
+                }
+                if (hit.collider.gameObject.GetComponent<LinePart>())
+                {
+                    // save the new line, and then click on it
+                    lastClickedLine = hit.collider.gameObject;
+                    lastClickedLine.GetComponent<LinePart>().ClickOnPart();
+                }
+            }
+        }
+        // if we clicked on another part of the screen
+        else
+        {
+            if (lastClickedLine)
+            {
+                // un-click the previous line
+                lastClickedLine.GetComponent<LinePart>().UnClickPart();
+            }
+            // clear the previous line
+            lastClickedLine = null;
         }
     }
 
