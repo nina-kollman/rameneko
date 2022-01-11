@@ -93,10 +93,10 @@ public class LinePart : MonoBehaviour
             // deactivate part
             //spriteRenderer.color = greyColor;
             spriteRenderer.sprite = disablesBamboo;
-            // if (lineParent.isVertical)
-            //     myAnimator.Play("disappear-V");
-            // else 
-            //     myAnimator.Play("disappear-H");
+            if (lineParent.isVertical)
+                myAnimator.Play("disappear-V");
+            else
+                myAnimator.Play("disappear-H");
             spriteRenderer.sortingOrder = 1;
             myCollider.isTrigger = true;
         }
