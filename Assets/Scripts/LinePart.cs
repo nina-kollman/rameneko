@@ -29,8 +29,7 @@ public class LinePart : MonoBehaviour
     {
         lineParent = GetComponentInParent<Line>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        myCollider = GetComponent<BoxCollider2D>();
-        // myCollider = transform.parent.GetComponent<BoxCollider2D>();
+        myCollider = transform.parent.GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
         lineMarked = false;
         lastColor = spriteRenderer.color;
@@ -85,7 +84,7 @@ public class LinePart : MonoBehaviour
         {
             // activate part
             //spriteRenderer.color = whiteColor;
-            Debug.Log(this);
+           // Debug.Log(this);
             if (lineParent.isVertical)
                 myAnimator.Play("V-DtoE");
             else 
