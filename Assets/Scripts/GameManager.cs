@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         lastClickedLine = null;
         clickCounter = 0;
         stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
-        nextLevelScreen.SetActive(false);
+       // nextLevelScreen.SetActive(false);
     }
 
     private void Update()
@@ -127,10 +127,10 @@ public class GameManager : MonoBehaviour
             // if we clicked on the same line as before = double click
             if (lastClickedLine && lastClickedLine.name == hit.collider.gameObject.name)
             {
-                // click on the line for the second time
-                lastClickedLine.GetComponent<LinePart>().ClickOnPart();
                 // after the second time - clear the 'hover' indication
                 lastClickedLine.GetComponent<LinePart>().UnClickPart();
+                // click on the line for the second time
+                lastClickedLine.GetComponent<LinePart>().ClickOnPart();
                 lastClickedLine = null;
             }
             // if we clicked on another line

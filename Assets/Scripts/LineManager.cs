@@ -6,11 +6,14 @@ public class LineManager : MonoBehaviour
 {
     [SerializeField] private List<Line> lineList;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private Animator catAnimator;
     
     public void AddClick()
     {
         gameManager.AddClick();
     }
+
+    
 
     public void ChangeGravityDirection(Transform transform, bool isVertical)
     {
@@ -21,6 +24,15 @@ public class LineManager : MonoBehaviour
     
     public void ChangeOtherLines(Vector2 top, Vector2 bottom, EraseDirection eraseDirection, bool hover)
     {
+        if (hover)
+        {
+            catAnimator.Play("squish");
+            Debug.Log("squish");
+        }
+        else
+            catAnimator.Play("leave_squish");
+        
+        
         foreach (Line line in lineList)
         {
             // go through each line - and check for needed changes
@@ -38,6 +50,7 @@ public class LineManager : MonoBehaviour
         {
             line.MarkLines(true);
         }
+        catAnimator.Play("leave_squish");
     }
     
 }
