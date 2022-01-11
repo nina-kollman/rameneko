@@ -14,6 +14,7 @@ public class LinePart : MonoBehaviour
     [SerializeField] private Vector2 bottom;
     [SerializeField] private Sprite disablesBamboo;
     [SerializeField] private Sprite enabledBamboo;
+    [SerializeField] private Animator catAnimator;
 
     private Animator myAnimator;
     private Collider2D myCollider;
@@ -44,6 +45,7 @@ public class LinePart : MonoBehaviour
 
     private void OnMouseDown()
     {
+        catAnimator.Play("jump");
         lineParent.ClickOnPart(transform, false);
     }
 
@@ -54,11 +56,57 @@ public class LinePart : MonoBehaviour
     {
         if (!mouseOver)
         {
+            Direction direction = lineParent.GetJumpDirection(transform);
+            
+            catAnimator.Play("squish");
             SetAnimation("hover_enable_V", "hover_enable_H", "hover_disable_V",
                 "hover_disable_H");
             mouseOver = true;
             lineParent.ClickOnPart(this.transform, true); 
         }
+    }
+
+    private void SetJumpAnimation(Direction dir, bool hover)
+    {
+        if (hover)
+        {
+            switch (dir)
+            {
+                case Direction.Up:
+                    catAnimator.Play("?");
+                    break;
+                case Direction.Down:
+                    catAnimator.Play("?");
+                    break;
+                case Direction.Right:
+                    catAnimator.Play("?");
+                    break;
+                case Direction.Left:
+                    catAnimator.Play("?");
+                    break;
+                
+            }
+        }
+        else
+        {
+            switch (dir)
+            {
+                case Direction.Up:
+                    catAnimator.Play("?");
+                    break;
+                case Direction.Down:
+                    catAnimator.Play("?");
+                    break;
+                case Direction.Right:
+                    catAnimator.Play("?");
+                    break;
+                case Direction.Left:
+                    catAnimator.Play("?");
+                    break;
+                
+            } 
+        }
+        
     }
 
     private void SetAnimation(string firstVertical, string secondVertical, string firstHorizontal, string secondHorizontal)
@@ -95,6 +143,7 @@ public class LinePart : MonoBehaviour
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
         myAnimator.Play("idle"); // Nicole this does not stop the shake
+        catAnimator.Play("leave_squish");
     }
 
     public void ActivateCommandPart(bool activateCommand)
@@ -107,6 +156,7 @@ public class LinePart : MonoBehaviour
                 myAnimator.Play("appear-V");
             else 
                 myAnimator.Play("appear-H");
+            
             
             spriteRenderer.sprite = enabledBamboo;
             Debug.Log(this);
@@ -155,7 +205,7 @@ public class LinePart : MonoBehaviour
             {
                 var opacityColor = spriteRenderer.color;
                 Debug.Log("Shake");
-               // myAnimator.Play("shake");
+                myAnimator.Play("shake");
                 //spriteRenderer.color = greyColor;
                 // for (int i = 255; i >= 0; i--)
                 // {
