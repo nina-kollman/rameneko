@@ -54,20 +54,46 @@ public class LinePart : MonoBehaviour
     {
         if (!mouseOver)
         {
+            hoverAnimation();
             mouseOver = true;
             lineParent.ClickOnPart(this.transform, true); 
         }
     }
 
+    private void hoverAnimation()
+    {
+        if (!myCollider.isTrigger) // line part is white and active
+        {
+            if (lineParent.isVertical)
+                myAnimator.Play("hover_enable_V");
+            else
+            {
+                myAnimator.Play("hover_enable_H");
+            }
+        }
+        else // not active
+        {
+            if (lineParent.isVertical)
+                myAnimator.Play("hover_disable_V");
+            else
+            {
+                myAnimator.Play("hover_disable_H");
+            }
+        }
+    }
+
+
+
     /**
-     * Called when the player stops hovering on the line.
-     * Rests all the lines that were marked when hovered on the line. 
-     */
+         * Called when the player stops hovering on the line.
+         * Rests all the lines that were marked when hovered on the line. 
+         */
     private void OnMouseExit()
     {
         mouseOver = false;
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
+        myAnimator.Play("idle"); // Nicole this does not stop the shake
     }
 
     public void ActivateCommandPart(bool activateCommand)
