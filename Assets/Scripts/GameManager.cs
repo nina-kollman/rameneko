@@ -117,7 +117,6 @@ public class GameManager : MonoBehaviour
      */
     private void ClickOnScreen()
     {
-        Debug.Log("Click");
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
             

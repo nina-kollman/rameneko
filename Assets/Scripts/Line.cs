@@ -97,8 +97,4 @@ public class Line : MonoBehaviour
         rightMarkSquare.SetActive(active);
     }
     
-    public Direction GetJumpDirection(Transform tranform)
-    {
-        return lineMng.GetJumpDirection(tranform, isVertical);
-    }
 }

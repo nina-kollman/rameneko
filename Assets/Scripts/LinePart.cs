@@ -28,6 +28,7 @@ public class LinePart : MonoBehaviour
     
     private void Awake()
     {
+        catAnimator = null;
         lineParent = GetComponentInParent<Line>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         myCollider = GetComponent<BoxCollider2D>();
@@ -43,7 +44,7 @@ public class LinePart : MonoBehaviour
 
     public void ClickOnPart()
     {
-        catAnimator.Play("jump");
+        //catAnimator.Play("jump");
         lineParent.ClickOnLine(transform);
     }
 
@@ -66,16 +67,16 @@ public class LinePart : MonoBehaviour
             switch (dir)
             {
                 case Direction.Up:
-                    catAnimator.Play("?");
+                    // catAnimator.Play("?");
                     break;
                 case Direction.Down:
-                    catAnimator.Play("?");
+                    // catAnimator.Play("?");
                     break;
                 case Direction.Right:
-                    catAnimator.Play("?");
+                    // catAnimator.Play("?");
                     break;
                 case Direction.Left:
-                    catAnimator.Play("?");
+                    // catAnimator.Play("?");
                     break;
                 
             }
@@ -85,16 +86,16 @@ public class LinePart : MonoBehaviour
             switch (dir)
             {
                 case Direction.Up:
-                    catAnimator.Play("?");
+                    // catAnimator.Play("?");
                     break;
                 case Direction.Down:
-                    catAnimator.Play("?");
+                    // catAnimator.Play("?");
                     break;
                 case Direction.Right:
-                    catAnimator.Play("?");
+                    // catAnimator.Play("?");
                     break;
                 case Direction.Left:
-                    catAnimator.Play("?");
+                    // catAnimator.Play("?");
                     break;
                 
             } 
