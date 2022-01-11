@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
             if (lastClickedLine && lastClickedLine.name == linePartObject.name)
             {
                 // after the second time - clear the 'hover' indication
-                lastClickedLine.GetComponent<LinePart>().UnClickPart();
+                lastClickedLine.GetComponent<LinePart>().UnClickPart(false);
                 // click on the line for the second time
                 lastClickedLine.GetComponent<LinePart>().ClickOnPart();
                 lastClickedLine = null;
@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
                 if (lastClickedLine)
                 {
                     // un-click the previous line
-                    lastClickedLine.GetComponent<LinePart>().UnClickPart();
+                    lastClickedLine.GetComponent<LinePart>().UnClickPart(true);
                 }
                 if (linePartObject.GetComponent<LinePart>())
                 {
@@ -156,11 +156,17 @@ public class GameManager : MonoBehaviour
             if (lastClickedLine)
             {
                 // un-click the previous line
-                lastClickedLine.GetComponent<LinePart>().UnClickPart();
+                lastClickedLine.GetComponent<LinePart>().UnClickPart(true);
             }
             // clear the previous line
             lastClickedLine = null;
         }
+    }
+
+    public void ResetLevel()
+    {
+        Physics2D.gravity = new Vector2(0, -300f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     /**
@@ -170,8 +176,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Physics2D.gravity = new Vector2(0, -300f);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            ResetLevel();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha0))
