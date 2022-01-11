@@ -14,7 +14,8 @@ public class LineManager : MonoBehaviour
 
     public void ChangeGravityDirection(Transform transform, bool isVertical)
     {
-        gameManager.ChangeGravityDirection(transform, isVertical);
+        Direction jumpDirection = gameManager.GetJumpDirection(transform, isVertical);
+        gameManager.ChangeGravityDirection(jumpDirection);
     }
 
     
