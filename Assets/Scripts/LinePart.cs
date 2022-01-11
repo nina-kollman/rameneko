@@ -42,7 +42,6 @@ public class LinePart : MonoBehaviour
 
     public void ClickOnPart()
     {
-        //catAnimator.Play("jump");
         lineParent.ClickOnLine(transform);
     }
 
@@ -50,59 +49,11 @@ public class LinePart : MonoBehaviour
      * Called when the player clicked on another point on the board.
      * Rests all the lines that were marked when clicked on the line for the first time. 
      */
-    public void UnClickPart()
+    public void UnClickPart(bool isClickedNeedToTurnOff)
     {
-        if(lineParent.isVertical)
-            myAnimator.Play("shake-V-stop");
-        else
-            myAnimator.Play("shake-H-stop");
+        lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
-        myAnimator.Play("idle"); // Nicole this does not stop the shake
-    
-    }
-
-    private void SetJumpAnimation(Direction dir, bool hover)
-    {
-        if (hover)
-        {
-            switch (dir)
-            {
-                case Direction.Up:
-                    // catAnimator.Play("?");
-                    break;
-                case Direction.Down:
-                    // catAnimator.Play("?");
-                    break;
-                case Direction.Right:
-                    // catAnimator.Play("?");
-                    break;
-                case Direction.Left:
-                    // catAnimator.Play("?");
-                    break;
-                
-            }
-        }
-        else
-        {
-            switch (dir)
-            {
-                case Direction.Up:
-                    // catAnimator.Play("?");
-                    break;
-                case Direction.Down:
-                    // catAnimator.Play("?");
-                    break;
-                case Direction.Right:
-                    // catAnimator.Play("?");
-                    break;
-                case Direction.Left:
-                    // catAnimator.Play("?");
-                    break;
-                
-            } 
-        }
-        
     }
 
     private void SetAnimation(string firstVertical, string secondVertical, string firstHorizontal, string secondHorizontal)
@@ -186,8 +137,6 @@ public class LinePart : MonoBehaviour
                     myAnimator.Play("shake-V");
                 else
                     myAnimator.Play("shake-H");
-                
-               
             }
                 
         }
@@ -196,8 +145,10 @@ public class LinePart : MonoBehaviour
             lineMarked = false;
             if (!myCollider.isTrigger) // Set back the active line to white
             {
-                spriteRenderer.sprite = lastSprite;
-                spriteRenderer.color = whiteColor;
+                if(lineParent.isVertical)
+                    myAnimator.Play("shake-V-stop");
+                else
+                    myAnimator.Play("shake-H-stop");
             }
         }
     }

@@ -16,7 +16,7 @@ public class Line : MonoBehaviour
 
     private Vector2 top;
     private Vector2 bottom;
-    private bool isClicked;
+    public bool isClicked;
 
     private void Awake()
     {
