@@ -30,6 +30,7 @@ public class LinePart : MonoBehaviour
         lineParent = GetComponentInParent<Line>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         myCollider = GetComponent<BoxCollider2D>();
+        // myCollider = transform.parent.GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
         lineMarked = false;
         lastColor = spriteRenderer.color;

@@ -162,6 +162,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ResetLevel()
+    {
+        Physics2D.gravity = new Vector2(0, -300f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     /**
      * Change the level by number keys - for a quick play-test feel
      */
@@ -169,8 +175,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Physics2D.gravity = new Vector2(0, -300f);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            ResetLevel();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha0))
