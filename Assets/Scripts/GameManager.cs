@@ -124,8 +124,9 @@ public class GameManager : MonoBehaviour
 
         if (hit.collider)
         {
+            GameObject linePartObject = hit.collider.transform.GetChild(0).gameObject;
             // if we clicked on the same line as before = double click
-            if (lastClickedLine && lastClickedLine.name == hit.collider.gameObject.name)
+            if (lastClickedLine && lastClickedLine.name == linePartObject.name)
             {
                 // after the second time - clear the 'hover' indication
                 lastClickedLine.GetComponent<LinePart>().UnClickPart();
@@ -141,10 +142,10 @@ public class GameManager : MonoBehaviour
                     // un-click the previous line
                     lastClickedLine.GetComponent<LinePart>().UnClickPart();
                 }
-                if (hit.collider.gameObject.GetComponent<LinePart>())
+                if (linePartObject.GetComponent<LinePart>())
                 {
                     // save the new line, and then click on it
-                    lastClickedLine = hit.collider.gameObject;
+                    lastClickedLine = linePartObject;
                     lastClickedLine.GetComponent<LinePart>().ClickOnPart();
                 }
             }
