@@ -54,20 +54,47 @@ public class LinePart : MonoBehaviour
     {
         if (!mouseOver)
         {
+            SetAnimation("hover_enable_V", "hover_enable_H", "hover_disable_V",
+                "hover_disable_H");
             mouseOver = true;
             lineParent.ClickOnPart(this.transform, true); 
         }
     }
 
+    private void SetAnimation(string firstVertical, string secondVertical, string firstHorizontal, string secondHorizontal)
+    {
+        if (!myCollider.isTrigger) // line part is white and active
+        {
+            if (lineParent.isVertical)
+                myAnimator.Play(firstVertical);
+            else
+            {
+                myAnimator.Play(secondVertical);
+            }
+        }
+        else // not active
+        {
+            if (lineParent.isVertical)
+                myAnimator.Play(firstHorizontal);
+            else
+            {
+                myAnimator.Play(secondHorizontal);
+            }
+        }
+    }
+
+
+
     /**
-     * Called when the player stops hovering on the line.
-     * Rests all the lines that were marked when hovered on the line. 
-     */
+         * Called when the player stops hovering on the line.
+         * Rests all the lines that were marked when hovered on the line. 
+         */
     private void OnMouseExit()
     {
         mouseOver = false;
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
+        myAnimator.Play("idle"); // Nicole this does not stop the shake
     }
 
     public void ActivateCommandPart(bool activateCommand)
@@ -76,8 +103,16 @@ public class LinePart : MonoBehaviour
         {
             // activate part
             //spriteRenderer.color = whiteColor;
+            if (lineParent.isVertical)
+                myAnimator.Play("appear-V");
+            else 
+                myAnimator.Play("appear-H");
+            
             spriteRenderer.sprite = enabledBamboo;
-            myAnimator.Play("appear");
+            Debug.Log(this);
+
+            
+            
             spriteRenderer.sortingOrder = 2;
             myCollider.isTrigger = false;
         }
@@ -88,8 +123,15 @@ public class LinePart : MonoBehaviour
             // deactivate part
             //spriteRenderer.color = greyColor;
             spriteRenderer.sprite = disablesBamboo;
-            myAnimator.Play("disappear");
-            Debug.Log("poof");
+            
+            if (!myCollider.isTrigger)
+            {
+                if (lineParent.isVertical)
+                    myAnimator.Play("disappear-V");
+                else
+                    myAnimator.Play("disappear-H");
+            }
+
             spriteRenderer.sortingOrder = 1;
             myCollider.isTrigger = true;
         }
@@ -112,6 +154,8 @@ public class LinePart : MonoBehaviour
             if (!myCollider.isTrigger) // line part is white and active
             {
                 var opacityColor = spriteRenderer.color;
+                Debug.Log("Shake");
+               // myAnimator.Play("shake");
                 //spriteRenderer.color = greyColor;
                 // for (int i = 255; i >= 0; i--)
                 // {
