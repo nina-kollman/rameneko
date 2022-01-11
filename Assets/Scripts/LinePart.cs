@@ -18,7 +18,6 @@ public class LinePart : MonoBehaviour
 
     private Animator myAnimator;
     private Collider2D myCollider;
-    private bool mouseOver;
     private Color lastColor;
     private Sprite lastSprite;
     private bool lineMarked;
@@ -33,7 +32,6 @@ public class LinePart : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         myCollider = GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
-        mouseOver = false;
         lineMarked = false;
         lastColor = spriteRenderer.color;
     }
@@ -43,27 +41,22 @@ public class LinePart : MonoBehaviour
         poof = this.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
     }
 
-    private void OnMouseDown()
+    public void ClickOnPart()
     {
         catAnimator.Play("jump");
-        lineParent.ClickOnPart(transform, false);
+        lineParent.ClickOnLine(transform);
     }
 
     /**
-     * Called when the player hovers on the line. Marks all the line parts that will be deleted upon selecting the line
+     * Called when the player clicked on another point on the board.
+     * Rests all the lines that were marked when clicked on the line for the first time. 
      */
-    private void OnMouseOver()
+    public void UnClickPart()
     {
-        if (!mouseOver)
-        {
-            Direction direction = lineParent.GetJumpDirection(transform);
-            
-            catAnimator.Play("squish");
-            SetAnimation("hover_enable_V", "hover_enable_H", "hover_disable_V",
-                "hover_disable_H");
-            mouseOver = true;
-            lineParent.ClickOnPart(this.transform, true); 
-        }
+        lineParent.MarkLines(false);
+        lineParent.MarkSquares(false);
+        myAnimator.Play("idle"); // Nicole this does not stop the shake
+    
     }
 
     private void SetJumpAnimation(Direction dir, bool hover)
@@ -129,21 +122,6 @@ public class LinePart : MonoBehaviour
                 myAnimator.Play(secondHorizontal);
             }
         }
-    }
-
-
-
-    /**
-         * Called when the player stops hovering on the line.
-         * Rests all the lines that were marked when hovered on the line. 
-         */
-    private void OnMouseExit()
-    {
-        mouseOver = false;
-        lineParent.MarkLines(false);
-        lineParent.MarkSquares(false);
-        myAnimator.Play("idle"); // Nicole this does not stop the shake
-        catAnimator.Play("leave_squish");
     }
 
     public void ActivateCommandPart(bool activateCommand)
@@ -213,7 +191,6 @@ public class LinePart : MonoBehaviour
                 // }
             }
                 
-            //spriteRenderer.color = Color.magenta;
         }
         else if (lineMarked)
         {
@@ -223,7 +200,6 @@ public class LinePart : MonoBehaviour
                 spriteRenderer.sprite = lastSprite;
                 spriteRenderer.color = whiteColor;
             }
-            // spriteRenderer.color = new Color(1,1,1,255);
         }
     }
     
