@@ -231,11 +231,12 @@ MonoBehaviour:
   lineParts:
   - {fileID: 776542563}
   - {fileID: 1850860255}
-  - {fileID: 0}
+  - {fileID: 255926522}
   isVertical: 0
   eraseDirection: 2
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
+  isClicked: 0
 --- !u!1 &34838774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +1027,7 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 1078502861}
   rightMarkSquare: {fileID: 1286882408}
+  isClicked: 0
 --- !u!1001 &279484760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3951,6 +3953,7 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
+  isClicked: 0
 --- !u!4 &907039570 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5067133359057947177, guid: 19799d827dd08ed4c9722da863d26a68, type: 3}
@@ -4251,6 +4254,7 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 1386685817}
   rightMarkSquare: {fileID: 544791656}
+  isClicked: 0
 --- !u!1001 &990996596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5009,6 +5013,7 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
+  isClicked: 0
 --- !u!4 &1229577394 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2135994580544101705, guid: 8f87d0550020db34cb629e74ca475638, type: 3}
@@ -6512,6 +6517,7 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 402032276}
   rightMarkSquare: {fileID: 910220178}
+  isClicked: 0
 --- !u!1 &1700718191
 GameObject:
   m_ObjectHideFlags: 0
@@ -6875,6 +6881,7 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
+  isClicked: 0
 --- !u!1 &1738254067
 GameObject:
   m_ObjectHideFlags: 0
@@ -8694,6 +8701,7 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 1392873651}
   rightMarkSquare: {fileID: 1894021661}
+  isClicked: 0
 --- !u!1001 &2503485527307065324
 PrefabInstance:
   m_ObjectHideFlags: 0
