@@ -22,12 +22,13 @@ public class LineManager : MonoBehaviour
     }
 
     
-    public void ChangeOtherLines(Vector2 top, Vector2 bottom, EraseDirection eraseDirection, bool hover)
+    public void ChangeOtherLines(Vector2 top, Vector2 bottom, EraseDirection eraseDirection, bool hover, bool isVertical)
     {
         if (hover)
         {
             catAnimator.Play("squish");
             Debug.Log("squish");
+            Direction dir = gameManager.GetJumpDirection(transform, isVertical);
         }
         else
             catAnimator.Play("leave_squish");
@@ -50,6 +51,7 @@ public class LineManager : MonoBehaviour
         {
             line.MarkLines(true);
         }
+        Debug.Log("LLSS");
         catAnimator.Play("leave_squish");
     }
     

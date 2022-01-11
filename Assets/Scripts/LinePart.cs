@@ -52,10 +52,7 @@ public class LinePart : MonoBehaviour
      */
     public void UnClickPart()
     {
-        if(lineParent.isVertical)
-            myAnimator.Play("shake-V-stop");
-        else
-            myAnimator.Play("shake-H-stop");
+       
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
         myAnimator.Play("idle"); // Nicole this does not stop the shake
@@ -133,7 +130,7 @@ public class LinePart : MonoBehaviour
         {
             // activate part
             //spriteRenderer.color = whiteColor;
-            Debug.Log(this);
+           // Debug.Log(this);
             if (lineParent.isVertical)
                 myAnimator.Play("V-DtoE");
             else 
@@ -196,8 +193,10 @@ public class LinePart : MonoBehaviour
             lineMarked = false;
             if (!myCollider.isTrigger) // Set back the active line to white
             {
-                spriteRenderer.sprite = lastSprite;
-                spriteRenderer.color = whiteColor;
+                if(lineParent.isVertical)
+                    myAnimator.Play("shake-V-stop");
+                else
+                    myAnimator.Play("shake-H-stop");
             }
         }
     }
