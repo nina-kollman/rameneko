@@ -8,7 +8,7 @@ public class Line : MonoBehaviour
 {
     [SerializeField] private LineManager lineMng;
     [SerializeField] private List<LinePart> lineParts;
-    [SerializeField] private bool isVertical;
+    [SerializeField] public bool isVertical;
     [SerializeField] private EraseDirection eraseDirection;
     [SerializeField] private GameObject leftMarkSquare;
     [SerializeField] private GameObject rightMarkSquare;

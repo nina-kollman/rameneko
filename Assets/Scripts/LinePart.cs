@@ -77,7 +77,12 @@ public class LinePart : MonoBehaviour
             // activate part
             //spriteRenderer.color = whiteColor;
             spriteRenderer.sprite = enabledBamboo;
-            myAnimator.Play("appear");
+
+            if (lineParent.isVertical)
+                myAnimator.Play("appear-V");
+            else 
+                myAnimator.Play("appear-H");
+            
             spriteRenderer.sortingOrder = 2;
             myCollider.isTrigger = false;
         }
@@ -88,8 +93,10 @@ public class LinePart : MonoBehaviour
             // deactivate part
             //spriteRenderer.color = greyColor;
             spriteRenderer.sprite = disablesBamboo;
-            myAnimator.Play("disappear");
-            Debug.Log("poof");
+            // if (lineParent.isVertical)
+            //     myAnimator.Play("disappear-V");
+            // else 
+            //     myAnimator.Play("disappear-H");
             spriteRenderer.sortingOrder = 1;
             myCollider.isTrigger = true;
         }
@@ -112,6 +119,8 @@ public class LinePart : MonoBehaviour
             if (!myCollider.isTrigger) // line part is white and active
             {
                 var opacityColor = spriteRenderer.color;
+                Debug.Log("Shake");
+                myAnimator.Play("shake");
                 //spriteRenderer.color = greyColor;
                 // for (int i = 255; i >= 0; i--)
                 // {
