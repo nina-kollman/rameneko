@@ -54,30 +54,31 @@ public class LinePart : MonoBehaviour
     {
         if (!mouseOver)
         {
-            hoverAnimation();
+            SetAnimation("hover_enable_V", "hover_enable_H", "hover_disable_V",
+                "hover_disable_H");
             mouseOver = true;
             lineParent.ClickOnPart(this.transform, true); 
         }
     }
 
-    private void hoverAnimation()
+    private void SetAnimation(string firstVertical, string secondVertical, string firstHorizontal, string secondHorizontal)
     {
         if (!myCollider.isTrigger) // line part is white and active
         {
             if (lineParent.isVertical)
-                myAnimator.Play("hover_enable_V");
+                myAnimator.Play(firstVertical);
             else
             {
-                myAnimator.Play("hover_enable_H");
+                myAnimator.Play(secondVertical);
             }
         }
         else // not active
         {
             if (lineParent.isVertical)
-                myAnimator.Play("hover_disable_V");
+                myAnimator.Play(firstHorizontal);
             else
             {
-                myAnimator.Play("hover_disable_H");
+                myAnimator.Play(secondHorizontal);
             }
         }
     }
@@ -102,12 +103,15 @@ public class LinePart : MonoBehaviour
         {
             // activate part
             //spriteRenderer.color = whiteColor;
-            spriteRenderer.sprite = enabledBamboo;
-
             if (lineParent.isVertical)
                 myAnimator.Play("appear-V");
             else 
                 myAnimator.Play("appear-H");
+            
+            spriteRenderer.sprite = enabledBamboo;
+            Debug.Log(this);
+
+            
             
             spriteRenderer.sortingOrder = 2;
             myCollider.isTrigger = false;
@@ -119,10 +123,15 @@ public class LinePart : MonoBehaviour
             // deactivate part
             //spriteRenderer.color = greyColor;
             spriteRenderer.sprite = disablesBamboo;
-            // if (lineParent.isVertical)
-            //     myAnimator.Play("disappear-V");
-            // else 
-            //     myAnimator.Play("disappear-H");
+            
+            if (!myCollider.isTrigger)
+            {
+                if (lineParent.isVertical)
+                    myAnimator.Play("disappear-V");
+                else
+                    myAnimator.Play("disappear-H");
+            }
+
             spriteRenderer.sortingOrder = 1;
             myCollider.isTrigger = true;
         }
@@ -146,7 +155,7 @@ public class LinePart : MonoBehaviour
             {
                 var opacityColor = spriteRenderer.color;
                 Debug.Log("Shake");
-                myAnimator.Play("shake");
+               // myAnimator.Play("shake");
                 //spriteRenderer.color = greyColor;
                 // for (int i = 255; i >= 0; i--)
                 // {
