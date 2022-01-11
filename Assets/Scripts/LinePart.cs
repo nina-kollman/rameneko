@@ -53,6 +53,7 @@ public class LinePart : MonoBehaviour
     {
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
+        myAnimator.Play("idle"); // Nicole this does not stop the shake
     }
 
     public void ActivateCommandPart(bool activateCommand)
@@ -61,8 +62,16 @@ public class LinePart : MonoBehaviour
         {
             // activate part
             //spriteRenderer.color = whiteColor;
+            if (lineParent.isVertical)
+                myAnimator.Play("appear-V");
+            else 
+                myAnimator.Play("appear-H");
+            
             spriteRenderer.sprite = enabledBamboo;
-            myAnimator.Play("appear");
+            Debug.Log(this);
+
+            
+            
             spriteRenderer.sortingOrder = 2;
             myCollider.isTrigger = false;
         }
@@ -73,8 +82,15 @@ public class LinePart : MonoBehaviour
             // deactivate part
             //spriteRenderer.color = greyColor;
             spriteRenderer.sprite = disablesBamboo;
-            myAnimator.Play("disappear");
-            Debug.Log("poof");
+            
+            if (!myCollider.isTrigger)
+            {
+                if (lineParent.isVertical)
+                    myAnimator.Play("disappear-V");
+                else
+                    myAnimator.Play("disappear-H");
+            }
+
             spriteRenderer.sortingOrder = 1;
             myCollider.isTrigger = true;
         }

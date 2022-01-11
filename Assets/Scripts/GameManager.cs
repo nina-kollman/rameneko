@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         // Gravity Down
-        Physics2D.gravity = new Vector2(0, -9.81f);
+        Physics2D.gravity = new Vector2(0, -300f);
     }
 
     private void Start()
@@ -59,13 +59,13 @@ public class GameManager : MonoBehaviour
             if (transform.position.x > player.transform.position.x)
             {
                 // gravity to the right
-                Physics2D.gravity = new Vector2(9.81f, 0);
+                Physics2D.gravity = new Vector2(300f, 0);
                 player.ChangeMovementConstraints(false);
             }
             else
             {
                 // gravity to the left
-                Physics2D.gravity = new Vector2(-9.81f, 0);
+                Physics2D.gravity = new Vector2(-300f, 0);
                 player.ChangeMovementConstraints(false);
             }
         }
@@ -74,13 +74,13 @@ public class GameManager : MonoBehaviour
             if (transform.position.y > player.transform.position.y)
             {
                 // gravity up
-                Physics2D.gravity = new Vector2(0, 9.81f);
+                Physics2D.gravity = new Vector2(0, 300f);
                 player.ChangeMovementConstraints(true);
             }
             else
             {
                 // gravity down
-                Physics2D.gravity = new Vector2(0, -9.81f);
+                Physics2D.gravity = new Vector2(0, -300f);
                 player.ChangeMovementConstraints(true);
             }
         }

@@ -6,10 +6,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
+    private Animator myAnimator;
 
 
     private void Awake()
     {
+        myAnimator = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
