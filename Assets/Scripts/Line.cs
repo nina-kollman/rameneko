@@ -16,21 +16,23 @@ public class Line : MonoBehaviour
 
     private Vector2 top;
     private Vector2 bottom;
+    private bool isClicked;
 
     private void Awake()
     {
         // init full line top and bottom by his parts
         top = lineParts[lineParts.Count - 1].GetTop();
         bottom = lineParts[0].GetBottom();
+        isClicked = false;
     }
 
     /**
      * create the effect of clicking on line
      */
-    public void ClickOnPart(Transform linePartTransform, bool hover)
+    public void ClickOnLine(Transform partTransform)
     {
         // 1. add one more click to click count
-        if (!hover)
+        if (isClicked)
         {
             lineMng.AddClick();
 
@@ -42,13 +44,15 @@ public class Line : MonoBehaviour
         }
 
         // 3. destroy all the other lines (that needed to be destroyed by nina's new rule)
-        lineMng.ChangeOtherLines(top, bottom, eraseDirection, hover);
-        if (hover)
+        lineMng.ChangeOtherLines(top, bottom, eraseDirection, !isClicked);
+        if (!isClicked)
             MarkSquares(true);
         
         // 4. change gravity direction
-        if(!hover)
-            lineMng.ChangeGravityDirection(linePartTransform, isVertical);
+        if(isClicked)
+            lineMng.ChangeGravityDirection(partTransform, isVertical);
+        // 5. change isClicked
+        isClicked = !isClicked;
     }
 
     /**
@@ -92,4 +96,5 @@ public class Line : MonoBehaviour
         leftMarkSquare.SetActive(active);
         rightMarkSquare.SetActive(active);
     }
+    
 }

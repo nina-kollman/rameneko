@@ -4,18 +4,20 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine. SceneManagement;
+using UnityEngine.UI;
 using Object = System.Object;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private LineManager lineMng;
-    [SerializeField] private TextMeshProUGUI stepsCounterUI;
+    [SerializeField] private TextMeshPro stepsCounterUI;
     [SerializeField] private Player player;
     [SerializeField] private int levelNum;
     [SerializeField] private int maxClicksInLevel;
     [SerializeField] private GameObject nextLevelScreen;
 
     private int clickCounter;
+    private GameObject lastClickedLine;
 
     private void Awake()
     {
@@ -25,57 +27,138 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        lastClickedLine = null;
         clickCounter = 0;
-        stepsCounterUI.text = "Remaining Steps: " + (maxClicksInLevel - clickCounter).ToString();
+        stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
         nextLevelScreen.SetActive(false);
     }
 
     private void Update()
     {
         PlayTestKeyPress();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            ClickOnScreen();
+        }
     }
-    
+
     public void AddClick()
     {
         clickCounter++;
-        stepsCounterUI.text = "Remaining Steps: " + (maxClicksInLevel - clickCounter).ToString();
+        stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
         if (clickCounter > maxClicksInLevel)
         {
             Debug.Log("YOU LOST!");
         }
     }
 
-    public void ChangeGravityDirection(Transform transform, bool isVertical)
+    public void ChangeGravityDirection(Direction direction)
+    {
+        if (direction == Direction.Up)
+        {
+            // gravity up
+            Physics2D.gravity = new Vector2(0, 300f);
+            player.ChangeMovementConstraints(true);
+        }
+        else if (direction == Direction.Down)
+        {
+            // gravity down
+            Physics2D.gravity = new Vector2(0, -300f);
+            player.ChangeMovementConstraints(true);
+        }
+        else if (direction == Direction.Left)
+        {
+            // gravity to the left
+            Physics2D.gravity = new Vector2(-300f, 0);
+            player.ChangeMovementConstraints(false);
+        }
+        else if (direction == Direction.Right)
+        {
+            // gravity to the right
+            Physics2D.gravity = new Vector2(300f, 0);
+            player.ChangeMovementConstraints(false);
+        }
+        else
+        {
+            throw new Exception("Invalid direction in gravity change");
+        }
+    }
+
+    public Direction GetJumpDirection(Transform transform, bool isVertical)
     {
         if (isVertical)
         {
             if (transform.position.x > player.transform.position.x)
             {
-                // gravity to the right
-                Physics2D.gravity = new Vector2(300f, 0);
-                player.ChangeMovementConstraints(false);
+                return Direction.Right;
             }
             else
             {
-                // gravity to the left
-                Physics2D.gravity = new Vector2(-300f, 0);
-                player.ChangeMovementConstraints(false);
+                return Direction.Left;
             }
         }
         else
         {
             if (transform.position.y > player.transform.position.y)
             {
-                // gravity up
-                Physics2D.gravity = new Vector2(0, 300f);
-                player.ChangeMovementConstraints(true);
+                return Direction.Up;
             }
             else
             {
-                // gravity down
-                Physics2D.gravity = new Vector2(0, -300f);
-                player.ChangeMovementConstraints(true);
+                return Direction.Down;
             }
+        }
+        throw new Exception("Invalid direction calculation");
+    }
+
+    /**
+     * when clicking on the screen - analyze the click place and check for on-line-part's click.
+     */
+    private void ClickOnScreen()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+            
+        RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+
+        if (hit.collider)
+        {
+            // if we clicked on the same line as before = double click
+            if (lastClickedLine && lastClickedLine.name == hit.collider.gameObject.name)
+            {
+                // click on the line for the second time
+                lastClickedLine.GetComponent<LinePart>().ClickOnPart();
+                // after the second time - clear the 'hover' indication
+                lastClickedLine.GetComponent<LinePart>().UnClickPart();
+                lastClickedLine = null;
+            }
+            // if we clicked on another line
+            else
+            {
+                if (lastClickedLine)
+                {
+                    // un-click the previous line
+                    lastClickedLine.GetComponent<LinePart>().UnClickPart();
+                }
+                if (hit.collider.gameObject.GetComponent<LinePart>())
+                {
+                    // save the new line, and then click on it
+                    lastClickedLine = hit.collider.gameObject;
+                    lastClickedLine.GetComponent<LinePart>().ClickOnPart();
+                }
+            }
+        }
+        // if we clicked on another part of the screen
+        else
+        {
+            if (lastClickedLine)
+            {
+                // un-click the previous line
+                lastClickedLine.GetComponent<LinePart>().UnClickPart();
+            }
+            // clear the previous line
+            lastClickedLine = null;
         }
     }
 
@@ -94,48 +177,57 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SceneManager.LoadScene(1);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             SceneManager.LoadScene(2);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             SceneManager.LoadScene(3);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             SceneManager.LoadScene(4);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             SceneManager.LoadScene(5);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             SceneManager.LoadScene(6);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha7))
         {
             SceneManager.LoadScene(7);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha8))
         {
             SceneManager.LoadScene(8);
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha9))
         {
             SceneManager.LoadScene(9);
         }
-        
+
         if (Input.GetKeyDown(KeyCode.Minus))
         {
             SceneManager.LoadScene(10);
         }
-        
+
         if (Input.GetKeyDown(KeyCode.Plus))
         {
             SceneManager.LoadScene(11);
@@ -146,6 +238,4 @@ public class GameManager : MonoBehaviour
     {
         nextLevelScreen.SetActive(true);
     }
-    
-    
 }
