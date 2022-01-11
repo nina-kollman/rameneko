@@ -508,7 +508,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94356066, b: 0.8632076, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -532,6 +532,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 0, y: 1}
   bottom: {x: 0, y: 0}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &127172962
 Animator:
   serializedVersion: 4
@@ -661,7 +663,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94509804, b: 0.8666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -685,6 +687,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 3}
   bottom: {x: 0, y: 3}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &177789181
 Animator:
   serializedVersion: 4
@@ -759,7 +763,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.010272205}
+  m_Offset: {x: 0, y: -0.06649512}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -770,7 +774,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 3.458646}
+  m_Size: {x: 0.4, y: 3.6121807}
   m_EdgeRadius: 0
 --- !u!212 &207890281
 SpriteRenderer:
@@ -814,7 +818,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94356066, b: 0.8632076, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -838,6 +842,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 2}
   bottom: {x: 1, y: 1}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &207890283
 Animator:
   serializedVersion: 4
@@ -1206,7 +1212,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94356066, b: 0.8632076, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1230,6 +1236,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 2}
   bottom: {x: 3, y: 1}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &316597549
 Animator:
   serializedVersion: 4
@@ -1240,7 +1248,7 @@ Animator:
   m_GameObject: {fileID: 316597543}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 092c70f8ee9498d4a8e38196d6f3cb25, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1544,7 +1552,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.1848402}
+  m_Offset: {x: 0, y: 0.2127555}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1555,7 +1563,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 3.33}
+  m_Size: {x: 0.4, y: 3.3858304}
   m_EdgeRadius: 0
 --- !u!212 &402240839
 SpriteRenderer:
@@ -1599,7 +1607,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94356066, b: 0.8632076, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1623,6 +1631,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 1}
   bottom: {x: 1, y: 0}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &402240841
 Animator:
   serializedVersion: 4
@@ -1747,7 +1757,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94509804, b: 0.8666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -1771,6 +1781,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 3}
   bottom: {x: 2, y: 3}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &417802266
 Animator:
   serializedVersion: 4
@@ -1952,7 +1964,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94509804, b: 0.8666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -1976,6 +1988,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 2}
   bottom: {x: 0, y: 2}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &492937808
 Animator:
   serializedVersion: 4
@@ -2071,7 +2085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &512957416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2648,6 +2662,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 1}
   bottom: {x: 2, y: 1}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &601148157
 Animator:
   serializedVersion: 4
@@ -2787,7 +2803,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94509804, b: 0.8666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2811,6 +2827,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 2}
   bottom: {x: 2, y: 1}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &641262895
 Animator:
   serializedVersion: 4
@@ -2935,7 +2953,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94356066, b: 0.8632076, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2959,6 +2977,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 3}
   bottom: {x: 1, y: 2}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &641661966
 Animator:
   serializedVersion: 4
@@ -3088,7 +3108,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94509804, b: 0.8666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3112,6 +3132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 3}
   bottom: {x: 2, y: 2}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &717988175
 Animator:
   serializedVersion: 4
@@ -3282,7 +3304,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94509804, b: 0.8666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3322,6 +3344,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 2}
   bottom: {x: 1, y: 2}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &738095809
 Animator:
   serializedVersion: 4
@@ -3461,7 +3485,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94509804, b: 0.8666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -3485,6 +3509,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 0}
   bottom: {x: 0, y: 0}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &776542564
 Animator:
   serializedVersion: 4
@@ -3930,7 +3956,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94356066, b: 0.8632076, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3954,6 +3980,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 0, y: 2}
   bottom: {x: 0, y: 1}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &859256306
 Animator:
   serializedVersion: 4
@@ -4994,7 +5022,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94356066, b: 0.8632076, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5018,6 +5046,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 3}
   bottom: {x: 3, y: 2}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1205781780
 Animator:
   serializedVersion: 4
@@ -5977,7 +6007,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94356066, b: 0.8632076, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6017,6 +6047,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 1}
   bottom: {x: 3, y: 0}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1472026191
 Animator:
   serializedVersion: 4
@@ -6340,6 +6372,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 1}
   bottom: {x: 0, y: 1}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1700718196
 Animator:
   serializedVersion: 4
@@ -6350,7 +6384,7 @@ Animator:
   m_GameObject: {fileID: 1700718191}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 092c70f8ee9498d4a8e38196d6f3cb25, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6525,7 +6559,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94509804, b: 0.8666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6549,6 +6583,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 1}
   bottom: {x: 2, y: 0}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1717107302
 Animator:
   serializedVersion: 4
@@ -6729,7 +6765,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94509804, b: 0.8666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6753,6 +6789,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 3}
   bottom: {x: 1, y: 3}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1846450239
 Animator:
   serializedVersion: 4
@@ -6877,7 +6915,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94509804, b: 0.8666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6901,6 +6939,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 0}
   bottom: {x: 1, y: 0}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1850860256
 Animator:
   serializedVersion: 4
@@ -7049,6 +7089,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 1}
   bottom: {x: 1, y: 1}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1879545835
 Animator:
   serializedVersion: 4
@@ -7173,7 +7215,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94356066, b: 0.8632076, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7197,6 +7239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 0, y: 3}
   bottom: {x: 0, y: 2}
+  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1881321753
 Animator:
   serializedVersion: 4
@@ -7466,7 +7510,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94509804, b: 0.8666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7506,6 +7550,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 0}
   bottom: {x: 2, y: 0}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1900929334
 Animator:
   serializedVersion: 4
@@ -7516,7 +7562,7 @@ Animator:
   m_GameObject: {fileID: 1900929328}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 092c70f8ee9498d4a8e38196d6f3cb25, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7996,7 +8042,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  m_Color: {r: 1, g: 0.94509804, b: 0.8666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -8020,6 +8066,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 2}
   bottom: {x: 2, y: 2}
+  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &2063916954
 Animator:
   serializedVersion: 4
