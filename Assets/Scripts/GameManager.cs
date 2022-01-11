@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine. SceneManagement;
+using UnityEngine.UI;
 using Object = System.Object;
 
 public class GameManager : MonoBehaviour
@@ -52,38 +53,63 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ChangeGravityDirection(Transform transform, bool isVertical)
+    public void ChangeGravityDirection(Direction direction)
+    {
+        if (direction == Direction.Up)
+        {
+            // gravity up
+            Physics2D.gravity = new Vector2(0, 300f);
+            player.ChangeMovementConstraints(true);
+        }
+        else if (direction == Direction.Down)
+        {
+            // gravity down
+            Physics2D.gravity = new Vector2(0, -300f);
+            player.ChangeMovementConstraints(true);
+        }
+        else if (direction == Direction.Left)
+        {
+            // gravity to the left
+            Physics2D.gravity = new Vector2(-300f, 0);
+            player.ChangeMovementConstraints(false);
+        }
+        else if (direction == Direction.Right)
+        {
+            // gravity to the right
+            Physics2D.gravity = new Vector2(300f, 0);
+            player.ChangeMovementConstraints(false);
+        }
+        else
+        {
+            throw new Exception("Invalid direction in gravity change");
+        }
+    }
+
+    public Direction GetJumpDirection(Transform transform, bool isVertical)
     {
         if (isVertical)
         {
             if (transform.position.x > player.transform.position.x)
             {
-                // gravity to the right
-                Physics2D.gravity = new Vector2(300f, 0);
-                player.ChangeMovementConstraints(false);
+                return Direction.Right;
             }
             else
             {
-                // gravity to the left
-                Physics2D.gravity = new Vector2(-300f, 0);
-                player.ChangeMovementConstraints(false);
+                return Direction.Left;
             }
         }
         else
         {
             if (transform.position.y > player.transform.position.y)
             {
-                // gravity up
-                Physics2D.gravity = new Vector2(0, 300f);
-                player.ChangeMovementConstraints(true);
+                return Direction.Up;
             }
             else
             {
-                // gravity down
-                Physics2D.gravity = new Vector2(0, -300f);
-                player.ChangeMovementConstraints(true);
+                return Direction.Down;
             }
         }
+        throw new Exception("Invalid direction calculation");
     }
 
     /**

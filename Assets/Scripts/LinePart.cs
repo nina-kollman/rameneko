@@ -14,6 +14,7 @@ public class LinePart : MonoBehaviour
     [SerializeField] private Vector2 bottom;
     [SerializeField] private Sprite disablesBamboo;
     [SerializeField] private Sprite enabledBamboo;
+    [SerializeField] private Animator catAnimator;
 
     private Animator myAnimator;
     private Collider2D myCollider;
@@ -42,6 +43,7 @@ public class LinePart : MonoBehaviour
 
     public void ClickOnPart()
     {
+        catAnimator.Play("jump");
         lineParent.ClickOnLine(transform);
     }
 
@@ -54,6 +56,72 @@ public class LinePart : MonoBehaviour
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
         myAnimator.Play("idle"); // Nicole this does not stop the shake
+    
+    }
+
+    private void SetJumpAnimation(Direction dir, bool hover)
+    {
+        if (hover)
+        {
+            switch (dir)
+            {
+                case Direction.Up:
+                    catAnimator.Play("?");
+                    break;
+                case Direction.Down:
+                    catAnimator.Play("?");
+                    break;
+                case Direction.Right:
+                    catAnimator.Play("?");
+                    break;
+                case Direction.Left:
+                    catAnimator.Play("?");
+                    break;
+                
+            }
+        }
+        else
+        {
+            switch (dir)
+            {
+                case Direction.Up:
+                    catAnimator.Play("?");
+                    break;
+                case Direction.Down:
+                    catAnimator.Play("?");
+                    break;
+                case Direction.Right:
+                    catAnimator.Play("?");
+                    break;
+                case Direction.Left:
+                    catAnimator.Play("?");
+                    break;
+                
+            } 
+        }
+        
+    }
+
+    private void SetAnimation(string firstVertical, string secondVertical, string firstHorizontal, string secondHorizontal)
+    {
+        if (!myCollider.isTrigger) // line part is white and active
+        {
+            if (lineParent.isVertical)
+                myAnimator.Play(firstVertical);
+            else
+            {
+                myAnimator.Play(secondVertical);
+            }
+        }
+        else // not active
+        {
+            if (lineParent.isVertical)
+                myAnimator.Play(firstHorizontal);
+            else
+            {
+                myAnimator.Play(secondHorizontal);
+            }
+        }
     }
 
     public void ActivateCommandPart(bool activateCommand)
@@ -66,6 +134,7 @@ public class LinePart : MonoBehaviour
                 myAnimator.Play("appear-V");
             else 
                 myAnimator.Play("appear-H");
+            
             
             spriteRenderer.sprite = enabledBamboo;
             Debug.Log(this);
@@ -113,6 +182,13 @@ public class LinePart : MonoBehaviour
             if (!myCollider.isTrigger) // line part is white and active
             {
                 var opacityColor = spriteRenderer.color;
+                Debug.Log("Shake");
+                myAnimator.Play("shake");
+                //spriteRenderer.color = greyColor;
+                // for (int i = 255; i >= 0; i--)
+                // {
+                //     spriteRenderer.color = new Color(1, 1, 1, i);
+                // }
             }
                 
         }
