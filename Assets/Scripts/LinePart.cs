@@ -14,7 +14,6 @@ public class LinePart : MonoBehaviour
     [SerializeField] private Vector2 bottom;
     [SerializeField] private Sprite disablesBamboo;
     [SerializeField] private Sprite enabledBamboo;
-    [SerializeField] private Animator catAnimator;
 
     private Animator myAnimator;
     private Collider2D myCollider;
@@ -28,10 +27,9 @@ public class LinePart : MonoBehaviour
     
     private void Awake()
     {
-        catAnimator = null;
         lineParent = GetComponentInParent<Line>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        myCollider = GetComponent<BoxCollider2D>();
+        myCollider = transform.parent.GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
         lineMarked = false;
         lastColor = spriteRenderer.color;
@@ -44,7 +42,6 @@ public class LinePart : MonoBehaviour
 
     public void ClickOnPart()
     {
-        //catAnimator.Play("jump");
         lineParent.ClickOnLine(transform);
     }
 
@@ -52,55 +49,11 @@ public class LinePart : MonoBehaviour
      * Called when the player clicked on another point on the board.
      * Rests all the lines that were marked when clicked on the line for the first time. 
      */
-    public void UnClickPart()
+    public void UnClickPart(bool isClickedNeedToTurnOff)
     {
+        lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
-        myAnimator.Play("idle"); // Nicole this does not stop the shake
-    
-    }
-
-    private void SetJumpAnimation(Direction dir, bool hover)
-    {
-        if (hover)
-        {
-            switch (dir)
-            {
-                case Direction.Up:
-                    // catAnimator.Play("?");
-                    break;
-                case Direction.Down:
-                    // catAnimator.Play("?");
-                    break;
-                case Direction.Right:
-                    // catAnimator.Play("?");
-                    break;
-                case Direction.Left:
-                    // catAnimator.Play("?");
-                    break;
-                
-            }
-        }
-        else
-        {
-            switch (dir)
-            {
-                case Direction.Up:
-                    // catAnimator.Play("?");
-                    break;
-                case Direction.Down:
-                    // catAnimator.Play("?");
-                    break;
-                case Direction.Right:
-                    // catAnimator.Play("?");
-                    break;
-                case Direction.Left:
-                    // catAnimator.Play("?");
-                    break;
-                
-            } 
-        }
-        
     }
 
     private void SetAnimation(string firstVertical, string secondVertical, string firstHorizontal, string secondHorizontal)
@@ -131,16 +84,11 @@ public class LinePart : MonoBehaviour
         {
             // activate part
             //spriteRenderer.color = whiteColor;
+           // Debug.Log(this);
             if (lineParent.isVertical)
-                myAnimator.Play("appear-V");
+                myAnimator.Play("V-DtoE");
             else 
-                myAnimator.Play("appear-H");
-            
-            
-            spriteRenderer.sprite = enabledBamboo;
-            Debug.Log(this);
-
-            
+                myAnimator.Play("H-DtoE");
             
             spriteRenderer.sortingOrder = 2;
             myCollider.isTrigger = false;
@@ -151,14 +99,14 @@ public class LinePart : MonoBehaviour
                 poof.Play();
             // deactivate part
             //spriteRenderer.color = greyColor;
-            spriteRenderer.sprite = disablesBamboo;
-            
+           // spriteRenderer.sprite = disablesBamboo;
             if (!myCollider.isTrigger)
             {
                 if (lineParent.isVertical)
-                    myAnimator.Play("disappear-V");
+                    myAnimator.Play("V-EtoD");
                 else
-                    myAnimator.Play("disappear-H");
+                    myAnimator.Play("H-EtoD");
+                
             }
 
             spriteRenderer.sortingOrder = 1;
@@ -184,12 +132,11 @@ public class LinePart : MonoBehaviour
             {
                 var opacityColor = spriteRenderer.color;
                 Debug.Log("Shake");
-                myAnimator.Play("shake");
-                //spriteRenderer.color = greyColor;
-                // for (int i = 255; i >= 0; i--)
-                // {
-                //     spriteRenderer.color = new Color(1, 1, 1, i);
-                // }
+
+                if(lineParent.isVertical)
+                    myAnimator.Play("shake-V");
+                else
+                    myAnimator.Play("shake-H");
             }
                 
         }
@@ -198,8 +145,10 @@ public class LinePart : MonoBehaviour
             lineMarked = false;
             if (!myCollider.isTrigger) // Set back the active line to white
             {
-                spriteRenderer.sprite = lastSprite;
-                spriteRenderer.color = whiteColor;
+                if(lineParent.isVertical)
+                    myAnimator.Play("shake-V-stop");
+                else
+                    myAnimator.Play("shake-H-stop");
             }
         }
     }

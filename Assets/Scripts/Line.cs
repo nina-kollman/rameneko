@@ -16,7 +16,7 @@ public class Line : MonoBehaviour
 
     private Vector2 top;
     private Vector2 bottom;
-    private bool isClicked;
+    public bool isClicked;
 
     private void Awake()
     {
@@ -44,7 +44,7 @@ public class Line : MonoBehaviour
         }
 
         // 3. destroy all the other lines (that needed to be destroyed by nina's new rule)
-        lineMng.ChangeOtherLines(top, bottom, eraseDirection, !isClicked);
+        lineMng.ChangeOtherLines(top, bottom, eraseDirection, !isClicked, isVertical);
         if (!isClicked)
             MarkSquares(true);
         
