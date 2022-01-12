@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine. SceneManagement;
@@ -15,7 +16,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int levelNum;
     [SerializeField] private int maxClicksInLevel;
     [SerializeField] private GameObject nextLevelScreen;
+    [SerializeField] private float duration;
 
+    private Vector3 nextLevelPosition = new Vector3(-1, 0, 0);
     private int clickCounter;
     private GameObject lastClickedLine;
 
@@ -243,5 +246,6 @@ public class GameManager : MonoBehaviour
     public void SetScreen()
     {
         nextLevelScreen.SetActive(true);
+        nextLevelScreen.transform.DOMove(nextLevelPosition, duration).SetEase(Ease.InOutFlash);
     }
 }

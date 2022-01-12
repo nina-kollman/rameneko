@@ -24,6 +24,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Goal")
+            gameManager.SetScreen();
+    }
+
     public void ChangeMovementConstraints(bool isVertical)
     {
         GetComponent<Rigidbody2D>().constraints = isVertical ?  RigidbodyConstraints2D.FreezePositionX : RigidbodyConstraints2D.FreezePositionY;
