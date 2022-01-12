@@ -83,7 +83,6 @@ public class LinePart : MonoBehaviour
         if (activateCommand)
         {
             // activate part
-            //spriteRenderer.color = whiteColor;
            // Debug.Log(this);
             if (lineParent.isVertical)
                 myAnimator.Play("V-DtoE");
@@ -98,8 +97,6 @@ public class LinePart : MonoBehaviour
             if (myCollider.isTrigger != true)
                 poof.Play();
             // deactivate part
-            //spriteRenderer.color = greyColor;
-           // spriteRenderer.sprite = disablesBamboo;
             if (!myCollider.isTrigger)
             {
                 if (lineParent.isVertical)
@@ -131,7 +128,6 @@ public class LinePart : MonoBehaviour
             if (!myCollider.isTrigger) // line part is white and active
             {
                 var opacityColor = spriteRenderer.color;
-                Debug.Log("Shake");
 
                 if(lineParent.isVertical)
                     myAnimator.Play("shake-V");

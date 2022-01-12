@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine. SceneManagement;
 using UnityEngine.UI;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         clickCounter = 0;
         stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
        // nextLevelScreen.SetActive(false);
+       
     }
 
     private void Update()
@@ -63,24 +65,30 @@ public class GameManager : MonoBehaviour
             // gravity up
             Physics2D.gravity = new Vector2(0, 300f);
             player.ChangeMovementConstraints(true);
+            player.transform.DORotate(new Vector3(0, 0, 180), 0.25f, RotateMode.Fast);
         }
         else if (direction == Direction.Down)
         {
             // gravity down
             Physics2D.gravity = new Vector2(0, -300f);
             player.ChangeMovementConstraints(true);
+            player.transform.DORotate(new Vector3(0, 0, 0), 0.25f, RotateMode.Fast);
+
         }
         else if (direction == Direction.Left)
         {
             // gravity to the left
             Physics2D.gravity = new Vector2(-300f, 0);
             player.ChangeMovementConstraints(false);
+            player.transform.DORotate(new Vector3(0, 0, 270), 0.25f, RotateMode.Fast);
+
         }
         else if (direction == Direction.Right)
         {
             // gravity to the right
             Physics2D.gravity = new Vector2(300f, 0);
             player.ChangeMovementConstraints(false);
+            player.transform.DORotate(new Vector3(0, 0, 90), 0.25f, RotateMode.Fast);
         }
         else
         {
