@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
         {
             // gravity up
             Physics2D.gravity = new Vector2(0, 300f);
+            AudioManager.Instance.Play("upDown");
             player.ChangeMovementConstraints(true);
             player.transform.DORotate(new Vector3(0, 0, 180), 0.25f, RotateMode.Fast);
         }
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
         {
             // gravity down
             Physics2D.gravity = new Vector2(0, -300f);
+            AudioManager.Instance.Play("upDown");
             player.ChangeMovementConstraints(true);
             player.transform.DORotate(new Vector3(0, 0, 0), 0.25f, RotateMode.Fast);
 
@@ -79,6 +81,7 @@ public class GameManager : MonoBehaviour
         {
             // gravity to the left
             Physics2D.gravity = new Vector2(-300f, 0);
+            AudioManager.Instance.Play("sideMovement");
             player.ChangeMovementConstraints(false);
             player.transform.DORotate(new Vector3(0, 0, 270), 0.25f, RotateMode.Fast);
 
@@ -87,6 +90,7 @@ public class GameManager : MonoBehaviour
         {
             // gravity to the right
             Physics2D.gravity = new Vector2(300f, 0);
+            AudioManager.Instance.Play("sideMovement");
             player.ChangeMovementConstraints(false);
             player.transform.DORotate(new Vector3(0, 0, 90), 0.25f, RotateMode.Fast);
         }
