@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         clickCounter = 0;
         stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
        // nextLevelScreen.SetActive(false);
+       
     }
 
     private void Update()
