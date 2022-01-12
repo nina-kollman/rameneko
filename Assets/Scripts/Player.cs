@@ -20,14 +20,18 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Goal"))
         {
             Debug.Log("Win");
+            AudioManager.Instance.Play("winLevelSound");
             gameManager.SetScreen();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Goal")
+        if (other.tag == "Goal")
+        {
+            AudioManager.Instance.Play("winLevelSound");
             gameManager.SetScreen();
+        }
     }
 
     public void ChangeMovementConstraints(bool isVertical)

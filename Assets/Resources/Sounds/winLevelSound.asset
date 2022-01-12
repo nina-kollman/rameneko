@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2705509c7665dd6408c1630ca56f833e, type: 3}
   m_Name: winLevelSound
   m_EditorClassIdentifier: 
-  soundName: 
-  clip: {fileID: 0}
-  volume: 0
-  pitch: 0
+  soundName: winLevelSound
+  clip: {fileID: 8300000, guid: 7fa1d1f02815d564f92b44bad219beef, type: 3}
+  volume: 0.221
+  pitch: 0.63
   loop: 0
   overlap: 0
   source: {fileID: 0}

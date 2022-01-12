@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2705509c7665dd6408c1630ca56f833e, type: 3}
   m_Name: backGroundSound
   m_EditorClassIdentifier: 
-  soundName: 
-  clip: {fileID: 0}
-  volume: 0
-  pitch: 0
-  loop: 0
+  soundName: backGroundSound
+  clip: {fileID: 8300000, guid: 1f14459d80e0e334399967ce714f9fd2, type: 3}
+  volume: 0.087
+  pitch: 0.18
+  loop: 1
   overlap: 0
   source: {fileID: 0}

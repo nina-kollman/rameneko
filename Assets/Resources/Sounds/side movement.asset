@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2705509c7665dd6408c1630ca56f833e, type: 3}
   m_Name: side movement
   m_EditorClassIdentifier: 
-  soundName: 
-  clip: {fileID: 0}
-  volume: 0
-  pitch: 0
+  soundName: sideMovement
+  clip: {fileID: 8300000, guid: 82fb57d314e64ca43afa76c7547a0bfd, type: 3}
+  volume: 0.312
+  pitch: 0.71
   loop: 0
   overlap: 0
   source: {fileID: 0}
