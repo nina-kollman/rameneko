@@ -27,7 +27,6 @@ public class LineManager : MonoBehaviour
         if (hover)
         {
             catAnimator.Play("squish");
-            Debug.Log("squish");
             Direction dir = gameManager.GetJumpDirection(transform, isVertical);
         }
         else
@@ -51,7 +50,6 @@ public class LineManager : MonoBehaviour
         {
             line.MarkLines(true);
         }
-        Debug.Log("LLSS");
         catAnimator.Play("leave_squish");
     }
     

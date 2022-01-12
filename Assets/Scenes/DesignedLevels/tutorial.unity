@@ -252,7 +252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &34838775
 Transform:
   m_ObjectHideFlags: 0
@@ -6734,7 +6734,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1780986617628030485, guid: 8f87d0550020db34cb629e74ca475638, type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2135994580544101705, guid: 8f87d0550020db34cb629e74ca475638, type: 3}
       propertyPath: m_RootOrder
@@ -8174,7 +8174,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00999999, y: 0.51174927}
+  m_Offset: {x: -0.0024061203, y: 0.5102304}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8185,7 +8185,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.032547}
+  m_Size: {x: 0.94836044, y: 1.0295093}
   m_EdgeRadius: 0
 --- !u!1 &1999022455
 GameObject:
@@ -8921,15 +8921,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5067133359057947177, guid: 19799d827dd08ed4c9722da863d26a68, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5067133359057947177, guid: 19799d827dd08ed4c9722da863d26a68, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5067133359057947177, guid: 19799d827dd08ed4c9722da863d26a68, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5067133359057947177, guid: 19799d827dd08ed4c9722da863d26a68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
