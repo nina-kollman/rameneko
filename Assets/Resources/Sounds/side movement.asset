@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundName: sideMovement
   clip: {fileID: 8300000, guid: 82fb57d314e64ca43afa76c7547a0bfd, type: 3}
-  volume: 0.312
-  pitch: 0.71
+  volume: 0.575
+  pitch: 1.62
   loop: 0
   overlap: 0
   source: {fileID: 0}

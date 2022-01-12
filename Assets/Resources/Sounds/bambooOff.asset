@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundName: bambooOff
   clip: {fileID: 8300000, guid: 712311b8f2f3f7e418022599b0d2f81a, type: 3}
-  volume: 0.66
+  volume: 0.782
   pitch: 0.36
   loop: 0
   overlap: 0

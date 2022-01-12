@@ -15,7 +15,7 @@ MonoBehaviour:
   soundName: winLevelSound
   clip: {fileID: 8300000, guid: 7fa1d1f02815d564f92b44bad219beef, type: 3}
   volume: 0.221
-  pitch: 0.63
+  pitch: 1
   loop: 0
   overlap: 0
   source: {fileID: 0}
