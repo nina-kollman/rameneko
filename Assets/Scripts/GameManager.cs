@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using DG.Tweening;
 using UnityEngine;
@@ -16,7 +17,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int levelNum;
     [SerializeField] private int maxClicksInLevel;
     [SerializeField] private GameObject nextLevelScreen;
+    [SerializeField] private float duration;
 
+    private Vector3 nextLevelPosition = new Vector3(-1, 0, 0);
     private int clickCounter;
     private GameObject lastClickedLine;
 
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour
         {
             // gravity up
             Physics2D.gravity = new Vector2(0, 300f);
+            AudioManager.Instance.Play("upDown");
             player.ChangeMovementConstraints(true);
             player.transform.DORotate(new Vector3(0, 0, 180), 0.25f, RotateMode.Fast);
         }
@@ -68,6 +72,7 @@ public class GameManager : MonoBehaviour
         {
             // gravity down
             Physics2D.gravity = new Vector2(0, -300f);
+            AudioManager.Instance.Play("upDown");
             player.ChangeMovementConstraints(true);
             player.transform.DORotate(new Vector3(0, 0, 0), 0.25f, RotateMode.Fast);
 
@@ -76,6 +81,7 @@ public class GameManager : MonoBehaviour
         {
             // gravity to the left
             Physics2D.gravity = new Vector2(-300f, 0);
+            AudioManager.Instance.Play("sideMovement");
             player.ChangeMovementConstraints(false);
             player.transform.DORotate(new Vector3(0, 0, 270), 0.25f, RotateMode.Fast);
 
@@ -84,6 +90,7 @@ public class GameManager : MonoBehaviour
         {
             // gravity to the right
             Physics2D.gravity = new Vector2(300f, 0);
+            AudioManager.Instance.Play("sideMovement");
             player.ChangeMovementConstraints(false);
             player.transform.DORotate(new Vector3(0, 0, 90), 0.25f, RotateMode.Fast);
         }
@@ -251,5 +258,6 @@ public class GameManager : MonoBehaviour
     public void SetScreen()
     {
         nextLevelScreen.SetActive(true);
+        nextLevelScreen.transform.DOMove(nextLevelPosition, duration).SetEase(Ease.InOutFlash);
     }
 }
