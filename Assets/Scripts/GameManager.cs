@@ -184,6 +184,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void LoadHome()
+    {
+        Physics2D.gravity = new Vector2(0, -300f);
+        SceneManager.LoadScene(0);
+    }
+
     /**
      * Change the level by number keys - for a quick play-test feel
      */
