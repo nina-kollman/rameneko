@@ -194,4 +194,30 @@ public class LinePart : MonoBehaviour
             }
         }
     }
+
+    public void FirstClickAnimation()
+    {
+        if (lineParent.isVertical)
+        {
+            if (!myCollider.isTrigger) // line part is active
+            {
+                myAnimator.Play("hover_enable_V");
+            }
+            else
+            {
+                myAnimator.Play("hover_disable_V");
+            }
+        }
+        else
+        {
+            if (!myCollider.isTrigger) // line part is active
+            {
+                myAnimator.Play("hover_enable_H");
+            }
+            else
+            {
+                myAnimator.Play("hover_disable_H");
+            }
+        }
+    }
 }
