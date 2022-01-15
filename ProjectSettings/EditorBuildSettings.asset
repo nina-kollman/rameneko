@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DesignedLevels/Grid1_Tutorial2.unity
     guid: 6edbe80b4a6d33a4b8e3b54227fc1255
   - enabled: 1
-    path: Assets/Scenes/DesignedLevels/Grid2.unity
+    path: Assets/Scenes/DesignedLevels/Grid2_2.unity
     guid: 189fec7815cd23947909e0d4958b0db6
   - enabled: 1
     path: Assets/Scenes/EndScene.unity

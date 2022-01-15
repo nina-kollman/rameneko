@@ -34,7 +34,6 @@ public class Player : MonoBehaviour
             int sceneIndex = SceneManager.GetActiveScene().buildIndex;
             PlayerPrefs.SetInt(("level_" + (sceneIndex-1).ToString()),1);
             gameManager.SetScreen();
-            
         }
     }
 

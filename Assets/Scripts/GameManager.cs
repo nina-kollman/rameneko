@@ -50,7 +50,15 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && !isTutorialActivated)
         {
-            ClickOnScreen();
+            if (clickCounter > maxClicksInLevel)
+            {
+                Debug.Log("YOU LOST!");
+                looseScreen.SetActive(true);
+            }
+            else
+            {
+                ClickOnScreen();
+            }
         }
     }
 
@@ -58,11 +66,6 @@ public class GameManager : MonoBehaviour
     {
         clickCounter++;
         stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
-        if (clickCounter > maxClicksInLevel)
-        {
-            Debug.Log("YOU LOST!");
-            looseScreen.SetActive(true);
-        }
     }
 
     public void ChangeGravityDirection(Direction direction)

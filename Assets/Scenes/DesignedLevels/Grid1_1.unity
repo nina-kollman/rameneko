@@ -3701,7 +3701,7 @@ MonoBehaviour:
   stepsCounterUI: {fileID: 1441972386}
   player: {fileID: 2082650558}
   levelNum: 3
-  maxClicksInLevel: 6
+  maxClicksInLevel: 8
   nextLevelScreen: {fileID: 1162065865}
   looseScreen: {fileID: 1162065864}
   duration: 250
