@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine. SceneManagement;
 using UnityEngine.UI;
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxClicksInLevel;
     [SerializeField] private GameObject nextLevelScreen;
     [SerializeField] private float duration;
+    
+    
 
     private Vector3 nextLevelPosition = new Vector3(-1, 0, 0);
     private int clickCounter;
@@ -193,6 +196,12 @@ public class GameManager : MonoBehaviour
         {
             ResetLevel();
         }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SceneManager.LoadScene(1);
+        }
+            
 
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {

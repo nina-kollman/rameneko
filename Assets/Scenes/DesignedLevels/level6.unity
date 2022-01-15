@@ -177,6 +177,9 @@ MonoBehaviour:
   - {fileID: 1900929333}
   isVertical: 0
   eraseDirection: 2
+  leftMarkSquare: {fileID: 0}
+  rightMarkSquare: {fileID: 0}
+  isClicked: 0
 --- !u!1 &33271817
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +230,9 @@ MonoBehaviour:
   - {fileID: 1717107301}
   isVertical: 1
   eraseDirection: 1
+  leftMarkSquare: {fileID: 0}
+  rightMarkSquare: {fileID: 0}
+  isClicked: 0
 --- !u!1 &38186154
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +379,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &127172961
@@ -390,6 +396,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 0, y: 1}
   bottom: {x: 0, y: 0}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &142731325
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +448,9 @@ MonoBehaviour:
   - {fileID: 402240840}
   isVertical: 1
   eraseDirection: 0
+  leftMarkSquare: {fileID: 0}
+  rightMarkSquare: {fileID: 0}
+  isClicked: 0
 --- !u!1 &177789176
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +560,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &177789180
@@ -566,6 +577,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 3}
   bottom: {x: 0, y: 3}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &207890278
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,7 +688,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &207890282
@@ -692,6 +705,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 2}
   bottom: {x: 1, y: 1}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &243842152
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,6 +856,9 @@ MonoBehaviour:
   - {fileID: 738095808}
   isVertical: 0
   eraseDirection: 3
+  leftMarkSquare: {fileID: 0}
+  rightMarkSquare: {fileID: 0}
+  isClicked: 0
 --- !u!1 &316597543
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,7 +968,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &316597548
@@ -967,6 +985,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 5, y: 3}
   bottom: {x: 5, y: 1}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &402240836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,7 +1096,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &402240840
@@ -1093,6 +1113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 1}
   bottom: {x: 2, y: 0}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &417802261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,7 +1224,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &417802265
@@ -1219,6 +1241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 5, y: 3}
   bottom: {x: 4, y: 3}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,7 +1436,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &601148156
@@ -1429,6 +1453,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 4, y: 1}
   bottom: {x: 3, y: 1}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &641262890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,7 +1564,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &641262894
@@ -1555,6 +1581,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 4, y: 2}
   bottom: {x: 4, y: 1}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &641661961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,7 +1692,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &641661965
@@ -1681,6 +1709,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 3}
   bottom: {x: 1, y: 2}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &717988170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,7 +1820,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &717988174
@@ -1807,6 +1837,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 4, y: 3}
   bottom: {x: 4, y: 2}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &734971721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,6 +1887,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 1}
   bottom: {x: 1, y: 1}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!61 &734971724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1930,7 +1964,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &738095804
@@ -2027,7 +2061,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &738095807
@@ -2059,6 +2093,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 4, y: 2}
   bottom: {x: 1, y: 2}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &769750535
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,7 +2147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f106388ccfbcc9d448dbd0f24f035fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 1636344178}
 --- !u!61 &769750538
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2307,7 +2342,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &776542563
@@ -2324,6 +2359,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 2, y: 0}
   bottom: {x: 0, y: 0}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &808186745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,7 +2616,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &859256305
@@ -2596,6 +2633,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 0, y: 3}
   bottom: {x: 0, y: 1}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &879206838
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,6 +2689,9 @@ MonoBehaviour:
   - {fileID: 417802265}
   isVertical: 0
   eraseDirection: 3
+  leftMarkSquare: {fileID: 0}
+  rightMarkSquare: {fileID: 0}
+  isClicked: 0
 --- !u!1 &988293784
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,6 +2744,9 @@ MonoBehaviour:
   - {fileID: 641661965}
   isVertical: 1
   eraseDirection: 0
+  leftMarkSquare: {fileID: 0}
+  rightMarkSquare: {fileID: 0}
+  isClicked: 0
 --- !u!1 &1123643021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2718,7 +2763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1123643022
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2949,6 +2994,9 @@ MonoBehaviour:
   - {fileID: 316597548}
   isVertical: 1
   eraseDirection: 1
+  leftMarkSquare: {fileID: 0}
+  rightMarkSquare: {fileID: 0}
+  isClicked: 0
 --- !u!1 &1231545143
 GameObject:
   m_ObjectHideFlags: 0
@@ -3265,7 +3313,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1472026189
@@ -3297,6 +3345,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 5, y: 1}
   bottom: {x: 5, y: 0}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &1636344177
 GameObject:
   m_ObjectHideFlags: 0
@@ -3327,11 +3377,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineMng: {fileID: 1882500799}
+  stepsCounterUI: {fileID: 0}
   player: {fileID: 1994726144}
   levelNum: 3
   maxClicksInLevel: 0
   nextLevelScreen: {fileID: 243842152}
-  lastBuildIndex: 3
+  duration: 0
 --- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0
@@ -3405,6 +3456,9 @@ MonoBehaviour:
   - {fileID: 1969399694}
   isVertical: 0
   eraseDirection: 2
+  leftMarkSquare: {fileID: 0}
+  rightMarkSquare: {fileID: 0}
+  isClicked: 0
 --- !u!1 &1700718191
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,7 +3568,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1700718195
@@ -3531,6 +3585,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 1, y: 1}
   bottom: {x: 0, y: 1}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &1717107297
 GameObject:
   m_ObjectHideFlags: 0
@@ -3640,7 +3696,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1717107301
@@ -3657,6 +3713,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 1}
   bottom: {x: 3, y: 0}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &1722462393
 GameObject:
   m_ObjectHideFlags: 0
@@ -3709,6 +3767,9 @@ MonoBehaviour:
   - {fileID: 859256305}
   isVertical: 1
   eraseDirection: 0
+  leftMarkSquare: {fileID: 0}
+  rightMarkSquare: {fileID: 0}
+  isClicked: 0
 --- !u!1 &1846450233
 GameObject:
   m_ObjectHideFlags: 0
@@ -3818,7 +3879,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1846450238
@@ -3835,6 +3896,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 4, y: 3}
   bottom: {x: 1, y: 3}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &1850860250
 GameObject:
   m_ObjectHideFlags: 0
@@ -3944,7 +4007,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1850860255
@@ -3961,6 +4024,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 0}
   bottom: {x: 2, y: 0}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &1879545830
 GameObject:
   m_ObjectHideFlags: 0
@@ -4070,7 +4135,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1879545834
@@ -4087,6 +4152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 3, y: 1}
   bottom: {x: 2, y: 1}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &1882500796
 GameObject:
   m_ObjectHideFlags: 0
@@ -4145,6 +4212,7 @@ MonoBehaviour:
   - {fileID: 33271819}
   - {fileID: 142731327}
   gameManager: {fileID: 1636344178}
+  catAnimator: {fileID: 0}
 --- !u!1 &1900929328
 GameObject:
   m_ObjectHideFlags: 0
@@ -4239,7 +4307,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1900929332
@@ -4271,6 +4339,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 5, y: 0}
   bottom: {x: 3, y: 0}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!1 &1969399692
 GameObject:
   m_ObjectHideFlags: 0
@@ -4319,6 +4389,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 5, y: 1}
   bottom: {x: 4, y: 1}
+  disablesBamboo: {fileID: 0}
+  enabledBamboo: {fileID: 0}
 --- !u!61 &1969399695
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4394,7 +4466,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1977976674
@@ -4607,8 +4679,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e6a8f2dc4212647ad8983186760b89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mPlayer: {fileID: 1994726143}
-  mMoveSpeed: 3
   gameManager: {fileID: 1636344178}
 --- !u!50 &1994726145
 Rigidbody2D:
@@ -4744,3 +4814,6 @@ MonoBehaviour:
   - {fileID: 717988174}
   isVertical: 1
   eraseDirection: 1
+  leftMarkSquare: {fileID: 0}
+  rightMarkSquare: {fileID: 0}
+  isClicked: 0
