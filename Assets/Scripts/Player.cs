@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -20,7 +21,20 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Goal"))
         {
             Debug.Log("Win");
+            AudioManager.Instance.Play("winLevelSound");
             gameManager.SetScreen();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Goal")
+        {
+            AudioManager.Instance.Play("winLevelSound");
+            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+            PlayerPrefs.SetInt(("level_" + (sceneIndex-1).ToString()),1);
+            gameManager.SetScreen();
+            
         }
     }
 

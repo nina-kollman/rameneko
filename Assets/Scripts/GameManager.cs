@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine. SceneManagement;
 using UnityEngine.UI;
@@ -16,9 +18,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int levelNum;
     [SerializeField] private int maxClicksInLevel;
     [SerializeField] private GameObject nextLevelScreen;
+    [SerializeField] private float duration;
+    
+    
 
+    private Vector3 nextLevelPosition = new Vector3(-1, 0, 0);
     private int clickCounter;
-    private GameObject lastClickedLine;
+    // the saved gameObject is a LinePart (and not Line)
+    private GameObject lastClickedLinePart;
 
     private void Awake()
     {
@@ -28,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        lastClickedLine = null;
+        lastClickedLinePart = null;
         clickCounter = 0;
         stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
        // nextLevelScreen.SetActive(false);
@@ -61,6 +68,7 @@ public class GameManager : MonoBehaviour
         {
             // gravity up
             Physics2D.gravity = new Vector2(0, 300f);
+            AudioManager.Instance.Play("upDown");
             player.ChangeMovementConstraints(true);
             player.transform.DORotate(new Vector3(0, 0, 180), 0.25f, RotateMode.Fast);
         }
@@ -68,6 +76,7 @@ public class GameManager : MonoBehaviour
         {
             // gravity down
             Physics2D.gravity = new Vector2(0, -300f);
+            AudioManager.Instance.Play("upDown");
             player.ChangeMovementConstraints(true);
             player.transform.DORotate(new Vector3(0, 0, 0), 0.25f, RotateMode.Fast);
 
@@ -76,6 +85,7 @@ public class GameManager : MonoBehaviour
         {
             // gravity to the left
             Physics2D.gravity = new Vector2(-300f, 0);
+            AudioManager.Instance.Play("sideMovement");
             player.ChangeMovementConstraints(false);
             player.transform.DORotate(new Vector3(0, 0, 270), 0.25f, RotateMode.Fast);
 
@@ -84,6 +94,7 @@ public class GameManager : MonoBehaviour
         {
             // gravity to the right
             Physics2D.gravity = new Vector2(300f, 0);
+            AudioManager.Instance.Play("sideMovement");
             player.ChangeMovementConstraints(false);
             player.transform.DORotate(new Vector3(0, 0, 90), 0.25f, RotateMode.Fast);
         }
@@ -134,40 +145,42 @@ public class GameManager : MonoBehaviour
         {
             GameObject linePartObject = hit.collider.transform.GetChild(0).gameObject;
             // if we clicked on the same line as before = double click
-            if (lastClickedLine && lastClickedLine.name == linePartObject.name)
+            string lastClickedLinePartParentLineName = linePartObject.GetComponentInParent<Line>().transform.name;
+            string clickedParentLineName = hit.collider.transform.parent.name;
+            if (lastClickedLinePart && lastClickedLinePartParentLineName == clickedParentLineName)
             {
                 // after the second time - clear the 'hover' indication
-                lastClickedLine.GetComponent<LinePart>().UnClickPart(false);
+                lastClickedLinePart.GetComponent<LinePart>().UnClickPart(false);
                 // click on the line for the second time
-                lastClickedLine.GetComponent<LinePart>().ClickOnPart();
-                lastClickedLine = null;
+                lastClickedLinePart.GetComponent<LinePart>().ClickOnPart();
+                lastClickedLinePart = null;
             }
             // if we clicked on another line
             else
             {
-                if (lastClickedLine)
+                if (lastClickedLinePart)
                 {
                     // un-click the previous line
-                    lastClickedLine.GetComponent<LinePart>().UnClickPart(true);
+                    lastClickedLinePart.GetComponent<LinePart>().UnClickPart(true);
                 }
                 if (linePartObject.GetComponent<LinePart>())
                 {
                     // save the new line, and then click on it
-                    lastClickedLine = linePartObject;
-                    lastClickedLine.GetComponent<LinePart>().ClickOnPart();
+                    lastClickedLinePart = linePartObject;
+                    lastClickedLinePart.GetComponent<LinePart>().ClickOnPart();
                 }
             }
         }
         // if we clicked on another part of the screen
         else
         {
-            if (lastClickedLine)
+            if (lastClickedLinePart)
             {
                 // un-click the previous line
-                lastClickedLine.GetComponent<LinePart>().UnClickPart(true);
+                lastClickedLinePart.GetComponent<LinePart>().UnClickPart(true);
             }
             // clear the previous line
-            lastClickedLine = null;
+            lastClickedLinePart = null;
         }
     }
 
@@ -175,6 +188,12 @@ public class GameManager : MonoBehaviour
     {
         Physics2D.gravity = new Vector2(0, -300f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadHome()
+    {
+        Physics2D.gravity = new Vector2(0, -300f);
+        SceneManager.LoadScene(0);
     }
 
     /**
@@ -186,6 +205,12 @@ public class GameManager : MonoBehaviour
         {
             ResetLevel();
         }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SceneManager.LoadScene(1);
+        }
+            
 
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
@@ -251,5 +276,6 @@ public class GameManager : MonoBehaviour
     public void SetScreen()
     {
         nextLevelScreen.SetActive(true);
+        nextLevelScreen.transform.DOMove(nextLevelPosition, duration).SetEase(Ease.InOutFlash);
     }
 }
