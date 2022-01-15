@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     private int clickCounter;
     // the saved gameObject is a LinePart (and not Line)
     private GameObject lastClickedPart;
+    // saves the tutorial gameObject
+    private bool isTutorialActivated;
 
     private void Awake()
     {
@@ -39,15 +41,14 @@ public class GameManager : MonoBehaviour
         lastClickedPart = null;
         clickCounter = 0;
         stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
-       // nextLevelScreen.SetActive(false);
-       
+        isTutorialActivated = GameObject.Find("Tutorial") != null;
     }
 
     private void Update()
     {
         PlayTestKeyPress();
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isTutorialActivated)
         {
             ClickOnScreen();
         }
