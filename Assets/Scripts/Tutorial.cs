@@ -71,13 +71,10 @@ public class Tutorial : MonoBehaviour
                 {
                     // un-click the previous line
                     lastClickedPart.GetComponent<LinePart>().UnClickPart(true);
+                    // Roll the Tutorial one step back
+                    tutorialClicksCounter -= 1;
                 }
-
-                if (linePartObject.GetComponent<LinePart>())
-                {
-                    // save the new line, and then click on it
-                    lastClickedPart = linePartObject;
-                }
+                lastClickedPart = null;
             }
         }
         // if we clicked on another part of the screen
@@ -88,9 +85,10 @@ public class Tutorial : MonoBehaviour
                 // un-click the previous line
                 lastClickedPart.GetComponent<LinePart>().UnClickPart(true);
             }
-
             // clear the previous line
             lastClickedPart = null;
+            // Roll the Tutorial one step back
+            tutorialClicksCounter -= 1;
         }
     }
 }
