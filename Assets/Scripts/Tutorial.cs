@@ -10,11 +10,13 @@ public class Tutorial : MonoBehaviour
 
     private GameObject lastClickedPart;
     private int tutorialClicksCounter;
+    private Animator tutorialAnimator;
 
     private void Start()
     {
         lastClickedPart = null;
         tutorialClicksCounter = 0;
+        tutorialAnimator = GetComponent<Animator>();
     }
 
     void Update()
@@ -23,6 +25,7 @@ public class Tutorial : MonoBehaviour
         {
             ClickOnScreenTutorial();
         }
+        PlayTutorialAnimations();
     }
 
     /**
@@ -89,6 +92,14 @@ public class Tutorial : MonoBehaviour
             lastClickedPart = null;
             // Roll the Tutorial one step back
             tutorialClicksCounter -= 1;
+        }
+    }
+
+    private void PlayTutorialAnimations()
+    {
+        if (tutorialLevel == 1)
+        {
+            
         }
     }
 }
