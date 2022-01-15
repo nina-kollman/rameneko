@@ -33,5 +33,20 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  
     }
 
+    public void RestartButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LevelSelectorScreen()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void EndGameButton()
+    {
+        Application.Quit();
+    }
+
 
 }

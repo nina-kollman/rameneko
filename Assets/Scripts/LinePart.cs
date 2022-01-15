@@ -12,8 +12,6 @@ public class LinePart : MonoBehaviour
     
     [SerializeField] private Vector2 top;
     [SerializeField] private Vector2 bottom;
-    [SerializeField] private Sprite disablesBamboo;
-    [SerializeField] private Sprite enabledBamboo;
 
     private Animator myAnimator;
     private Collider2D myCollider;
@@ -51,7 +49,7 @@ public class LinePart : MonoBehaviour
      */
     public void UnClickPart(bool isClickedNeedToTurnOff)
     {
-        myAnimator.StopPlayback();
+        //myAnimator.StopPlayback();
 
         lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;        
         lineParent.MarkLines(false);
@@ -126,8 +124,8 @@ public class LinePart : MonoBehaviour
         if (toDelete)
         {
             lineMarked = true;
-            lastColor = spriteRenderer.color;
-            lastSprite = spriteRenderer.sprite;
+            //lastColor = spriteRenderer.color;
+            //lastSprite = spriteRenderer.sprite;
             if (!myCollider.isTrigger) // line part is white and active
             {
                 var opacityColor = spriteRenderer.color;
@@ -203,10 +201,13 @@ public class LinePart : MonoBehaviour
         {
             if (!myCollider.isTrigger) // line part is active
             {
+                Debug.Log($"hover_enable_V {this}");
+                Debug.Log($"{spriteRenderer.sprite.name}");
                 myAnimator.Play("hover_enable_V");
             }
             else
             {
+                Debug.Log($"hover_disable_V {this}");
                 myAnimator.Play("hover_disable_V");
             }
         }
@@ -214,10 +215,13 @@ public class LinePart : MonoBehaviour
         {
             if (!myCollider.isTrigger) // line part is active
             {
-                myAnimator.Play("hover_enable_H");
+                // Debug.Log($"hover_enable_H {this}");
+                // Debug.Log($"{spriteRenderer.sprite.name}");
+                // myAnimator.Play("hover_enable_H");
             }
             else
             {
+                Debug.Log($"hover_disable_H {this}");
                 myAnimator.Play("hover_disable_H");
             }
         }

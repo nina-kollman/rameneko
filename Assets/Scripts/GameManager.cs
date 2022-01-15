@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int levelNum;
     [SerializeField] private int maxClicksInLevel;
     [SerializeField] private GameObject nextLevelScreen;
+    [SerializeField] private GameObject looseScreen;
     [SerializeField] private float duration;
     
     
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
         if (clickCounter > maxClicksInLevel)
         {
             Debug.Log("YOU LOST!");
+            looseScreen.SetActive(true);
         }
     }
 

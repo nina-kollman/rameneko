@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DesignedLevels/Grid2.unity
     guid: 189fec7815cd23947909e0d4958b0db6
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 2c8b0fd0a8d48964bad1286f0348f4db
   m_configObjects: {}
