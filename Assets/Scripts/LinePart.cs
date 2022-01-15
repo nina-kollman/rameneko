@@ -7,12 +7,12 @@ using Debug = UnityEngine.Debug;
 
 public class LinePart : MonoBehaviour
 {
-    public Line lineParent;
     private SpriteRenderer spriteRenderer;
     
     [SerializeField] private Vector2 top;
     [SerializeField] private Vector2 bottom;
-
+    
+    private Line lineParent;
     private Animator myAnimator;
     private Collider2D myCollider;
     private Color lastColor;
@@ -199,17 +199,18 @@ public class LinePart : MonoBehaviour
     {
         if (lineParent.isVertical)
         {
-            if (!myCollider.isTrigger) // line part is active
-            {
-                Debug.Log($"hover_enable_V {this}");
-                Debug.Log($"{spriteRenderer.sprite.name}");
-                myAnimator.Play("hover_enable_V");
-            }
-            else
-            {
-                Debug.Log($"hover_disable_V {this}");
-                myAnimator.Play("hover_disable_V");
-            }
+            // TODO: add oneClick animation
+            // if (!myCollider.isTrigger)
+            // {
+            //     Debug.Log($"hover_enable_V {this}");
+            //     Debug.Log($"{spriteRenderer.sprite.name}");
+            //     myAnimator.Play("hover_enable_V");
+            // }
+            // else
+            // {
+            //     Debug.Log($"hover_disable_V {this}");
+            //     myAnimator.Play("hover_disable_V");
+            // }
         }
         else
         {

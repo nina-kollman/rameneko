@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelector.unity
     guid: 318e19302ecd76d45b59f2da901e48d0
   - enabled: 1
-    path: Assets/Scenes/DesignedLevels/tutoriaPreFabl.unity
+    path: Assets/Scenes/DesignedLevels/Grid1_Tutorial2.unity
     guid: 6edbe80b4a6d33a4b8e3b54227fc1255
   - enabled: 1
     path: Assets/Scenes/DesignedLevels/Grid2.unity

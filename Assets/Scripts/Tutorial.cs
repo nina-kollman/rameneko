@@ -8,15 +8,19 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private int tutorialLevel;
     [SerializeField] private List<GameObject> tutorialLineList;
 
+    [SerializeField] private GameObject firstHighlightLine;
+    [SerializeField] private GameObject secondHighlightLine;
+
+    [SerializeField] private GameObject firstUIPost;
+    [SerializeField] private GameObject secondUIPost;
+
     private GameObject lastClickedPart;
-    private int tutorialClicksCounter;
-    private Animator tutorialAnimator;
+    public int tutorialClicksCounter;
 
     private void Start()
     {
         lastClickedPart = null;
         tutorialClicksCounter = 0;
-        tutorialAnimator = GetComponent<Animator>();
     }
 
     void Update()
@@ -56,7 +60,7 @@ public class Tutorial : MonoBehaviour
                 lastClickedPart.GetComponent<LinePart>().ClickOnPart();
                 lastClickedPart = null;
                 // advance tutorial click counter
-                tutorialClicksCounter += 1;
+                UpdateClickCount(true);
             }
             // if we clicked on the wonted line - for the first time
             else if (tutorialLine)
@@ -65,7 +69,7 @@ public class Tutorial : MonoBehaviour
                 lastClickedPart = linePartObject;
                 lastClickedPart.GetComponent<LinePart>().ClickOnPart();
                 // advance tutorial click counter
-                tutorialClicksCounter += 1;
+                UpdateClickCount(true);
             }
             // if we clicked on another line
             else
@@ -75,7 +79,7 @@ public class Tutorial : MonoBehaviour
                     // un-click the previous line
                     lastClickedPart.GetComponent<LinePart>().UnClickPart(true);
                     // Roll the Tutorial one step back
-                    tutorialClicksCounter -= 1;
+                    UpdateClickCount(false);
                 }
                 lastClickedPart = null;
             }
@@ -91,15 +95,85 @@ public class Tutorial : MonoBehaviour
             // clear the previous line
             lastClickedPart = null;
             // Roll the Tutorial one step back
-            tutorialClicksCounter -= 1;
+            UpdateClickCount(false);
         }
     }
-
+    
     private void PlayTutorialAnimations()
     {
         if (tutorialLevel == 1)
         {
-            
+            if (tutorialClicksCounter < 1)
+            {
+                firstHighlightLine.SetActive(true);
+                firstUIPost.SetActive(true);
+                secondUIPost.SetActive(false);
+            }
+            else if (tutorialClicksCounter < 2)
+            {
+                firstHighlightLine.SetActive(false);
+                secondUIPost.SetActive(true);
+            }
+            else
+            {
+                firstHighlightLine.SetActive(false);
+                firstUIPost.SetActive(false);
+                secondUIPost.SetActive(false);
+            }
+        }
+        else if (tutorialLevel == 2)
+        {
+            if (tutorialClicksCounter < 1)
+            {
+                firstHighlightLine.SetActive(true);
+                firstUIPost.SetActive(true);
+                secondHighlightLine.SetActive(false);
+                secondUIPost.SetActive(false);
+            }
+            else if (tutorialClicksCounter < 2)
+            {
+                firstHighlightLine.SetActive(true);
+                firstUIPost.SetActive(false);
+                secondHighlightLine.SetActive(false);
+                secondUIPost.SetActive(true);
+            }
+            else if (tutorialClicksCounter < 4)
+            {
+                firstHighlightLine.SetActive(false);
+                firstHighlightLine.SetActive(false);
+                secondHighlightLine.SetActive(true);
+                secondUIPost.SetActive(true);
+            }
+            else
+            {
+                firstHighlightLine.SetActive(false);
+                firstHighlightLine.SetActive(false);
+                secondHighlightLine.SetActive(false);
+                secondUIPost.SetActive(false);
+            }
+        }
+        else
+        {
+            throw new Exception("Unknown tutorial level");
+        }
+    }
+
+    private void UpdateClickCount(bool increase)
+    {
+        if (increase)
+        {
+            tutorialClicksCounter += 1;
+        }
+        else
+        {
+            if (tutorialLevel == 2 && tutorialClicksCounter >= 2)
+            {
+                tutorialClicksCounter = Math.Max(2, tutorialClicksCounter - 1);
+            }
+            else
+            {
+                tutorialClicksCounter = Math.Max(0, tutorialClicksCounter - 1);
+            }
         }
     }
 }

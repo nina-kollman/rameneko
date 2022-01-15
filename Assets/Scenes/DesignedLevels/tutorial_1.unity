@@ -504,10 +504,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 0, y: 1}
   bottom: {x: 0, y: 0}
-  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &127172962
 Animator:
   serializedVersion: 4
@@ -632,10 +631,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 1, y: 3}
   bottom: {x: 0, y: 3}
-  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &177789181
 Animator:
   serializedVersion: 4
@@ -760,10 +758,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 1, y: 2}
   bottom: {x: 1, y: 1}
-  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &207890283
 Animator:
   serializedVersion: 4
@@ -913,10 +910,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 3, y: 0}
   bottom: {x: 2, y: 0}
-  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!212 &255926523
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1335,10 +1331,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 3, y: 2}
   bottom: {x: 3, y: 1}
-  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &316597549
 Animator:
   serializedVersion: 4
@@ -1568,10 +1563,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 1, y: 1}
   bottom: {x: 1, y: 0}
-  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &402240841
 Animator:
   serializedVersion: 4
@@ -1691,10 +1685,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 3, y: 3}
   bottom: {x: 2, y: 3}
-  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &417802266
 Animator:
   serializedVersion: 4
@@ -1976,10 +1969,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 1, y: 2}
   bottom: {x: 0, y: 2}
-  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &492937808
 Animator:
   serializedVersion: 4
@@ -2647,10 +2639,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 3, y: 1}
   bottom: {x: 2, y: 1}
-  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &601148157
 Animator:
   serializedVersion: 4
@@ -2785,10 +2776,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 2, y: 2}
   bottom: {x: 2, y: 1}
-  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &641262895
 Animator:
   serializedVersion: 4
@@ -2908,10 +2898,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 1, y: 3}
   bottom: {x: 1, y: 2}
-  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &641661966
 Animator:
   serializedVersion: 4
@@ -3122,10 +3111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 2, y: 3}
   bottom: {x: 2, y: 2}
-  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &717988175
 Animator:
   serializedVersion: 4
@@ -3307,10 +3295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 2, y: 2}
   bottom: {x: 1, y: 2}
-  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &738095809
 Animator:
   serializedVersion: 4
@@ -3445,10 +3432,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 1, y: 0}
   bottom: {x: 0, y: 0}
-  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &776542564
 Animator:
   serializedVersion: 4
@@ -3948,10 +3934,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 0, y: 2}
   bottom: {x: 0, y: 1}
-  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &859256306
 Animator:
   serializedVersion: 4
@@ -4260,17 +4245,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.5, y: 0.4}
   m_EdgeRadius: 0
---- !u!114 &925398538 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7017877128403682903, guid: 66ab07a9b7a99764981865a6cb0c29fc, type: 3}
-  m_PrefabInstance: {fileID: 7017877128819193911}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &974827083 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8140368139144975312, guid: d68fdd4c64f377349b6a68b61ee06fee, type: 3}
@@ -5067,10 +5041,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 3, y: 3}
   bottom: {x: 3, y: 2}
-  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1205781780
 Animator:
   serializedVersion: 4
@@ -5170,7 +5143,7 @@ GameObject:
   - component: {fileID: 1227363434}
   - component: {fileID: 1227363433}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: TutorialUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6325,10 +6298,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 3, y: 1}
   bottom: {x: 3, y: 0}
-  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1472026191
 Animator:
   serializedVersion: 4
@@ -6623,11 +6595,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineMng: {fileID: 1882500799}
-  stepsCounterUI: {fileID: 925398538}
+  stepsCounterUI: {fileID: 0}
   player: {fileID: 1994726144}
   levelNum: 3
   maxClicksInLevel: 6
   nextLevelScreen: {fileID: 289145269}
+  looseScreen: {fileID: 0}
   duration: 250
 --- !u!4 &1636344179
 Transform:
@@ -6920,10 +6893,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 1, y: 1}
   bottom: {x: 0, y: 1}
-  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1700718196
 Animator:
   serializedVersion: 4
@@ -7104,10 +7076,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 2, y: 1}
   bottom: {x: 2, y: 0}
-  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1717107302
 Animator:
   serializedVersion: 4
@@ -7402,10 +7373,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 2, y: 3}
   bottom: {x: 1, y: 3}
-  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1846450239
 Animator:
   serializedVersion: 4
@@ -7525,10 +7495,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 2, y: 0}
   bottom: {x: 1, y: 0}
-  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1850860256
 Animator:
   serializedVersion: 4
@@ -7648,10 +7617,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 2, y: 1}
   bottom: {x: 1, y: 1}
-  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1879545835
 Animator:
   serializedVersion: 4
@@ -7771,10 +7739,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 0, y: 3}
   bottom: {x: 0, y: 2}
-  disablesBamboo: {fileID: 1850476498, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &1881321753
 Animator:
   serializedVersion: 4
@@ -7966,8 +7933,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1895172232}
+  - component: {fileID: 1895172233}
   m_Layer: 0
-  m_Name: tutorial
+  m_Name: Tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7989,6 +7957,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1895172233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895172231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407394f53cf229640b05a9973d9e5210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialLevel: 0
+  tutorialLineList: []
 --- !u!1 &1900929328
 GameObject:
   m_ObjectHideFlags: 0
@@ -8971,10 +8953,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineParent: {fileID: 0}
   top: {x: 3, y: 2}
   bottom: {x: 2, y: 2}
-  disablesBamboo: {fileID: 1479356910, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
-  enabledBamboo: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
 --- !u!95 &2063916954
 Animator:
   serializedVersion: 4
@@ -9174,6 +9155,10 @@ PrefabInstance:
     - target: {fileID: 4159631773588040432, guid: 79eee0aa7b99be7419abd47bee263352, type: 3}
       propertyPath: m_Name
       value: background container
+      objectReference: {fileID: 0}
+    - target: {fileID: 4159631773588040432, guid: 79eee0aa7b99be7419abd47bee263352, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4159631773588040433, guid: 79eee0aa7b99be7419abd47bee263352, type: 3}
       propertyPath: m_RootOrder
@@ -9564,6 +9549,10 @@ PrefabInstance:
     - target: {fileID: 8140368139144975313, guid: d68fdd4c64f377349b6a68b61ee06fee, type: 3}
       propertyPath: m_Name
       value: tutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140368139144975313, guid: d68fdd4c64f377349b6a68b61ee06fee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d68fdd4c64f377349b6a68b61ee06fee, type: 3}
