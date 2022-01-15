@@ -193,7 +193,7 @@ public class GameManager : MonoBehaviour
     public void LoadHome()
     {
         Physics2D.gravity = new Vector2(0, -300f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     /**
@@ -208,7 +208,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            SceneManager.LoadScene(1);
+            LoadHome();
         }
             
 
