@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/DesignedLevels/tutoriaPreFabl.unity
     guid: 6edbe80b4a6d33a4b8e3b54227fc1255
   - enabled: 1
-    path: Assets/Scenes/DesignedLevels/level6.unity
-    guid: 6015b336ee2fdc24394e52d5c8885a88
+    path: Assets/Scenes/DesignedLevels/Grid2.unity
+    guid: 189fec7815cd23947909e0d4958b0db6
   m_configObjects: {}
