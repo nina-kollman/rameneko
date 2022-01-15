@@ -343,9 +343,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce691b7c67125147ac348262aa6cd25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startScreen: {fileID: 109590437}
-  selectLevelScreen: {fileID: 0}
-  levelButtons: {fileID: 0}
 --- !u!114 &856933522
 MonoBehaviour:
   m_ObjectHideFlags: 0
