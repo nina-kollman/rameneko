@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour
 
     private Vector3 nextLevelPosition = new Vector3(-1, 0, 0);
     private int clickCounter;
-    private GameObject lastClickedLine;
+    // the saved gameObject is a LinePart (and not Line)
+    private GameObject lastClickedLinePart;
 
     private void Awake()
     {
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        lastClickedLine = null;
+        lastClickedLinePart = null;
         clickCounter = 0;
         stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
        // nextLevelScreen.SetActive(false);
@@ -144,40 +145,42 @@ public class GameManager : MonoBehaviour
         {
             GameObject linePartObject = hit.collider.transform.GetChild(0).gameObject;
             // if we clicked on the same line as before = double click
-            if (lastClickedLine && lastClickedLine.name == linePartObject.name)
+            string lastClickedLinePartParentLineName = linePartObject.GetComponentInParent<Line>().transform.name;
+            string clickedParentLineName = hit.collider.transform.parent.name;
+            if (lastClickedLinePart && lastClickedLinePartParentLineName == clickedParentLineName)
             {
                 // after the second time - clear the 'hover' indication
-                lastClickedLine.GetComponent<LinePart>().UnClickPart(false);
+                lastClickedLinePart.GetComponent<LinePart>().UnClickPart(false);
                 // click on the line for the second time
-                lastClickedLine.GetComponent<LinePart>().ClickOnPart();
-                lastClickedLine = null;
+                lastClickedLinePart.GetComponent<LinePart>().ClickOnPart();
+                lastClickedLinePart = null;
             }
             // if we clicked on another line
             else
             {
-                if (lastClickedLine)
+                if (lastClickedLinePart)
                 {
                     // un-click the previous line
-                    lastClickedLine.GetComponent<LinePart>().UnClickPart(true);
+                    lastClickedLinePart.GetComponent<LinePart>().UnClickPart(true);
                 }
                 if (linePartObject.GetComponent<LinePart>())
                 {
                     // save the new line, and then click on it
-                    lastClickedLine = linePartObject;
-                    lastClickedLine.GetComponent<LinePart>().ClickOnPart();
+                    lastClickedLinePart = linePartObject;
+                    lastClickedLinePart.GetComponent<LinePart>().ClickOnPart();
                 }
             }
         }
         // if we clicked on another part of the screen
         else
         {
-            if (lastClickedLine)
+            if (lastClickedLinePart)
             {
                 // un-click the previous line
-                lastClickedLine.GetComponent<LinePart>().UnClickPart(true);
+                lastClickedLinePart.GetComponent<LinePart>().UnClickPart(true);
             }
             // clear the previous line
-            lastClickedLine = null;
+            lastClickedLinePart = null;
         }
     }
 
@@ -185,6 +188,12 @@ public class GameManager : MonoBehaviour
     {
         Physics2D.gravity = new Vector2(0, -300f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadHome()
+    {
+        Physics2D.gravity = new Vector2(0, -300f);
+        SceneManager.LoadScene(0);
     }
 
     /**

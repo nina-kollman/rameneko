@@ -7,7 +7,7 @@ using Debug = UnityEngine.Debug;
 
 public class LinePart : MonoBehaviour
 {
-    private Line lineParent;
+    public Line lineParent;
     private SpriteRenderer spriteRenderer;
     
     [SerializeField] private Vector2 top;
