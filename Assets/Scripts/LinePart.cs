@@ -51,7 +51,9 @@ public class LinePart : MonoBehaviour
      */
     public void UnClickPart(bool isClickedNeedToTurnOff)
     {
-        lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;
+        myAnimator.StopPlayback();
+
+        lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;        
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
     }
@@ -191,6 +193,32 @@ public class LinePart : MonoBehaviour
             else // On Click 
             {
                 ActivateCommandPart(false);
+            }
+        }
+    }
+
+    public void FirstClickAnimation()
+    {
+        if (lineParent.isVertical)
+        {
+            if (!myCollider.isTrigger) // line part is active
+            {
+                myAnimator.Play("hover_enable_V");
+            }
+            else
+            {
+                myAnimator.Play("hover_disable_V");
+            }
+        }
+        else
+        {
+            if (!myCollider.isTrigger) // line part is active
+            {
+                myAnimator.Play("hover_enable_H");
+            }
+            else
+            {
+                myAnimator.Play("hover_disable_H");
             }
         }
     }

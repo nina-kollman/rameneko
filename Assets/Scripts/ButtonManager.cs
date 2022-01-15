@@ -27,6 +27,11 @@ public class ButtonManager : MonoBehaviour
             SceneManager.LoadScene(levelNum+1);  
         }
     }
-    
-    
+
+    public void NextLevelButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  
+    }
+
+
 }
