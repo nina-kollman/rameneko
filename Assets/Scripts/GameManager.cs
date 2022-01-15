@@ -13,7 +13,7 @@ using Object = System.Object;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private LineManager lineMng;
-    [SerializeField] private TextMeshPro stepsCounterUI;
+    [SerializeField] private TextMeshProUGUI stepsCounterUI;
     [SerializeField] private Player player;
     [SerializeField] private int levelNum;
     [SerializeField] private int maxClicksInLevel;
