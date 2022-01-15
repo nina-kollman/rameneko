@@ -1536,10 +1536,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: h2_2
       objectReference: {fileID: 0}
-    - target: {fileID: 3506163369623330436, guid: 1a667baa686406d4a883a04935e3b967, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3506163369623330456, guid: 1a667baa686406d4a883a04935e3b967, type: 3}
       propertyPath: top.x
       value: 2

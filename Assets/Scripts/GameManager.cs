@@ -6,6 +6,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine. SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Object = System.Object;
 
@@ -24,7 +25,9 @@ public class GameManager : MonoBehaviour
     private Vector3 nextLevelPosition = new Vector3(-1, 0, 0);
     private int clickCounter;
     // the saved gameObject is a LinePart (and not Line)
-    private GameObject lastClickedLinePart;
+    private GameObject lastClickedPart;
+    // saves the tutorial gameObject
+    private bool isTutorialActivated;
 
     private void Awake()
     {
@@ -34,18 +37,17 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        lastClickedLinePart = null;
+        lastClickedPart = null;
         clickCounter = 0;
         stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
-       // nextLevelScreen.SetActive(false);
-       
+        isTutorialActivated = GameObject.Find("Tutorial") != null;
     }
 
     private void Update()
     {
         PlayTestKeyPress();
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isTutorialActivated)
         {
             ClickOnScreen();
         }
@@ -144,42 +146,42 @@ public class GameManager : MonoBehaviour
         {
             GameObject linePartObject = hit.collider.transform.GetChild(0).gameObject;
             // if we clicked on the same line as before = double click
-            string lastClickedLinePartParentLineName = linePartObject.GetComponentInParent<Line>().transform.name;
+            string lastClickedLineName = lastClickedPart ? lastClickedPart.GetComponentInParent<Line>().transform.name: null;
             string clickedParentLineName = hit.collider.transform.parent.name;
-            if (lastClickedLinePart && lastClickedLinePartParentLineName == clickedParentLineName)
+            if (lastClickedPart && lastClickedLineName == clickedParentLineName)
             {
                 // after the second time - clear the 'hover' indication
-                lastClickedLinePart.GetComponent<LinePart>().UnClickPart(false);
+                lastClickedPart.GetComponent<LinePart>().UnClickPart(false);
                 // click on the line for the second time
-                lastClickedLinePart.GetComponent<LinePart>().ClickOnPart();
-                lastClickedLinePart = null;
+                lastClickedPart.GetComponent<LinePart>().ClickOnPart();
+                lastClickedPart = null;
             }
             // if we clicked on another line
             else
             {
-                if (lastClickedLinePart)
+                if (lastClickedPart)
                 {
                     // un-click the previous line
-                    lastClickedLinePart.GetComponent<LinePart>().UnClickPart(true);
+                    lastClickedPart.GetComponent<LinePart>().UnClickPart(true);
                 }
                 if (linePartObject.GetComponent<LinePart>())
                 {
                     // save the new line, and then click on it
-                    lastClickedLinePart = linePartObject;
-                    lastClickedLinePart.GetComponent<LinePart>().ClickOnPart();
+                    lastClickedPart = linePartObject;
+                    lastClickedPart.GetComponent<LinePart>().ClickOnPart();
                 }
             }
         }
         // if we clicked on another part of the screen
         else
         {
-            if (lastClickedLinePart)
+            if (lastClickedPart)
             {
                 // un-click the previous line
-                lastClickedLinePart.GetComponent<LinePart>().UnClickPart(true);
+                lastClickedPart.GetComponent<LinePart>().UnClickPart(true);
             }
             // clear the previous line
-            lastClickedLinePart = null;
+            lastClickedPart = null;
         }
     }
 
@@ -192,7 +194,7 @@ public class GameManager : MonoBehaviour
     public void LoadHome()
     {
         Physics2D.gravity = new Vector2(0, -300f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     /**
@@ -207,7 +209,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            SceneManager.LoadScene(1);
+            LoadHome();
         }
             
 
