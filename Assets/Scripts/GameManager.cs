@@ -27,10 +27,6 @@ public class GameManager : MonoBehaviour
     private int clickCounter;
     // the saved gameObject is a LinePart (and not Line)
     private GameObject lastClickedPart;
-    
-    // TODO: DEBUG
-    [FormerlySerializedAs("clickedLineName")] public string lastClickedLineName;
-    public string clickedParentLineName;
 
     private void Awake()
     {
@@ -150,8 +146,8 @@ public class GameManager : MonoBehaviour
         {
             GameObject linePartObject = hit.collider.transform.GetChild(0).gameObject;
             // if we clicked on the same line as before = double click
-            lastClickedLineName = lastClickedPart ? lastClickedPart.GetComponentInParent<Line>().transform.name: null;
-            clickedParentLineName = hit.collider.transform.parent.name;
+            string lastClickedLineName = lastClickedPart ? lastClickedPart.GetComponentInParent<Line>().transform.name: null;
+            string clickedParentLineName = hit.collider.transform.parent.name;
             if (lastClickedPart && lastClickedLineName == clickedParentLineName)
             {
                 // after the second time - clear the 'hover' indication
