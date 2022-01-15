@@ -18,8 +18,23 @@ EditorBuildSettings:
     path: Assets/Scenes/DesignedLevels/Grid1_Tutorial2.unity
     guid: 6edbe80b4a6d33a4b8e3b54227fc1255
   - enabled: 1
+    path: Assets/Scenes/DesignedLevels/Grid1_1.unity
+    guid: 5ad881276485e0d4092e08b6217307b8
+  - enabled: 1
+    path: Assets/Scenes/DesignedLevels/Grid1_2.unity
+    guid: 128f2518382de68429e103c4c292ccad
+  - enabled: 1
+    path: Assets/Scenes/DesignedLevels/Grid2_1.unity
+    guid: 900ff047ec96f7244945624cf6d974c3
+  - enabled: 1
     path: Assets/Scenes/DesignedLevels/Grid2_2.unity
     guid: 189fec7815cd23947909e0d4958b0db6
+  - enabled: 1
+    path: Assets/Scenes/DesignedLevels/Grid3_1.unity
+    guid: 4d2b7ba48053d0749b31a7ada184906b
+  - enabled: 1
+    path: Assets/Scenes/DesignedLevels/Grid3_2.unity
+    guid: 0d05c0ab530bc0b48803a1a09b1f0df1
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: 2c8b0fd0a8d48964bad1286f0348f4db
