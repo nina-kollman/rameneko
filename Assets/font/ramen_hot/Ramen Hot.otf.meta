@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 1ba256bfbd1c7ae4a965c7be22fc9e51
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Ramen Hot
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 48c0f19ac12e2ff459eeb60b52969702, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

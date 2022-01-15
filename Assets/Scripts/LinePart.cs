@@ -7,14 +7,12 @@ using Debug = UnityEngine.Debug;
 
 public class LinePart : MonoBehaviour
 {
-    private Line lineParent;
     private SpriteRenderer spriteRenderer;
     
     [SerializeField] private Vector2 top;
     [SerializeField] private Vector2 bottom;
-    [SerializeField] private Sprite disablesBamboo;
-    [SerializeField] private Sprite enabledBamboo;
-
+    
+    private Line lineParent;
     private Animator myAnimator;
     private Collider2D myCollider;
     private Color lastColor;
@@ -51,7 +49,9 @@ public class LinePart : MonoBehaviour
      */
     public void UnClickPart(bool isClickedNeedToTurnOff)
     {
-        lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;
+        //myAnimator.StopPlayback();
+
+        lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;        
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
     }
@@ -83,13 +83,13 @@ public class LinePart : MonoBehaviour
         if (activateCommand)
         {
             // activate part
-            //spriteRenderer.color = whiteColor;
-           // Debug.Log(this);
-            if (lineParent.isVertical)
+           // Debug.Log(this)
+           if (lineParent.isVertical)
                 myAnimator.Play("V-DtoE");
             else 
                 myAnimator.Play("H-DtoE");
             
+            AudioManager.Instance.Play("bambooOn");
             spriteRenderer.sortingOrder = 2;
             myCollider.isTrigger = false;
         }
@@ -98,15 +98,13 @@ public class LinePart : MonoBehaviour
             if (myCollider.isTrigger != true)
                 poof.Play();
             // deactivate part
-            //spriteRenderer.color = greyColor;
-           // spriteRenderer.sprite = disablesBamboo;
+           // AudioManager.Instance.Play("bambooOff");
             if (!myCollider.isTrigger)
             {
                 if (lineParent.isVertical)
                     myAnimator.Play("V-EtoD");
                 else
                     myAnimator.Play("H-EtoD");
-                
             }
 
             spriteRenderer.sortingOrder = 1;
@@ -126,12 +124,11 @@ public class LinePart : MonoBehaviour
         if (toDelete)
         {
             lineMarked = true;
-            lastColor = spriteRenderer.color;
-            lastSprite = spriteRenderer.sprite;
+            //lastColor = spriteRenderer.color;
+            //lastSprite = spriteRenderer.sprite;
             if (!myCollider.isTrigger) // line part is white and active
             {
                 var opacityColor = spriteRenderer.color;
-                Debug.Log("Shake");
 
                 if(lineParent.isVertical)
                     myAnimator.Play("shake-V");
@@ -194,6 +191,39 @@ public class LinePart : MonoBehaviour
             else // On Click 
             {
                 ActivateCommandPart(false);
+            }
+        }
+    }
+
+    public void FirstClickAnimation()
+    {
+        if (lineParent.isVertical)
+        {
+            // TODO: add oneClick animation
+            // if (!myCollider.isTrigger)
+            // {
+            //     Debug.Log($"hover_enable_V {this}");
+            //     Debug.Log($"{spriteRenderer.sprite.name}");
+            //     myAnimator.Play("hover_enable_V");
+            // }
+            // else
+            // {
+            //     Debug.Log($"hover_disable_V {this}");
+            //     myAnimator.Play("hover_disable_V");
+            // }
+        }
+        else
+        {
+            if (!myCollider.isTrigger) // line part is active
+            {
+                // Debug.Log($"hover_enable_H {this}");
+                // Debug.Log($"{spriteRenderer.sprite.name}");
+                // myAnimator.Play("hover_enable_H");
+            }
+            else
+            {
+                Debug.Log($"hover_disable_H {this}");
+                myAnimator.Play("hover_disable_H");
             }
         }
     }

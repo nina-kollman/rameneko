@@ -45,6 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2503485527947636384}
   - component: {fileID: 2503485527947636385}
+  - component: {fileID: 8976600032313944796}
   m_Layer: 5
   m_Name: Restart icon
   m_TagString: Untagged
@@ -119,6 +120,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8976600032313944796
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503485527947636391}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c42c54ed256b15439c45ee6516ead2c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2503485527321790767
 PrefabInstance:
   m_ObjectHideFlags: 0
