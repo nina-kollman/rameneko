@@ -111,7 +111,8 @@ public class Tutorial : MonoBehaviour
             }
             else if (tutorialClicksCounter < 2)
             {
-                firstHighlightLine.SetActive(false);
+                firstHighlightLine.SetActive(true);
+                firstUIPost.SetActive(false);
                 secondUIPost.SetActive(true);
             }
             else
@@ -166,9 +167,18 @@ public class Tutorial : MonoBehaviour
         }
         else
         {
-            if (tutorialLevel == 2 && tutorialClicksCounter >= 2)
+            if (tutorialLevel == 2 && tutorialClicksCounter >= 4)
+            {
+                tutorialClicksCounter = 4;
+            }
+            else if (tutorialLevel == 2 && tutorialClicksCounter >= 2)
             {
                 tutorialClicksCounter = Math.Max(2, tutorialClicksCounter - 1);
+            }
+            else if (tutorialLevel == 1 && tutorialClicksCounter >= 2)
+            {
+                tutorialClicksCounter = 2;
+
             }
             else
             {
