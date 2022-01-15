@@ -42,6 +42,13 @@ public class Line : MonoBehaviour
                 part.ActivateCommandPart(true);
             }
         }
+        else //first click
+        {
+            foreach (LinePart part in lineParts)
+            {
+                part.FirstClickAnimation();
+            }
+        }
 
         // 3. destroy all the other lines (that needed to be destroyed by nina's new rule)
         lineMng.ChangeOtherLines(top, bottom, eraseDirection, !isClicked, isVertical);
