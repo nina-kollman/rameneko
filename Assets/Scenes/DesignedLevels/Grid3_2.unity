@@ -3875,6 +3875,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'ScreenUI '
       objectReference: {fileID: 0}
+    - target: {fileID: 8889294885298638490, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 429.2028
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889294885298638490, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 303.0546
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889294885298638490, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889294885298638490, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.8868
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889294885298638491, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889294885905932060, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
 --- !u!1 &1897698285 stripped

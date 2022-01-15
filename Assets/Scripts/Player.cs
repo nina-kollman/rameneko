@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
     private Animator myAnimator;
+    private int lastLevelBuildIndex = 9; 
 
 
     private void Awake()
@@ -22,7 +23,14 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Win");
             AudioManager.Instance.Play("winLevelSound");
-            gameManager.SetScreen();
+            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+            string key = "level_" + (sceneIndex - 1).ToString();
+            Debug.Log(key);
+            PlayerPrefs.SetInt(key,1);
+            if (sceneIndex == lastLevelBuildIndex)
+                gameManager.SetScene(lastLevelBuildIndex + 1);
+            else
+                gameManager.SetNextLevelScreen();
         }
     }
 
@@ -32,8 +40,13 @@ public class Player : MonoBehaviour
         {
             AudioManager.Instance.Play("winLevelSound");
             int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-            PlayerPrefs.SetInt(("level_" + (sceneIndex-1).ToString()),1);
-            gameManager.SetScreen();
+            string key = "level_" + (sceneIndex - 1).ToString();
+            Debug.Log(key);
+            PlayerPrefs.SetInt(key,1);
+            if (sceneIndex == lastLevelBuildIndex)
+                gameManager.SetScene(lastLevelBuildIndex + 1);
+            else
+                gameManager.SetNextLevelScreen();
         }
     }
 

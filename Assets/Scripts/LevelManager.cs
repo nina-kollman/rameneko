@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject levelButtons;
     void Start()
     {
+        Debug.Log("LevelManagerStart");
         SetAllLevelButtons();
         levelButtons.transform.GetChild(0).GetComponent<Image>().color = new Color(0.1f, 0.3f, 0.2f, 1f);
     }
@@ -26,6 +27,7 @@ public class LevelManager : MonoBehaviour
         for (int i = 1; i <= numOfLevels; i++)
         {
             string key = "level_" + i.ToString();
+            Debug.Log($"{key}, value {PlayerPrefs.GetInt(key)}");
             switch (PlayerPrefs.GetInt(key))
             {
                 case 0:

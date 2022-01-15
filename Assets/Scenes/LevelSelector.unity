@@ -1911,6 +1911,7 @@ MonoBehaviour:
   levelNum: 3
   maxClicksInLevel: 6
   nextLevelScreen: {fileID: 0}
+  looseScreen: {fileID: 0}
   duration: 0
 --- !u!4 &1636344179
 Transform:
@@ -1956,7 +1957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259da1f9ef1e06349bd38c53aa5123fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numOfLevels: 10
+  numOfLevels: 8
   levelButtons: {fileID: 298493831}
 --- !u!4 &1912341197
 Transform:

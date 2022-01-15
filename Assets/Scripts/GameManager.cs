@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && !isTutorialActivated)
         {
-            if (clickCounter > maxClicksInLevel)
+            if (clickCounter >= maxClicksInLevel)
             {
                 Debug.Log("YOU LOST!");
                 looseScreen.SetActive(true);
@@ -279,9 +279,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetScreen()
+    public void SetNextLevelScreen()
     {
         nextLevelScreen.SetActive(true);
         nextLevelScreen.transform.DOMove(nextLevelPosition, duration).SetEase(Ease.InOutFlash);
+    }
+
+    public void SetScene(int index)
+    {
+        SceneManager.LoadScene(index);
     }
 }
