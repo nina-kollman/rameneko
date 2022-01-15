@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour
         {
             GameObject linePartObject = hit.collider.transform.GetChild(0).gameObject;
             // if we clicked on the same line as before = double click
-            string lastClickedLinePartParentLineName = lastClickedLinePart.transform.parent.transform.parent.name;
+            string lastClickedLinePartParentLineName = linePartObject.GetComponentInParent<Line>().transform.name;
             string clickedParentLineName = hit.collider.transform.parent.name;
             if (lastClickedLinePart && lastClickedLinePartParentLineName == clickedParentLineName)
             {
