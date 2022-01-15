@@ -51,7 +51,9 @@ public class LinePart : MonoBehaviour
      */
     public void UnClickPart(bool isClickedNeedToTurnOff)
     {
-        lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;
+        myAnimator.StopPlayback();
+
+        lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;        
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
     }
