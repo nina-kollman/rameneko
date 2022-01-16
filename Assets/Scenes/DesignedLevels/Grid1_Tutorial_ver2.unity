@@ -1562,7 +1562,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -90.42677}
-  m_SizeDelta: {x: 403.21, y: 128.49}
+  m_SizeDelta: {x: 381.88, y: 128.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216232415
 MonoBehaviour:
@@ -1584,8 +1584,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TAPPING ONCE A SOLID OR AN EMPTY BAMBOO IN A LINE WILL SPLIT THE SCREEN
-    TO THE TWO SIDES OF THE WHOLE LINE \n"
+  m_text: 'A CHOSEN LINE SPLITS THE SCREEN ACCORDINGLY
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 45c1327cb7c22d44e8f1128e1523fdc7, type: 2}
   m_sharedMaterial: {fileID: 4137710189385432133, guid: 45c1327cb7c22d44e8f1128e1523fdc7, type: 2}
@@ -3853,9 +3854,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8140368137366678138, guid: d68fdd4c64f377349b6a68b61ee06fee, type: 3}
       propertyPath: m_text
-      value: 'TAPING A BAMBOO OR AN EMPTY SPACE DIVIDES THE SCREEN
-
-'
+      value: TAP THE LINE TO SPLIT THE SCREEN
       objectReference: {fileID: 0}
     - target: {fileID: 8140368137366678139, guid: d68fdd4c64f377349b6a68b61ee06fee, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3951,7 +3950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8140368139144975313, guid: d68fdd4c64f377349b6a68b61ee06fee, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d68fdd4c64f377349b6a68b61ee06fee, type: 3}
@@ -5373,12 +5372,12 @@ GameObject:
   m_Component:
   - component: {fileID: 838621083}
   m_Layer: 5
-  m_Name: 2
+  m_Name: UNWATED TRASH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &838621083
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5397,7 +5396,7 @@ RectTransform:
   - {fileID: 1512953827}
   - {fileID: 1490273759}
   m_Father: {fileID: 1473203081}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6571,9 +6570,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8140368137366678138, guid: d68fdd4c64f377349b6a68b61ee06fee, type: 3}
       propertyPath: m_text
-      value: 'TAPPING AGAIN WILL REMOVE ALL BAMBOOS IN THE DARK PART
-
-'
+      value: "TAP AGAIN TO REMOVE THE BAMBOO \n"
       objectReference: {fileID: 0}
     - target: {fileID: 8140368137366678138, guid: d68fdd4c64f377349b6a68b61ee06fee, type: 3}
       propertyPath: m_margin.x
@@ -9248,8 +9245,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1286500862}
-  - {fileID: 838621083}
   - {fileID: 1957148982}
+  - {fileID: 838621083}
   m_Father: {fileID: 1503637601}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12021,12 +12018,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1957148982}
   m_Layer: 5
-  m_Name: 3
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1957148982
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12044,7 +12041,7 @@ RectTransform:
   - {fileID: 976474455}
   - {fileID: 1706642258}
   m_Father: {fileID: 1473203081}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12363,8 +12360,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TAPPING AGAIN WILL REMOVE ALL SOLID BAMBOOS IN THE DARK SIDE, LEAVING
-    EMPTY BAMBOO SPACES
+  m_text: 'TAPPING AGAIN WILL REMOVE ALL BAMBOOS IN THE DARK SIDE
 
 '
   m_isRightToLeft: 0
