@@ -42,11 +42,12 @@ public class Line : MonoBehaviour
                 part.ActivateCommandPart(true);
             }
         }
-        else //first click
+        // first click
+        else 
         {
             foreach (LinePart part in lineParts)
             {
-                part.FirstClickAnimation();
+                // part.FirstClickAnimation();
             }
         }
 

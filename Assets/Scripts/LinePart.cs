@@ -15,12 +15,9 @@ public class LinePart : MonoBehaviour
     private Line lineParent;
     private Animator myAnimator;
     private Collider2D myCollider;
-    private Color lastColor;
     private Sprite lastSprite;
     private bool lineMarked;
     private Stopwatch stopWatch;
-    private Color whiteColor = new Color(1f, 1f, 1f ,1f);
-    private Color greyColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
     private ParticleSystem poof;
     
     private void Awake()
@@ -30,12 +27,11 @@ public class LinePart : MonoBehaviour
         myCollider = transform.parent.GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
         lineMarked = false;
-        lastColor = spriteRenderer.color;
     }
 
     private void Start()
     {
-        poof = this.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
+        poof = transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
     }
 
     public void ClickOnPart()
@@ -49,8 +45,6 @@ public class LinePart : MonoBehaviour
      */
     public void UnClickPart(bool isClickedNeedToTurnOff)
     {
-        //myAnimator.StopPlayback();
-
         lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;        
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
@@ -98,7 +92,7 @@ public class LinePart : MonoBehaviour
             if (myCollider.isTrigger != true)
                 poof.Play();
             // deactivate part
-           // AudioManager.Instance.Play("bambooOff");
+            // AudioManager.Instance.Play("bambooOff");
             if (!myCollider.isTrigger)
             {
                 if (lineParent.isVertical)
@@ -124,8 +118,6 @@ public class LinePart : MonoBehaviour
         if (toDelete)
         {
             lineMarked = true;
-            //lastColor = spriteRenderer.color;
-            //lastSprite = spriteRenderer.sprite;
             if (!myCollider.isTrigger) // line part is white and active
             {
                 var opacityColor = spriteRenderer.color;
@@ -199,26 +191,25 @@ public class LinePart : MonoBehaviour
     {
         if (lineParent.isVertical)
         {
-            // TODO: add oneClick animation
-            // if (!myCollider.isTrigger)
-            // {
-            //     Debug.Log($"hover_enable_V {this}");
-            //     Debug.Log($"{spriteRenderer.sprite.name}");
-            //     myAnimator.Play("hover_enable_V");
-            // }
-            // else
-            // {
-            //     Debug.Log($"hover_disable_V {this}");
-            //     myAnimator.Play("hover_disable_V");
-            // }
+            if (!myCollider.isTrigger)
+            {
+                Debug.Log($"hover_enable_V {this}");
+                Debug.Log($"{spriteRenderer.sprite.name}");
+                myAnimator.Play("hover_enable_V");
+            }
+            else
+            {
+                Debug.Log($"hover_disable_V {this}");
+                myAnimator.Play("hover_disable_V");
+            }
         }
         else
         {
             if (!myCollider.isTrigger) // line part is active
             {
-                // Debug.Log($"hover_enable_H {this}");
-                // Debug.Log($"{spriteRenderer.sprite.name}");
-                // myAnimator.Play("hover_enable_H");
+                Debug.Log($"hover_enable_H {this}");
+                Debug.Log($"{spriteRenderer.sprite.name}");
+                myAnimator.Play("hover_enable_H");
             }
             else
             {

@@ -3611,7 +3611,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8140368137366678138, guid: d68fdd4c64f377349b6a68b61ee06fee, type: 3}
       propertyPath: m_text
-      value: 'TAP THE EMPTY SPACE TO CHOOSE IT
+      value: 'TAP THE BLACK DOTS TO CHOOSE THE EMPTY BAMBOO
 
 '
       objectReference: {fileID: 0}
@@ -3709,7 +3709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8140368139144975313, guid: d68fdd4c64f377349b6a68b61ee06fee, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d68fdd4c64f377349b6a68b61ee06fee, type: 3}
