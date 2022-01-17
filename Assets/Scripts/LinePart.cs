@@ -40,7 +40,7 @@ public class LinePart : MonoBehaviour
     }
 
     /**
-     * Called when the player clicked on another point on the board.
+     * Called when the player clicked on another point on the board or second time on the part before activating.
      * Rests all the lines that were marked when clicked on the line for the first time. 
      */
     public void UnClickPart(bool isClickedNeedToTurnOff)
@@ -120,14 +120,11 @@ public class LinePart : MonoBehaviour
             lineMarked = true;
             if (!myCollider.isTrigger) // line part is white and active
             {
-                var opacityColor = spriteRenderer.color;
-
-                if(lineParent.isVertical)
+                if (lineParent.isVertical)
                     myAnimator.Play("shake-V");
                 else
                     myAnimator.Play("shake-H");
             }
-                
         }
         else if (lineMarked)
         {

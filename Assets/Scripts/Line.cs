@@ -47,7 +47,7 @@ public class Line : MonoBehaviour
         {
             foreach (LinePart part in lineParts)
             {
-                // part.FirstClickAnimation();
+                part.FirstClickAnimation();
             }
         }
 
@@ -81,7 +81,7 @@ public class Line : MonoBehaviour
 
     
     /**
-     * toMark:true - Marks all the line that will be deleted upon selecting the line.
+     * toMark:true - Marks all the lines that will be deleted upon selecting the line.
      * toMark:false - Sets the MarkLines function from the line manager 
      */
     public void MarkLines(bool toMark)
