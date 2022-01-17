@@ -16,7 +16,7 @@ public class LinePart : MonoBehaviour
     private Animator myAnimator;
     private Collider2D myCollider;
     private Sprite lastSprite;
-    private bool lineMarked;
+    private bool linePartMarked;
     private Stopwatch stopWatch;
     private ParticleSystem poof;
     
@@ -26,7 +26,7 @@ public class LinePart : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         myCollider = transform.parent.GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
-        lineMarked = false;
+        linePartMarked = false;
     }
 
     private void Start()
@@ -45,7 +45,7 @@ public class LinePart : MonoBehaviour
      */
     public void UnClickPart(bool isClickedNeedToTurnOff)
     {
-        lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;        
+        lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
     }
@@ -113,11 +113,9 @@ public class LinePart : MonoBehaviour
      */
     public void MarkPartToBeDeleted(bool toDelete)
     {
-        Color myColor = spriteRenderer.color;
-        
         if (toDelete)
         {
-            lineMarked = true;
+            linePartMarked = true;
             if (!myCollider.isTrigger) // line part is white and active
             {
                 if (lineParent.isVertical)
@@ -126,16 +124,20 @@ public class LinePart : MonoBehaviour
                     myAnimator.Play("shake-H");
             }
         }
-        else if (lineMarked)
+        else if (linePartMarked)
         {
-            lineMarked = false;
+            linePartMarked = false;
             if (!myCollider.isTrigger) // Set back the active line to white
             {
-                if(lineParent.isVertical)
+                if (lineParent.isVertical)
                     myAnimator.Play("shake-V-stop");
                 else
                     myAnimator.Play("shake-H-stop");
             }
+        }
+        else
+        {
+            myAnimator.Play("idle");
         }
     }
     

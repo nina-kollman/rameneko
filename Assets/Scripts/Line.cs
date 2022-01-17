@@ -74,12 +74,6 @@ public class Line : MonoBehaviour
         }
     }
 
-    public bool GetVertical()
-    {
-        return isVertical;
-    }
-
-    
     /**
      * toMark:true - Marks all the lines that will be deleted upon selecting the line.
      * toMark:false - Sets the MarkLines function from the line manager 
