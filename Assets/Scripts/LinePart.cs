@@ -137,7 +137,7 @@ public class LinePart : MonoBehaviour
         }
         else
         {
-            myAnimator.Play("idle");
+            // myAnimator.Play("idle");
         }
     }
     
