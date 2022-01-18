@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 98dd5baab3f5d8a499084e79fd80b31e
+guid: 751a03f1351ceec43ab5b3e8c3c84c08
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 115
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,101 +100,89 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bamboo + leaf_1
+      name: rays_0
       rect:
         serializedVersion: 2
-        x: 724
-        y: 802
-        width: 30
-        height: 109
-      alignment: 9
-      pivot: {x: 0.9147156, y: 0.027868988}
+        x: 8
+        y: 99
+        width: 48
+        height: 142
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f431c4f62cc8a3429a5ed1c5b56f31e
-      internalID: 523090820
+      spriteID: e777f24ed053702418f7fa4199569f32
+      internalID: 1096739855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bamboo + leaf_6
+      name: rays_1
       rect:
         serializedVersion: 2
-        x: 655
-        y: 696
-        width: 41
-        height: 149
-      alignment: 9
-      pivot: {x: 0.29310274, y: 0.014184324}
+        x: 75
+        y: 99
+        width: 48
+        height: 142
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5de5d2da3d238b04aaef1b96e76f32cb
-      internalID: 1610208526
+      spriteID: 3ce3aae63e53af748a4895583757afb6
+      internalID: -1782828769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bamboo + leaf_9
+      name: rays_2
       rect:
         serializedVersion: 2
-        x: 646
-        y: 537
-        width: 122
-        height: 149
-      alignment: 9
-      pivot: {x: 0.041094672, y: 0.048343122}
+        x: 132
+        y: 99
+        width: 48
+        height: 142
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 597354b2fb1db4d409461cdf44163263
-      internalID: -1016496694
+      spriteID: 104e6cba328ddfd4bb8bf34d318ae558
+      internalID: -693651686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bamboo + leaf_11
+      name: rays_3
       rect:
         serializedVersion: 2
-        x: 660
-        y: 369
-        width: 60
-        height: 138
-      alignment: 9
-      pivot: {x: 0.81103617, y: 0.008243284}
+        x: 199
+        y: 99
+        width: 48
+        height: 142
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9d2699d312fe8140b6a6632f8290d7f
-      internalID: 2091920895
+      spriteID: 4cdc7de79a2542d4fa8d4314f2fec56e
+      internalID: -770505295
       vertices: []
       indices: 
       edges: []
@@ -210,21 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bamboo + leaf_1: 523090820
-      bamboo + leaf_7: -97504230
-      bamboo + leaf_3: -1891156644
-      bamboo + leaf_14: 1477044104
-      bamboo + leaf_4: 1921267722
-      bamboo + leaf_6: 1610208526
-      bamboo + leaf_0: 1633200101
-      bamboo + leaf_13: -780317115
-      bamboo + leaf_2: -591441968
-      bamboo + leaf_5: -1310978010
-      bamboo + leaf_11: 2091920895
-      bamboo + leaf_12: 1749766220
-      bamboo + leaf_10: 1648177236
-      bamboo + leaf_9: -1016496694
-      bamboo + leaf_8: 1330952384
+      rays_2: -693651686
+      rays_0: 1096739855
+      rays_1: -1782828769
+      rays_3: -770505295
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
