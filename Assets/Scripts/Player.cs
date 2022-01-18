@@ -8,16 +8,18 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
     private int lastLevelBuildIndex = 9;
+    private bool win = false;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log($"player Collide with {other}");
-        if (other.gameObject.CompareTag("Goal"))
+        if (other.gameObject.CompareTag("Goal") && !win)
         {
+            win = true;
             Debug.Log("Win");
             AudioManager.Instance.Play("winLevelSound");
             int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-            string key = "level_" + (sceneIndex - 1).ToString();
+            string key = "level_" + (sceneIndex - 1);
             Debug.Log(key);
             PlayerPrefs.SetInt(key,1);
             if (sceneIndex == lastLevelBuildIndex)
