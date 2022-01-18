@@ -19,6 +19,7 @@ public class Tutorial : MonoBehaviour
     {
         lastClickedPart = null;
         clicksOnLine = 0;
+        PlayTutorialAnimations();
     }
 
     /**
