@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 6286901141029364312}
   - component: {fileID: 6286901141029364313}
   m_Layer: 0
-  m_Name: VLine
+  m_Name: VLine3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
