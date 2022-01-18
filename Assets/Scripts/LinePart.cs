@@ -77,7 +77,6 @@ public class LinePart : MonoBehaviour
         if (activateCommand)
         {
             // activate part
-           // Debug.Log(this)
            if (lineParent.isVertical)
                 myAnimator.Play("V-DtoE");
             else 
@@ -92,7 +91,6 @@ public class LinePart : MonoBehaviour
             if (myCollider.isTrigger != true)
                 poof.Play();
             // deactivate part
-            // AudioManager.Instance.Play("bambooOff");
             if (!myCollider.isTrigger)
             {
                 if (lineParent.isVertical)

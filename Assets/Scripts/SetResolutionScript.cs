@@ -15,7 +15,7 @@ public class SetResolutionScript : MonoBehaviour
         // Get the real ratio
         float ratio = (float)Screen.width / (float)Screen.height;
 
-        // Cammera settings to landscape
+        // Camera settings to landscape
         if (ratio >= landscapeRatio)
         {
             Camera.main.orthographicSize = 1080f / 200f;

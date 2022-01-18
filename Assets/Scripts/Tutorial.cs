@@ -139,10 +139,6 @@ public class Tutorial : MonoBehaviour
             if (stage == 0)
             {
                 tutorialHelpers[0].SetActive(true); // pre tutorial 1
-                // firstHighlightLine.SetActive(true);
-                // firstUIPost.SetActive(true);
-                // secondHighlightLine.SetActive(false);
-                // secondUIPost.SetActive(false);
             }
             else if (stage == 1)
             {

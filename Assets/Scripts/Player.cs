@@ -7,14 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
-    private Animator myAnimator;
-    private int lastLevelBuildIndex = 9; 
-
-
-    private void Awake()
-    {
-        myAnimator = GetComponent<Animator>();
-    }
+    private int lastLevelBuildIndex = 9;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -22,22 +15,6 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Goal"))
         {
             Debug.Log("Win");
-            AudioManager.Instance.Play("winLevelSound");
-            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-            string key = "level_" + (sceneIndex - 1).ToString();
-            Debug.Log(key);
-            PlayerPrefs.SetInt(key,1);
-            if (sceneIndex == lastLevelBuildIndex)
-                gameManager.SetScene(lastLevelBuildIndex + 1);
-            else
-                gameManager.SetNextLevelScreen();
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Goal")
-        {
             AudioManager.Instance.Play("winLevelSound");
             int sceneIndex = SceneManager.GetActiveScene().buildIndex;
             string key = "level_" + (sceneIndex - 1).ToString();

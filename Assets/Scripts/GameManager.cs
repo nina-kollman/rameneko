@@ -199,17 +199,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ResetLevel()
-    {
-        Physics2D.gravity = new Vector2(0, -300f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void LoadHome()
-    {
-        Physics2D.gravity = new Vector2(0, -300f);
-        SceneManager.LoadScene(1);
-    }
 
     public void SetNextLevelScreen()
     {
