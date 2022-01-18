@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top: {x: 0, y: 0}
   bottom: {x: 0, y: 0}
+  myAnimator: {fileID: 0}
 --- !u!1 &6436101259637952390
 GameObject:
   m_ObjectHideFlags: 0

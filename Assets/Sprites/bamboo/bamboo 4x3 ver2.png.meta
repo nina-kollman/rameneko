@@ -107,9 +107,9 @@ TextureImporter:
       name: bamboo 4x3 ver2_0
       rect:
         serializedVersion: 2
-        x: 527
+        x: 569
         y: 1168
-        width: 480
+        width: 427
         height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,9 +128,9 @@ TextureImporter:
       name: bamboo 4x3 ver2_1
       rect:
         serializedVersion: 2
-        x: 527
+        x: 569
         y: 1074
-        width: 485
+        width: 432
         height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -150,9 +150,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 869
-        y: 239
+        y: 287
         width: 62
-        height: 803
+        height: 678
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,9 +171,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 970
-        y: 239
+        y: 287
         width: 42
-        height: 803
+        height: 678
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,9 +191,9 @@ TextureImporter:
       name: bamboo 4x3 ver2_4
       rect:
         serializedVersion: 2
-        x: 60
+        x: 159
         y: 165
-        width: 947
+        width: 848
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -212,9 +212,9 @@ TextureImporter:
       name: bamboo 4x3 ver2_5
       rect:
         serializedVersion: 2
-        x: 60
+        x: 159
         y: 71
-        width: 952
+        width: 853
         height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
