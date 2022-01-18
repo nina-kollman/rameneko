@@ -114,24 +114,35 @@ public class Tutorial : MonoBehaviour
         {
             if (stage == 0)
             {
-                tutorialHelpers[0].SetActive(true); // pre tutorial
+                tutorialHelpers[0].SetActive(true); // pre tutorial 1
             }
             else if (stage == 1)
             {
-                tutorialHelpers[0].SetActive(false); // pre tutorial - off
-                tutorialHelpers[1].SetActive(true); // tap the line
-                tutorialHelpers[2].SetActive(true); // arrow and dots
-                tutorialHelpers[3].SetActive(false); // tap again - off
+                tutorialHelpers[1].SetActive(true); // pre tutorial 2
+                tutorialHelpers[0].SetActive(false); // pre tutorial 1 - off
+
             }
             else if (stage == 2)
             {
-                tutorialHelpers[1].SetActive(false); // tap the line - off
-                tutorialHelpers[3].SetActive(true); // tap again
+                tutorialHelpers[2].SetActive(true); // pre tutorial 3
+                tutorialHelpers[1].SetActive(false); // pre tutorial 2 - off
+            }
+            else if (stage == 3)
+            {
+                tutorialHelpers[2].SetActive(false); // pre tutorial - off
+                tutorialHelpers[3].SetActive(true); // tap the line
+                tutorialHelpers[4].SetActive(true); // arrow and dots
+                tutorialHelpers[5].SetActive(false); // tap again - off
+            }
+            else if (stage == 4)
+            {
+                tutorialHelpers[3].SetActive(false); // tap the line - off
+                tutorialHelpers[5].SetActive(true); // tap again
             }
             else
             {
-                tutorialHelpers[2].SetActive(false); // arrow and dots - off
-                tutorialHelpers[3].SetActive(false); // tap again - off
+                tutorialHelpers[4].SetActive(false); // arrow and dots - off
+                tutorialHelpers[5].SetActive(false); // tap again - off
             }
         }
         // Tutorial 2 is not a real tutorial
@@ -217,7 +228,7 @@ public class Tutorial : MonoBehaviour
     {
         if (tutorialLevel == 1)
         {
-            return (clicksOnLine + emptyClicks) == 0;
+            return (clicksOnLine + emptyClicks) == 0  || (clicksOnLine + emptyClicks) == 1 || (clicksOnLine + emptyClicks) == 2;
         }
         else if (tutorialLevel == 3)
         {
