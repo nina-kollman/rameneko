@@ -14,12 +14,6 @@ public class ButtonManager : MonoBehaviour
         AudioManager.Instance.Play("backGroundSound");
     }
 
-    public void StartButton()
-    {
-        Debug.Log("hiiiii");
-        SceneManager.LoadScene(1); // loading LevelSelector scene
-    }
-
     public void SetLevelButton(int levelNum)
     {
         if (PlayerPrefs.GetInt(("level_" + (levelNum - 1).ToString())) == 1 || levelNum == 1)
@@ -43,10 +37,14 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void EndGameButton()
+    public void StartSceneButton()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 
-
+    public void EndGameButton()
+    {
+        Debug.Log("QUIT");
+        Application.Quit();
+    }
 }
