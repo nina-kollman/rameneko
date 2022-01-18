@@ -13,7 +13,7 @@ public class LinePart : MonoBehaviour
     [SerializeField] private Vector2 bottom;
     
     private Line lineParent;
-    private Animator myAnimator;
+    public Animator myAnimator;
     private Collider2D myCollider;
     private Sprite lastSprite;
     private bool linePartMarked;
@@ -45,6 +45,9 @@ public class LinePart : MonoBehaviour
      */
     public void UnClickPart(bool isClickedNeedToTurnOff)
     {
+        // get the lines out of firstClick mode
+        lineParent.UnBlinkParts();
+        // update parent isClicked
         lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);

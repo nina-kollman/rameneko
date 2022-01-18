@@ -98,5 +98,13 @@ public class Line : MonoBehaviour
         leftMarkSquare.SetActive(active);
         rightMarkSquare.SetActive(active);
     }
+
+    public void UnBlinkParts()
+    {
+        foreach (var part in lineParts)
+        {
+            part.myAnimator.Play("idle");
+        }
+    }
     
 }
