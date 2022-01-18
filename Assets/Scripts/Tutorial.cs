@@ -21,20 +21,22 @@ public class Tutorial : MonoBehaviour
         clicksOnLine = 0;
     }
 
-    void Update()
+    /**
+     * Called by the GameManager, this function handles all of the Tutorial clicks
+     * and animation.
+     */
+    public void TutorialClicksManager()
     {
-        if (Input.GetMouseButtonDown(0))
+        // for the tutorial - check if empty click is needed
+        if (IsEmptyClickNeeded())
         {
-            // for the tutorial - check if empty click is needed
-            if (IsEmptyClickNeeded())
-            {
-                emptyClicks += 1;
-            }
-            else
-            {
-                ClickOnScreenTutorial();
-            }
+            emptyClicks += 1;
         }
+        else
+        {
+            ClickOnScreenTutorial();
+        }
+        
         PlayTutorialAnimations();
     }
 

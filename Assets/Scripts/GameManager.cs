@@ -29,7 +29,8 @@ public class GameManager : MonoBehaviour
     private GameObject lastClickedPart;
     // saves the tutorial gameObject
     private bool isTutorialActivated;
-
+    private bool win;
+    private Tutorial tutorial;
     private void Awake()
     {
         // Gravity Down
@@ -41,19 +42,29 @@ public class GameManager : MonoBehaviour
         lastClickedPart = null;
         clickCounter = 0;
         stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
+        // handle Tutorial clause and script
         isTutorialActivated = GameObject.Find("Tutorial") != null;
+        tutorial = isTutorialActivated ? GameObject.Find("Tutorial").GetComponent<Tutorial>() : null;
+        win = false;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !isTutorialActivated)
+        if (Input.GetMouseButtonDown(0) && !win)
         {
+            // check for lose condition
             if (clickCounter - maxClicksInLevel >= 0)
             {
                 Debug.Log("YOU LOST!");
                 looseScreen.SetActive(true);
             }
-            else if (!isTutorialActivated)
+            // check for Tutorial click activation
+            else if (isTutorialActivated)
+            {
+                tutorial.TutorialClicksManager();
+            }
+            // regular click on the screen
+            else
             {
                 ClickOnScreen();
             }
@@ -202,6 +213,7 @@ public class GameManager : MonoBehaviour
 
     public void SetNextLevelScreen()
     {
+        win = true;
         nextLevelScreen.SetActive(true);
         nextLevelScreen.transform.DOMove(nextLevelPosition, duration).SetEase(Ease.InOutFlash);
     }
