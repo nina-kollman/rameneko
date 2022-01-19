@@ -18,13 +18,18 @@ public class ButtonManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt(("level_" + (levelNum - 1).ToString())) == 1 || levelNum == 1)
         {
-            SceneManager.LoadScene(levelNum+1);  
+            SceneManager.LoadScene(levelNum+2);  
         }
     }
 
     public void NextLevelButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  
+    }
+
+    public void PreviousLevelButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);  
     }
 
     public void RestartButton()

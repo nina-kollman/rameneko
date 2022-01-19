@@ -209,6 +209,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
+
   m_Children:
   - {fileID: 2199191344183110223}
   m_Father: {fileID: 2199191343712690381}
@@ -227,6 +228,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+
   m_Offset: {x: 0.0181489, y: 0.005219817}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
