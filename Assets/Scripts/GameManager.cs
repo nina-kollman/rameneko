@@ -154,41 +154,52 @@ public class GameManager : MonoBehaviour
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-            
-        RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
-        if (hit.collider)
+        RaycastHit2D[] hit = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
+
+        for (int index = 0; index < hit.Length; index++)
         {
-            GameObject linePartObject = hit.collider.transform.GetChild(0).gameObject;
-            // if we clicked on the same line as before = double click
-            string lastClickedLineName = lastClickedPart ? lastClickedPart.GetComponentInParent<Line>().transform.name: null;
-            string clickedParentLineName = hit.collider.transform.parent.name;
-            if (lastClickedPart && lastClickedLineName == clickedParentLineName)
+            if (hit[index].collider)
             {
-                // after the second time - clear the 'hover' indication
-                lastClickedPart.GetComponent<LinePart>().UnClickPart(false);
-                // click on the line for the second time
-                lastClickedPart.GetComponent<LinePart>().ClickOnPart();
-                lastClickedPart = null;
-            }
-            // if we clicked on another line
-            else
-            {
-                if (lastClickedPart)
+                Debug.Log("Found collider");
+                /*
+                if (hit[index].collider.tag.Equals(("TouchDetect")))
                 {
-                    // un-click the previous line
-                    lastClickedPart.GetComponent<LinePart>().UnClickPart(true);
+                    GameObject linePartObject = hit.collider.transform.GetChild(0).gameObject;
+                    // if we clicked on the same line as before = double click
+                    string lastClickedLineName = lastClickedPart ? lastClickedPart.GetComponentInParent<Line>().transform.name: null;
+                    string clickedParentLineName = hit.collider.transform.parent.name;
+                    if (lastClickedPart && lastClickedLineName == clickedParentLineName)
+                    {
+                        // after the second time - clear the 'hover' indication
+                        lastClickedPart.GetComponent<LinePart>().UnClickPart(false);
+                        // click on the line for the second time
+                        lastClickedPart.GetComponent<LinePart>().ClickOnPart();
+                        lastClickedPart = null;
+                    }
+                    // if we clicked on another line
+                    else
+                    {
+                        if (lastClickedPart)
+                        {
+                            // un-click the previous line
+                            lastClickedPart.GetComponent<LinePart>().UnClickPart(true);
+                        }
+                        if (linePartObject.GetComponent<LinePart>())
+                        {
+                            // save the new line, and then click on it
+                            lastClickedPart = linePartObject;
+                            lastClickedPart.GetComponent<LinePart>().ClickOnPart();
+                        }
+                    }
                 }
-                if (linePartObject.GetComponent<LinePart>())
-                {
-                    // save the new line, and then click on it
-                    lastClickedPart = linePartObject;
-                    lastClickedPart.GetComponent<LinePart>().ClickOnPart();
-                }
+                */
             }
         }
+
+        return;
         // if we clicked on another part of the screen
-        else
+       // else
         {
             if (lastClickedPart)
             {
