@@ -7,22 +7,17 @@ using Debug = UnityEngine.Debug;
 
 public class LinePart : MonoBehaviour
 {
-    public Line lineParent;
     private SpriteRenderer spriteRenderer;
     
     [SerializeField] private Vector2 top;
     [SerializeField] private Vector2 bottom;
-    [SerializeField] private Sprite disablesBamboo;
-    [SerializeField] private Sprite enabledBamboo;
-
-    private Animator myAnimator;
+    
+    private Line lineParent;
+    public Animator myAnimator;
     private Collider2D myCollider;
-    private Color lastColor;
     private Sprite lastSprite;
-    private bool lineMarked;
+    private bool linePartMarked;
     private Stopwatch stopWatch;
-    private Color whiteColor = new Color(1f, 1f, 1f ,1f);
-    private Color greyColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
     private ParticleSystem poof;
     
     private void Awake()
@@ -31,13 +26,12 @@ public class LinePart : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         myCollider = transform.parent.GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
-        lineMarked = false;
-        lastColor = spriteRenderer.color;
+        linePartMarked = false;
     }
 
     private void Start()
     {
-        poof = this.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
+        poof = transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
     }
 
     public void ClickOnPart()
@@ -46,11 +40,14 @@ public class LinePart : MonoBehaviour
     }
 
     /**
-     * Called when the player clicked on another point on the board.
+     * Called when the player clicked on another point on the board or second time on the part before activating.
      * Rests all the lines that were marked when clicked on the line for the first time. 
      */
     public void UnClickPart(bool isClickedNeedToTurnOff)
     {
+        // get the lines out of firstClick mode
+        lineParent.UnBlinkParts();
+        // update parent isClicked
         lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
@@ -83,7 +80,6 @@ public class LinePart : MonoBehaviour
         if (activateCommand)
         {
             // activate part
-           // Debug.Log(this)
            if (lineParent.isVertical)
                 myAnimator.Play("V-DtoE");
             else 
@@ -98,7 +94,6 @@ public class LinePart : MonoBehaviour
             if (myCollider.isTrigger != true)
                 poof.Play();
             // deactivate part
-           // AudioManager.Instance.Play("bambooOff");
             if (!myCollider.isTrigger)
             {
                 if (lineParent.isVertical)
@@ -119,34 +114,31 @@ public class LinePart : MonoBehaviour
      */
     public void MarkPartToBeDeleted(bool toDelete)
     {
-        Color myColor = spriteRenderer.color;
-        
         if (toDelete)
         {
-            lineMarked = true;
-            lastColor = spriteRenderer.color;
-            lastSprite = spriteRenderer.sprite;
+            linePartMarked = true;
             if (!myCollider.isTrigger) // line part is white and active
             {
-                var opacityColor = spriteRenderer.color;
-
-                if(lineParent.isVertical)
+                if (lineParent.isVertical)
                     myAnimator.Play("shake-V");
                 else
                     myAnimator.Play("shake-H");
             }
-                
         }
-        else if (lineMarked)
+        else if (linePartMarked)
         {
-            lineMarked = false;
+            linePartMarked = false;
             if (!myCollider.isTrigger) // Set back the active line to white
             {
-                if(lineParent.isVertical)
+                if (lineParent.isVertical)
                     myAnimator.Play("shake-V-stop");
                 else
                     myAnimator.Play("shake-H-stop");
             }
+        }
+        else
+        {
+            // myAnimator.Play("idle");
         }
     }
     
@@ -191,6 +183,38 @@ public class LinePart : MonoBehaviour
             else // On Click 
             {
                 ActivateCommandPart(false);
+            }
+        }
+    }
+
+    public void FirstClickAnimation()
+    {
+        if (lineParent.isVertical)
+        {
+            if (!myCollider.isTrigger)
+            {
+                Debug.Log($"hover_enable_V {this}");
+                Debug.Log($"{spriteRenderer.sprite.name}");
+                myAnimator.Play("hover_enable_V");
+            }
+            else
+            {
+                Debug.Log($"hover_disable_V {this}");
+                myAnimator.Play("hover_disable_V");
+            }
+        }
+        else
+        {
+            if (!myCollider.isTrigger) // line part is active
+            {
+                Debug.Log($"hover_enable_H {this}");
+                Debug.Log($"{spriteRenderer.sprite.name}");
+                myAnimator.Play("hover_enable_H");
+            }
+            else
+            {
+                Debug.Log($"hover_disable_H {this}");
+                myAnimator.Play("hover_disable_H");
             }
         }
     }

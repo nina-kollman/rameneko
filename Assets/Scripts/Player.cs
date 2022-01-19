@@ -2,35 +2,30 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
-    private Animator myAnimator;
-
-
-    private void Awake()
-    {
-        myAnimator = GetComponent<Animator>();
-    }
+    private int lastLevelBuildIndex = 9;
+    private bool win = false;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log($"player Collide with {other}");
-        if (other.gameObject.CompareTag("Goal"))
+        if (other.gameObject.CompareTag("Goal") && !win)
         {
+            win = true;
             Debug.Log("Win");
             AudioManager.Instance.Play("winLevelSound");
-            gameManager.SetScreen();
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Goal")
-        {
-            AudioManager.Instance.Play("winLevelSound");
-            gameManager.SetScreen();
+            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+            string key = "level_" + (sceneIndex - 1);
+            Debug.Log(key);
+            PlayerPrefs.SetInt(key,1);
+            if (sceneIndex == lastLevelBuildIndex)
+                gameManager.SetScene(lastLevelBuildIndex + 1);
+            else
+                gameManager.SetNextLevelScreen();
         }
     }
 

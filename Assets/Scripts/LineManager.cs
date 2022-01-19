@@ -7,14 +7,12 @@ public class LineManager : MonoBehaviour
     [SerializeField] private List<Line> lineList;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Animator catAnimator;
-    
+
     public void AddClick()
     {
         gameManager.AddClick();
     }
-
     
-
     public void ChangeGravityDirection(Transform transform, bool isVertical)
     {
         Direction jumpDirection = gameManager.GetJumpDirection(transform, isVertical);

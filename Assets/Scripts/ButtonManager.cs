@@ -6,11 +6,6 @@ using UnityEngine. SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-
-    [SerializeField] private GameObject startScreen;
-    [SerializeField] private GameObject selectLevelScreen;
-    [SerializeField] private GameObject levelButtons;
-
     private AudioManager audioManager;
 
     private void Start()
@@ -19,19 +14,37 @@ public class ButtonManager : MonoBehaviour
         AudioManager.Instance.Play("backGroundSound");
     }
 
-    public void StartButton()
-    {
-        Debug.Log("hiiiii");
-       startScreen.SetActive(false);
-       selectLevelScreen.SetActive(true);
-       this.gameObject.SetActive(false);
-       levelButtons.SetActive(true);
-    }
-
     public void SetLevelButton(int levelNum)
     {
-        SceneManager.LoadScene(levelNum);
+        if (PlayerPrefs.GetInt(("level_" + (levelNum - 1).ToString())) == 1 || levelNum == 1)
+        {
+            SceneManager.LoadScene(levelNum+1);  
+        }
     }
-    
-    
+
+    public void NextLevelButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  
+    }
+
+    public void RestartButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LevelSelectorScreen()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void StartSceneButton()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void EndGameButton()
+    {
+        Debug.Log("QUIT");
+        Application.Quit();
+    }
 }

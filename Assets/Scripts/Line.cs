@@ -21,8 +21,8 @@ public class Line : MonoBehaviour
     private void Awake()
     {
         // init full line top and bottom by his parts
-        top = lineParts[lineParts.Count - 1].GetTop();
-        bottom = lineParts[0].GetBottom();
+        top = lineParts.Last().GetTop();
+        bottom = lineParts.First().GetBottom();
         isClicked = false;
     }
 
@@ -40,6 +40,14 @@ public class Line : MonoBehaviour
             foreach (LinePart part in lineParts)
             {
                 part.ActivateCommandPart(true);
+            }
+        }
+        // first click
+        else 
+        {
+            foreach (LinePart part in lineParts)
+            {
+                part.FirstClickAnimation();
             }
         }
 
@@ -66,14 +74,8 @@ public class Line : MonoBehaviour
         }
     }
 
-    public bool GetVertical()
-    {
-        return isVertical;
-    }
-
-    
     /**
-     * toMark:true - Marks all the line that will be deleted upon selecting the line.
+     * toMark:true - Marks all the lines that will be deleted upon selecting the line.
      * toMark:false - Sets the MarkLines function from the line manager 
      */
     public void MarkLines(bool toMark)
@@ -95,6 +97,14 @@ public class Line : MonoBehaviour
     {
         leftMarkSquare.SetActive(active);
         rightMarkSquare.SetActive(active);
+    }
+
+    public void UnBlinkParts()
+    {
+        foreach (var part in lineParts)
+        {
+            part.myAnimator.Play("idle");
+        }
     }
     
 }
