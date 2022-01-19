@@ -11,6 +11,7 @@ TagManager:
   - Vertical_2
   - Vertical_3
   - Goal
+  - TouchDetect
   layers:
   - Default
   - TransparentFX

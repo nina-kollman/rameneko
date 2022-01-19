@@ -24,7 +24,8 @@ public class LinePart : MonoBehaviour
     {
         lineParent = GetComponentInParent<Line>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        myCollider = transform.parent.GetComponent<BoxCollider2D>();
+        // this line changed due to the prefab change
+        myCollider = transform.parent.parent.GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
         linePartMarked = false;
     }
@@ -193,13 +194,10 @@ public class LinePart : MonoBehaviour
         {
             if (!myCollider.isTrigger)
             {
-                Debug.Log($"hover_enable_V {this}");
-                Debug.Log($"{spriteRenderer.sprite.name}");
                 myAnimator.Play("hover_enable_V");
             }
             else
             {
-                Debug.Log($"hover_disable_V {this}");
                 myAnimator.Play("hover_disable_V");
             }
         }
@@ -207,13 +205,10 @@ public class LinePart : MonoBehaviour
         {
             if (!myCollider.isTrigger) // line part is active
             {
-                Debug.Log($"hover_enable_H {this}");
-                Debug.Log($"{spriteRenderer.sprite.name}");
                 myAnimator.Play("hover_enable_H");
             }
             else
             {
-                Debug.Log($"hover_disable_H {this}");
                 myAnimator.Play("hover_disable_H");
             }
         }
