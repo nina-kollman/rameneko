@@ -18,7 +18,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt(("level_" + (levelNum - 1).ToString())) == 1 || levelNum == 1)
         {
-            SceneManager.LoadScene(levelNum+1);  
+            SceneManager.LoadScene(levelNum+2);  
         }
     }
 

@@ -24,13 +24,14 @@ public class GameManager : MonoBehaviour
     
 
     private Vector3 nextLevelPosition = new Vector3(-1, 0, 0);
-    private int clickCounter;
+    public int clickCounter;
     // the saved gameObject is a LinePart (and not Line)
     private GameObject lastClickedPart;
     // saves the tutorial gameObject
     private bool isTutorialActivated;
     private bool win;
     private Tutorial tutorial;
+    
     private void Awake()
     {
         // Gravity Down
@@ -210,5 +211,11 @@ public class GameManager : MonoBehaviour
     public void SetScene(int index)
     {
         SceneManager.LoadScene(index);
+    }
+
+    public void UpdateStarCounter(int stars)
+    {
+        int current = PlayerPrefs.GetInt("starCounter");
+        PlayerPrefs.SetInt("StarCounter", current+stars);
     }
 }
