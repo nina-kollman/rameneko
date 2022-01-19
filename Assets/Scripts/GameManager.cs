@@ -154,14 +154,26 @@ public class GameManager : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
             
-        RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+        RaycastHit2D[] hit = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
+        Transform partHit = null;
 
-        if (hit.collider)
+        for (int i = 0; i < hit.Length; i++)
         {
-            GameObject linePartObject = hit.collider.transform.GetChild(0).gameObject;
+            if (hit[i].collider.CompareTag("TouchDetect"))
+            {
+                // get the TouchDetect object
+                partHit = hit[i].collider.transform;
+                Debug.Log("Found the touch");
+                break;
+            }
+        }
+
+        if (partHit)
+        {
+            GameObject linePartObject = partHit.GetChild(0).gameObject;
             // if we clicked on the same line as before = double click
             string lastClickedLineName = lastClickedPart ? lastClickedPart.GetComponentInParent<Line>().transform.name: null;
-            string clickedParentLineName = hit.collider.transform.parent.name;
+            string clickedParentLineName = partHit.parent.parent.name;
             if (lastClickedPart && lastClickedLineName == clickedParentLineName)
             {
                 // after the second time - clear the 'hover' indication
