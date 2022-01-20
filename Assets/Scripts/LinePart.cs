@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
@@ -22,12 +23,13 @@ public class LinePart : MonoBehaviour
     
     private void Awake()
     {
-        lineParent = GetComponentInParent<Line>();
+        lineParent = transform.GetComponentInParent<Line>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         // this line changed due to the prefab change
         myCollider = transform.parent.parent.GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
         linePartMarked = false;
+        Debug.Log($"{lineParent} , Awake");
     }
 
     private void Start()
@@ -37,6 +39,7 @@ public class LinePart : MonoBehaviour
 
     public void ClickOnPart()
     {
+        Debug.Log($"{lineParent}, In Click On Part ");
         lineParent.ClickOnLine(transform);
     }
 
