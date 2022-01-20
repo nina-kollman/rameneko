@@ -9,11 +9,9 @@ public class Player : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     private int lastLevelBuildIndex = 9;
     private bool win = false;
-    [SerializeField] private int star0Clicks;
-    [SerializeField] private int star1Clicks;
-    [SerializeField] private int star2Clicks;
-    [SerializeField] private int star3Clicks;
-    [SerializeField] private GameObject[] starScreens;
+    [SerializeField] public int star1Clicks;
+    [SerializeField] public int star2Clicks;
+    [SerializeField] public int star3Clicks;
 
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -31,7 +29,7 @@ public class Player : MonoBehaviour
             if (sceneIndex == lastLevelBuildIndex)
                 gameManager.SetScene(lastLevelBuildIndex + 1); // End Game screen
             else
-                SetNextLevelScreen(); //Set StarScreen 
+                gameManager.SetStarScreen(); //Set StarScreen 
         }
     }
 
@@ -40,28 +38,5 @@ public class Player : MonoBehaviour
         GetComponent<Rigidbody2D>().constraints = isVertical ?  RigidbodyConstraints2D.FreezePositionX : RigidbodyConstraints2D.FreezePositionY;
     }
 
-    /**
-     * This function sets the correct NextLevelScreen according to the number of stars the player deserves 
-     */
-    public void SetNextLevelScreen()
-    {
-        if (gameManager.clickCounter <= star3Clicks)
-        {
-            starScreens[3].SetActive(true);
-            gameManager.UpdateStarCounter(3);
-        }else if (gameManager.clickCounter <= star2Clicks)
-        {
-            starScreens[2].SetActive(true);   
-            gameManager.UpdateStarCounter(2);
-        }else if (gameManager.clickCounter <= star1Clicks)
-        {
-            starScreens[1].SetActive(true);
-            gameManager.UpdateStarCounter(1);
-        }
-        else // Zero stars
-        {
-            starScreens[0].SetActive(true);
-        }
-        
-    }
+    
 }
