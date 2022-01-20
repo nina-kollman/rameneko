@@ -3744,6 +3744,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8889294885905932060, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
   m_PrefabInstance: {fileID: 1162065863}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1162065866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6844456450862767105, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+  m_PrefabInstance: {fileID: 1162065863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1162065867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8940139775130473525, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+  m_PrefabInstance: {fileID: 1162065863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1162065868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4152135032470376016, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+  m_PrefabInstance: {fileID: 1162065863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1162065869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 314031564840099853, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+  m_PrefabInstance: {fileID: 1162065863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1177391093 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2144322293105473919, guid: c492f4406a43b2c4db942422390460c2, type: 3}
@@ -5625,6 +5645,11 @@ MonoBehaviour:
   nextLevelScreen: {fileID: 1162065865}
   looseScreen: {fileID: 1162065864}
   duration: 250
+  starScreens:
+  - {fileID: 1162065869}
+  - {fileID: 1162065868}
+  - {fileID: 1162065867}
+  - {fileID: 1162065866}
   clickCounter: 0
 --- !u!4 &1636344179
 Transform:

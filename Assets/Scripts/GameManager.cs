@@ -20,7 +20,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject nextLevelScreen;
     [SerializeField] private GameObject looseScreen;
     [SerializeField] private float duration;
-    
+    [SerializeField] private GameObject[] starScreens;
+
     
 
     private Vector3 nextLevelPosition = new Vector3(-1, 0, 0);
@@ -252,5 +253,30 @@ public class GameManager : MonoBehaviour
     {
         int current = PlayerPrefs.GetInt("starCounter");
         PlayerPrefs.SetInt("StarCounter", current+stars);
+    }
+    
+    /**
+     * This function sets the correct NextLevelScreen according to the number of stars the player deserves 
+     */
+    public void SetStarScreen()
+    {
+        if (clickCounter <= player.star3Clicks)
+        {
+            starScreens[3].SetActive(true);
+            UpdateStarCounter(3);
+        }else if (clickCounter <= player.star2Clicks)
+        {
+            starScreens[2].SetActive(true);   
+            UpdateStarCounter(2);
+        }else if (clickCounter <= player.star1Clicks)
+        {
+            starScreens[1].SetActive(true);
+            UpdateStarCounter(1);
+        }
+        else // Zero stars
+        {
+            starScreens[0].SetActive(true);
+        }
+        
     }
 }

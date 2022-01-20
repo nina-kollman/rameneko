@@ -3332,6 +3332,7 @@ MonoBehaviour:
   nextLevelScreen: {fileID: 1162065865}
   looseScreen: {fileID: 1162065864}
   duration: 250
+  clickCounter: 0
 --- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0
@@ -4124,6 +4125,10 @@ PrefabInstance:
       propertyPath: bottom.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6286901140392889781, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 092c70f8ee9498d4a8e38196d6f3cb25, type: 2}
     - target: {fileID: 6286901140392889784, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
       propertyPath: m_Name
       value: v2_1

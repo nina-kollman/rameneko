@@ -2694,7 +2694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4152135032470376016, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6844456450862767105, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
       propertyPath: m_IsActive
@@ -2787,7 +2787,7 @@ PrefabInstance:
     - target: {fileID: 8889294884224726227, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 519420031}
     - target: {fileID: 8889294884224726254, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
       propertyPath: m_Name
       value: 'ScreenUI '
@@ -4352,6 +4352,11 @@ MonoBehaviour:
   nextLevelScreen: {fileID: 0}
   looseScreen: {fileID: 0}
   duration: 250
+  starScreens:
+  - {fileID: 1236455198}
+  - {fileID: 1173858784}
+  - {fileID: 50048345}
+  - {fileID: 1043172615}
   clickCounter: 0
 --- !u!4 &1636344179
 Transform:

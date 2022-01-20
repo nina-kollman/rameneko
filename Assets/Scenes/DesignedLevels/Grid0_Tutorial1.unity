@@ -5001,6 +5001,11 @@ MonoBehaviour:
   nextLevelScreen: {fileID: 1162065865}
   looseScreen: {fileID: 1162065864}
   duration: 250
+  starScreens:
+  - {fileID: 1162065869}
+  - {fileID: 1162065868}
+  - {fileID: 1162065867}
+  - {fileID: 1162065866}
   clickCounter: 0
 --- !u!4 &1636344179
 Transform:
