@@ -12,7 +12,7 @@ public class LinePart : MonoBehaviour
     [SerializeField] private Vector2 top;
     [SerializeField] private Vector2 bottom;
     
-    [SerializeField] private Line lineParent;
+    private Line lineParent;
     public Animator myAnimator;
     private Collider2D myCollider;
     private Sprite lastSprite;
@@ -22,8 +22,7 @@ public class LinePart : MonoBehaviour
     
     private void Awake()
     {
-        //Debug.Log(this.transform.parent.parent.gameObject.GetComponentInParent<Line>());
-       // lineParent = this.transform.parent.parent.gameObject.GetComponentInParent<Line>();
+        lineParent = GetComponentInParent<Line>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         // this line changed due to the prefab change
         myCollider = transform.parent.parent.GetComponent<BoxCollider2D>();

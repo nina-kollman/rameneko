@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-       // Debug.Log($"player Collide with {other}");
+        Debug.Log($"player Collide with {other}");
         if (other.gameObject.CompareTag("Goal") && !win)
         {
             win = true;
@@ -45,7 +45,6 @@ public class Player : MonoBehaviour
      */
     public void SetNextLevelScreen()
     {
-        Debug.Log($"StarScreen, clicks {gameManager.clickCounter.ToString()}");
         if (gameManager.clickCounter <= star3Clicks)
         {
             starScreens[3].SetActive(true);
