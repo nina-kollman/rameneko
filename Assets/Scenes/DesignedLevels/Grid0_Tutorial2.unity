@@ -760,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 1636344178}
     - target: {fileID: 7863438916288796074, guid: f6a092a77e06c1d47a1d4a82df41e3ed, type: 3}
       propertyPath: star1Clicks
-      value: 4
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7863438916288796074, guid: f6a092a77e06c1d47a1d4a82df41e3ed, type: 3}
       propertyPath: star2Clicks
@@ -1279,7 +1279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 1513469868}
   - {fileID: 1553854004}
@@ -1288,6 +1287,7 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 2071350614}
   rightMarkSquare: {fileID: 254603250}
+  unbreakable: 0
   isClicked: 0
 --- !u!1001 &1162065863
 PrefabInstance:
@@ -1487,7 +1487,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 1828442007}
   - {fileID: 439373428}
@@ -1496,6 +1495,7 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
+  unbreakable: 0
   isClicked: 0
 --- !u!1001 &1230848286
 PrefabInstance:
@@ -2889,7 +2889,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 70293574}
   - {fileID: 1599018306}
@@ -2898,6 +2897,7 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
+  unbreakable: 0
   isClicked: 0
 --- !u!1 &1747793904
 GameObject:
@@ -3270,7 +3270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 1612412282}
   - {fileID: 1397030238}
@@ -3279,6 +3278,7 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
+  unbreakable: 0
   isClicked: 0
 --- !u!95 &2000585014 stripped
 Animator:
@@ -3654,7 +3654,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 266291927}
   - {fileID: 262412641}
@@ -3663,4 +3662,5 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 1392873651}
   rightMarkSquare: {fileID: 1894021661}
+  unbreakable: 0
   isClicked: 0

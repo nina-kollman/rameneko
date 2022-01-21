@@ -9,9 +9,6 @@ public class Player : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     private int lastLevelBuildIndex = 9;
     private bool win = false;
-    [SerializeField] public int star1Clicks;
-    [SerializeField] public int star2Clicks;
-    [SerializeField] public int star3Clicks;
 
 
     private void OnCollisionEnter2D(Collision2D other)

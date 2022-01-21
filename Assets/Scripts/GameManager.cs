@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject looseScreen;
     [SerializeField] private float duration;
     [SerializeField] private GameObject[] starScreens;
+    
+    [SerializeField] private int[] starClicks;
 
     
 
@@ -228,6 +230,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateStarCounter(int stars)
     {
+        // TODO: Netzer - i think we need to pu a dict with levelNum:starsNum
         int current = PlayerPrefs.GetInt("starCounter");
         PlayerPrefs.SetInt("StarCounter", current+stars);
     }
@@ -237,15 +240,17 @@ public class GameManager : MonoBehaviour
      */
     public void SetStarScreen()
     {
-        if (clickCounter <= player.star3Clicks)
+        if (clickCounter <= starClicks[2])
         {
             starScreens[3].SetActive(true);
             UpdateStarCounter(3);
-        }else if (clickCounter <= player.star2Clicks)
+        }
+        else if (clickCounter <= starClicks[1])
         {
-            starScreens[2].SetActive(true);   
+            starScreens[2].SetActive(true);
             UpdateStarCounter(2);
-        }else if (clickCounter <= player.star1Clicks)
+        }
+        else if (clickCounter <= starClicks[0])
         {
             starScreens[1].SetActive(true);
             UpdateStarCounter(1);

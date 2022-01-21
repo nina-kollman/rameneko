@@ -906,11 +906,11 @@ PrefabInstance:
       objectReference: {fileID: 1636344178}
     - target: {fileID: 7863438916288796074, guid: f6a092a77e06c1d47a1d4a82df41e3ed, type: 3}
       propertyPath: star1Clicks
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7863438916288796074, guid: f6a092a77e06c1d47a1d4a82df41e3ed, type: 3}
       propertyPath: star2Clicks
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7863438916288796074, guid: f6a092a77e06c1d47a1d4a82df41e3ed, type: 3}
       propertyPath: star3Clicks
@@ -1189,6 +1189,7 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 0}
   rightMarkSquare: {fileID: 0}
+  unbreakable: 0
   isClicked: 0
 --- !u!1 &519420028
 GameObject:
@@ -1448,6 +1449,7 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 0}
   rightMarkSquare: {fileID: 0}
+  unbreakable: 0
   isClicked: 0
 --- !u!4 &551149027
 Transform:
@@ -2141,6 +2143,7 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 1386685817}
   rightMarkSquare: {fileID: 544791656}
+  unbreakable: 0
   isClicked: 0
 --- !u!114 &1041015227 stripped
 MonoBehaviour:
@@ -2490,6 +2493,7 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 0}
   rightMarkSquare: {fileID: 0}
+  unbreakable: 0
   isClicked: 0
 --- !u!1001 &1230848286
 PrefabInstance:
@@ -3653,6 +3657,7 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 402032276}
   rightMarkSquare: {fileID: 910220178}
+  unbreakable: 0
   isClicked: 0
 --- !u!95 &1707628640 stripped
 Animator:
@@ -3719,6 +3724,7 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 0}
   rightMarkSquare: {fileID: 0}
+  unbreakable: 0
   isClicked: 0
 --- !u!95 &1766459594 stripped
 Animator:
