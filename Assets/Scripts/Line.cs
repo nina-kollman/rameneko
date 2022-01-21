@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class Line : MonoBehaviour
 {
-    [SerializeField] private LineManager lineMng;
     [SerializeField] private List<LinePart> lineParts;
     [SerializeField] public bool isVertical;
     [SerializeField] private EraseDirection eraseDirection;
     [SerializeField] private GameObject leftMarkSquare;
     [SerializeField] private GameObject rightMarkSquare;
+    private LineManager lineMng;
 
 
     private Vector2 top;
@@ -24,6 +24,7 @@ public class Line : MonoBehaviour
         top = lineParts.Last().GetTop();
         bottom = lineParts.First().GetBottom();
         isClicked = false;
+        lineMng = GetComponentInParent<LineManager>();
     }
 
     /**
@@ -95,8 +96,11 @@ public class Line : MonoBehaviour
 
     public void MarkSquares(bool active)
     {
-        leftMarkSquare.SetActive(active);
-        rightMarkSquare.SetActive(active);
+        if (leftMarkSquare && rightMarkSquare)
+        {
+            leftMarkSquare.SetActive(active);
+            rightMarkSquare.SetActive(active);
+        }
     }
 
     public void UnBlinkParts()

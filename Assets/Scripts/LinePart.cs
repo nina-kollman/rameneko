@@ -29,7 +29,6 @@ public class LinePart : MonoBehaviour
         myCollider = transform.parent.parent.GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
         linePartMarked = false;
-        Debug.Log($"{lineParent} , Awake");
     }
 
     private void Start()
@@ -39,7 +38,6 @@ public class LinePart : MonoBehaviour
 
     public void ClickOnPart()
     {
-        Debug.Log($"{lineParent}, In Click On Part ");
         lineParent.ClickOnLine(transform);
     }
 

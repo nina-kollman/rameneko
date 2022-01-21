@@ -2208,7 +2208,7 @@ Transform:
   - {fileID: 999154754}
   - {fileID: 1947840750}
   m_Father: {fileID: 2049687730}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &372675850
 MonoBehaviour:
@@ -2222,7 +2222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 0}
   lineParts:
   - {fileID: 135569497}
   - {fileID: 1481826623}
@@ -4390,7 +4389,7 @@ Transform:
   - {fileID: 2039262728}
   - {fileID: 1650200959}
   m_Father: {fileID: 2049687730}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &946404090
 MonoBehaviour:
@@ -4404,7 +4403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 0}
   lineParts:
   - {fileID: 401973129}
   - {fileID: 316639495}
@@ -4509,7 +4507,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 0}
   lineParts:
   - {fileID: 1823618223}
   - {fileID: 1560264902}
@@ -6014,7 +6011,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 1828442007}
   - {fileID: 439373428}
@@ -8874,7 +8870,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 70293574}
   - {fileID: 1599018306}
@@ -9498,7 +9493,7 @@ MonoBehaviour:
   lineList:
   - {fileID: 972880459}
   - {fileID: 372675850}
-  - {fileID: 372675850}
+  - {fileID: 946404090}
   - {fileID: 1228381784}
   - {fileID: 2124635862}
   - {fileID: 1722462395}
@@ -10294,8 +10289,8 @@ Transform:
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 372675849}
   - {fileID: 946404089}
+  - {fileID: 372675849}
   - {fileID: 972880458}
   m_Father: {fileID: 1882500798}
   m_RootOrder: 0
@@ -10780,7 +10775,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 266291927}
   - {fileID: 262412641}

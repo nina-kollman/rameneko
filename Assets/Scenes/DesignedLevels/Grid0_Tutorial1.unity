@@ -1232,8 +1232,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1636344178}
     - target: {fileID: 7863438916288796074, guid: f6a092a77e06c1d47a1d4a82df41e3ed, type: 3}
+      propertyPath: star1Clicks
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863438916288796074, guid: f6a092a77e06c1d47a1d4a82df41e3ed, type: 3}
       propertyPath: star2Clicks
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7863438916288796074, guid: f6a092a77e06c1d47a1d4a82df41e3ed, type: 3}
       propertyPath: star3Clicks

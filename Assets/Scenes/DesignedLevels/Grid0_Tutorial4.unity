@@ -326,37 +326,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &116473899
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 116473900}
-  m_Layer: 0
-  m_Name: EmptyMarkSquare
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &116473900
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116473899}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.19137242, y: 0.34424055, z: -0.26752013}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &159202535 stripped
@@ -764,7 +733,7 @@ RectTransform:
   m_Children:
   - {fileID: 907638191}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1198,7 +1167,7 @@ Transform:
   - {fileID: 1420215878}
   - {fileID: 306935999}
   m_Father: {fileID: 2049687730}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &489240998
 MonoBehaviour:
@@ -1212,15 +1181,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 0}
   lineParts:
   - {fileID: 413858976}
   - {fileID: 1413718168}
   - {fileID: 675870321}
   isVertical: 0
   eraseDirection: 2
-  leftMarkSquare: {fileID: 116473899}
-  rightMarkSquare: {fileID: 116473899}
+  leftMarkSquare: {fileID: 0}
+  rightMarkSquare: {fileID: 0}
   isClicked: 0
 --- !u!1 &519420028
 GameObject:
@@ -1472,7 +1440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 0}
   lineParts:
   - {fileID: 1999858570}
   - {fileID: 1455368299}
@@ -1498,7 +1465,7 @@ Transform:
   - {fileID: 914522032}
   - {fileID: 980478952}
   m_Father: {fileID: 2049687730}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &563296298
 PrefabInstance:
@@ -2166,7 +2133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 795896778}
   - {fileID: 780551445}
@@ -2330,7 +2296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8889294884224726226, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8889294884224726226, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2516,15 +2482,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 1828442007}
   - {fileID: 439373428}
   - {fileID: 290684762}
   isVertical: 1
   eraseDirection: 1
-  leftMarkSquare: {fileID: 116473899}
-  rightMarkSquare: {fileID: 116473899}
+  leftMarkSquare: {fileID: 0}
+  rightMarkSquare: {fileID: 0}
   isClicked: 0
 --- !u!1001 &1230848286
 PrefabInstance:
@@ -2679,7 +2644,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1281528671
 PrefabInstance:
@@ -3197,7 +3162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1426783867323492020, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1426783867323492020, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3666,7 +3631,7 @@ Transform:
   - {fileID: 402032277}
   - {fileID: 910220179}
   m_Father: {fileID: 2049687730}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1700606611
 MonoBehaviour:
@@ -3680,7 +3645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 1422080880}
   - {fileID: 719859286}
@@ -3747,15 +3711,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 70293574}
   - {fileID: 1599018306}
   - {fileID: 1230848288}
   isVertical: 1
   eraseDirection: 0
-  leftMarkSquare: {fileID: 116473899}
-  rightMarkSquare: {fileID: 116473899}
+  leftMarkSquare: {fileID: 0}
+  rightMarkSquare: {fileID: 0}
   isClicked: 0
 --- !u!95 &1766459594 stripped
 Animator:
@@ -3973,9 +3936,9 @@ Transform:
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 489240997}
   - {fileID: 1700606610}
   - {fileID: 551149027}
-  - {fileID: 489240997}
   m_Father: {fileID: 1882500798}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

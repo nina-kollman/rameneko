@@ -1285,7 +1285,7 @@ MonoBehaviour:
   - {fileID: 1553854004}
   - {fileID: 1551817623}
   isVertical: 0
-  eraseDirection: 3
+  eraseDirection: 2
   leftMarkSquare: {fileID: 2071350614}
   rightMarkSquare: {fileID: 254603250}
   isClicked: 0
