@@ -14,7 +14,7 @@ public class LinePart : MonoBehaviour
     [SerializeField] private Vector2 bottom;
     
     private Line lineParent;
-    public Animator myAnimator;
+    private Animator myAnimator;
     private Collider2D myCollider;
     private Sprite lastSprite;
     private bool linePartMarked;
@@ -211,6 +211,32 @@ public class LinePart : MonoBehaviour
             else
             {
                 myAnimator.Play("hover_disable_H");
+            }
+        }
+    }
+
+    public void UnClickFirstClick()
+    {
+        if (lineParent.isVertical)
+        {
+            if (!myCollider.isTrigger)
+            {
+                myAnimator.Play("idle-V-E");
+            }
+            else
+            {
+                myAnimator.Play("idle-V-D");
+            }
+        }
+        else
+        {
+            if (!myCollider.isTrigger) // line part is active
+            {
+                myAnimator.Play("idle-H-E");
+            }
+            else
+            {
+                myAnimator.Play("idle-H-D");
             }
         }
     }

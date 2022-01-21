@@ -113,11 +113,15 @@ public class Line : MonoBehaviour
         }
     }
 
+    /**
+     * (let's say the line is already clicked - first click)
+     * when clicking on another element, decline the blinking animation.
+     */
     public void UnBlinkParts()
     {
         foreach (var part in lineParts)
         {
-            part.myAnimator.Play("idle");
+            part.UnClickFirstClick();
         }
     }
     
