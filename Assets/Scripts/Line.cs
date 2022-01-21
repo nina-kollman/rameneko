@@ -11,6 +11,7 @@ public class Line : MonoBehaviour
     [SerializeField] private EraseDirection eraseDirection;
     [SerializeField] private GameObject leftMarkSquare;
     [SerializeField] private GameObject rightMarkSquare;
+    [SerializeField] private bool unbreakable;
     private LineManager lineMng;
 
 
@@ -32,6 +33,15 @@ public class Line : MonoBehaviour
      */
     public void ClickOnLine(Transform partTransform)
     {
+        if (unbreakable)
+        {
+            foreach (LinePart part in lineParts)
+            {
+                // TODO: play unbreakable animation
+            }
+
+            return;
+        }
         // 1. add one more click to click count
         if (isClicked)
         {
