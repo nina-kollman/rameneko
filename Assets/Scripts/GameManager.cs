@@ -160,7 +160,7 @@ public class GameManager : MonoBehaviour
             {
                 // get the TouchDetect object
                 partHit = hit[i].collider.transform;
-                Debug.Log($"{partHit} Found the touch");
+               // Debug.Log($"{partHit} Found the touch");
                 break;
             }
         }

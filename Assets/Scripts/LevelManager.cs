@@ -10,7 +10,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject levelButtons;
     [SerializeField] private int[] levelBuildIndex;
     [SerializeField] private GameObject arrows;
-    private int firstLevelIndex = 4; 
+    private int firstLevelIndex = 4;
+    private int numOfLevelSelectorScreens = 3;
+    
+    
     
     void Start()
     {
@@ -85,4 +88,6 @@ public class LevelManager : MonoBehaviour
         }
 
     }
+
+   
 }

@@ -7,20 +7,15 @@ using UnityEngine. SceneManagement;
 public class ButtonManager : MonoBehaviour
 {
     private AudioManager audioManager;
-    [SerializeField] private LevelManager levelManager;
-
+    private int firstLevelIndex = 4;
+    
+    
     private void Start()
     {
         
         AudioManager.Instance.Play("backGroundSound");
     }
-
-    public void SetLevelButton(int index)
-    {
-        Debug.Log("SetLevel");
-        levelManager.LoadLevel(index);
-    }
-
+    
     public void NextLevelButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  
@@ -38,7 +33,7 @@ public class ButtonManager : MonoBehaviour
 
     public void LevelSelectorScreen()
     {
-        SceneManager.LoadScene(1);
+        LevelSelectorScreen(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void StartSceneButton()
@@ -50,5 +45,13 @@ public class ButtonManager : MonoBehaviour
     {
         Debug.Log("QUIT");
         Application.Quit();
+    }
+    
+    private void LevelSelectorScreen(int buildIndex)
+    {
+        int index = buildIndex - firstLevelIndex;
+        int screenNum = buildIndex / 5;
+        Debug.Log($"screen number {screenNum}");
+        SceneManager.LoadScene(screenNum);
     }
 }
