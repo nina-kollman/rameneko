@@ -4464,6 +4464,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1180614254057867246, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180614254057867246, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180614254057867246, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1426783867323491656, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
       propertyPath: m_Name
       value: UI
@@ -4560,14 +4572,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1426783867706011366, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 359.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426783868247799046, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -319.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426783868247799046, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 190.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426783868247799047, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c6d689347270bca47a9b066c76769e0b, type: 3}
     - target: {fileID: 1426783868569424436, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426783868569424437, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426783868569424437, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426783868569424437, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426783868628632578, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -316.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494626653122321984, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 17.099998
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985248162279194899, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -369.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985248162279194899, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 193.4
       objectReference: {fileID: 0}
     - target: {fileID: 7275652556036131807, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7530915337080845220, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530915337080845220, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c6d689347270bca47a9b066c76769e0b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
 --- !u!114 &1441972386 stripped
@@ -5010,6 +5074,7 @@ MonoBehaviour:
   - {fileID: 1162065868}
   - {fileID: 1162065867}
   - {fileID: 1162065866}
+  starClicks: 
   clickCounter: 0
 --- !u!4 &1636344179
 Transform:
