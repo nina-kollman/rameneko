@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
             Debug.Log("Win");
             AudioManager.Instance.Play("winLevelSound");
             int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-            string key = "level_" + (sceneIndex - 1);
+            string key = "level_" + sceneIndex;
             Debug.Log(key);
             PlayerPrefs.SetInt(key,1);
             if (sceneIndex == lastLevelBuildIndex)

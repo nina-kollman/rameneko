@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int levelNum;
     [SerializeField] private int maxClicksInLevel;
     [SerializeField] private GameObject nextLevelScreen;
-    [SerializeField] private GameObject looseScreen;
     [SerializeField] private float duration;
     [SerializeField] private GameObject[] starScreens;
     
@@ -56,14 +55,8 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !win)
         {
-            // check for lose condition
-            if (clickCounter - maxClicksInLevel >= 0)
-            {
-                Debug.Log("YOU LOST!");
-                looseScreen.SetActive(true);
-            }
             // check for Tutorial click activation
-            else if (isTutorialActivated)
+            if (isTutorialActivated)
             {
                 tutorial.TutorialClicksManager();
             }

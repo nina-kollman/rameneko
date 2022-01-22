@@ -7,6 +7,7 @@ using UnityEngine. SceneManagement;
 public class ButtonManager : MonoBehaviour
 {
     private AudioManager audioManager;
+    [SerializeField] private LevelManager levelManager;
 
     private void Start()
     {
@@ -14,12 +15,9 @@ public class ButtonManager : MonoBehaviour
         AudioManager.Instance.Play("backGroundSound");
     }
 
-    public void SetLevelButton(int levelNum)
+    public void SetLevelButton(int index)
     {
-        if (PlayerPrefs.GetInt(("level_" + (levelNum - 1).ToString())) == 1 || levelNum == 1)
-        {
-            SceneManager.LoadScene(levelNum+2);  
-        }
+        levelManager.LoadLevel(index);
     }
 
     public void NextLevelButton()
