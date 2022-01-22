@@ -17,6 +17,7 @@ public class ButtonManager : MonoBehaviour
 
     public void SetLevelButton(int index)
     {
+        Debug.Log("SetLevel");
         levelManager.LoadLevel(index);
     }
 
