@@ -25,7 +25,9 @@ public class ButtonManager : MonoBehaviour
     
     public void NextLevelButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  
+        StartCoroutine(LoadScreen(SceneManager.GetActiveScene().buildIndex+1));
+
     }
     
     public void NextLevelSelectorButton()
@@ -61,7 +63,8 @@ public class ButtonManager : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        StartCoroutine(LoadScreen(SceneManager.GetActiveScene().buildIndex));
     }
 
     public void LevelSelectorScreen()
