@@ -65,5 +65,4 @@ public class LineManager : MonoBehaviour
         }
         catAnimator.Play("leave_squish");
     }
-    
 }
