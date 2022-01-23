@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     private int clickCounter;
     // the saved gameObject is a LinePart (and not Line)
-    private GameObject lastClickedPart;
+    public GameObject lastClickedPart;
     // saves the tutorial gameObject
     private bool isTutorialActivated;
     private bool win;
@@ -157,7 +157,6 @@ public class GameManager : MonoBehaviour
             {
                 // get the TouchDetect object
                 partHit = hit[i].collider.transform;
-               // Debug.Log($"{partHit} Found the touch");
                 break;
             }
         }
@@ -176,7 +175,7 @@ public class GameManager : MonoBehaviour
                 lastClickedPart.GetComponent<LinePart>().ClickOnPart();
                 lastClickedPart = null;
             }
-            // if we clicked on another line
+            // if we clicked on a line for the first time, or another line
             else
             {
                 if (lastClickedPart)
@@ -187,8 +186,8 @@ public class GameManager : MonoBehaviour
                 if (linePartObject.GetComponent<LinePart>())
                 {
                     // save the new line, and then click on it
-                    lastClickedPart = linePartObject;
-                    lastClickedPart.GetComponent<LinePart>().ClickOnPart();
+                    lastClickedPart = linePartObject.GetComponent<LinePart>().IsParentUnClickable() ? null : linePartObject;
+                    linePartObject.GetComponent<LinePart>().ClickOnPart();
                 }
             }
         }
@@ -212,9 +211,8 @@ public class GameManager : MonoBehaviour
 
     public void UpdateStarCounter(int stars)
     {
-        // TODO: Netzer - i think we need to pu a dict with levelNum:starsNum
         int current = PlayerPrefs.GetInt("starCounter");
-        PlayerPrefs.SetInt("StarCounter", current+stars);
+        PlayerPrefs.SetInt("StarCounter", current + stars);
         string key = "level_" + SceneManager.GetActiveScene().buildIndex;
         PlayerPrefs.SetInt(key, stars);
     }

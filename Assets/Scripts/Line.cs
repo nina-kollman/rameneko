@@ -11,10 +11,9 @@ public class Line : MonoBehaviour
     [SerializeField] private EraseDirection eraseDirection;
     [SerializeField] private GameObject leftMarkSquare;
     [SerializeField] private GameObject rightMarkSquare;
-    [SerializeField] private bool unbreakable;
+    public bool unClickable;
+    
     private LineManager lineMng;
-
-
     private Vector2 top;
     private Vector2 bottom;
     public bool isClicked;
@@ -33,23 +32,6 @@ public class Line : MonoBehaviour
      */
     public void ClickOnLine(Transform partTransform)
     {
-        // unbreakable line
-        if (unbreakable)
-        {
-            foreach (LinePart part in lineParts)
-            {
-                if (isVertical)
-                {
-                    part.myAnimator.Play("unbreakable-V");
-                }
-                else
-                {
-                    part.myAnimator.Play("unbreakable-H");
-                }
-            }
-
-            return;
-        }
         // 1. add one more click to click count
         if (isClicked)
         {

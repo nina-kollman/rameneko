@@ -14,7 +14,7 @@ public class LinePart : MonoBehaviour
     [SerializeField] private Vector2 bottom;
     
     private Line lineParent;
-    public Animator myAnimator;
+    private Animator myAnimator;
     private Collider2D myCollider;
     private Sprite lastSprite;
     private bool linePartMarked;
@@ -38,7 +38,22 @@ public class LinePart : MonoBehaviour
 
     public void ClickOnPart()
     {
-        lineParent.ClickOnLine(transform);
+        // clicked on unbreakable line
+        if (lineParent.unClickable)
+        {
+            if (lineParent.isVertical)
+            {
+                myAnimator.Play("unClickable-V");
+            }
+            else
+            {
+                myAnimator.Play("unClickable-H");
+            }
+        }
+        else
+        {
+            lineParent.ClickOnLine(transform);
+        }
     }
 
     /**
@@ -239,5 +254,11 @@ public class LinePart : MonoBehaviour
                 myAnimator.Play("idle-H-D");
             }
         }
+    }
+    
+    
+    public bool IsParentUnClickable()
+    {
+        return lineParent.unClickable;
     }
 }
