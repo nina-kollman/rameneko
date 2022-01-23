@@ -760,15 +760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07445c83c1d48c44fa6bada49fad9f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList:
-  - {fileID: 350226890}
-  - {fileID: 180762715}
-  - {fileID: 1253736515}
-  - {fileID: 612696400}
-  - {fileID: 1076591408}
-  - {fileID: 1785536753}
-  - {fileID: 1755102376}
-  - {fileID: 2013420659}
+  lineList: []
   gameManager: {fileID: 1636344178}
   catAnimator: {fileID: 298064501}
 --- !u!4 &139408510
@@ -2265,7 +2257,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0057154894, y: 0.013188779}
@@ -2321,7 +2313,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 1626937307, guid: c74f57c879edc8b419fe2d9128e8ad6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3664,7 +3656,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0057154894, y: 0.013188779}

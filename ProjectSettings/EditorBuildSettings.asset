@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DesignedLevels/Grid1_2.unity
     guid: 128f2518382de68429e103c4c292ccad
   - enabled: 1
-    path: Assets/Scenes/DesignedLevels/Grid2_1.unity
+    path: Assets/Scenes/DesignedLevels/Unknown2.unity
     guid: 900ff047ec96f7244945624cf6d974c3
   - enabled: 1
     path: Assets/Scenes/DesignedLevels/Grid2_2.unity
