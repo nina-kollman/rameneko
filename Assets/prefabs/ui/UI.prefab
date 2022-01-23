@@ -388,7 +388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce691b7c67125147ac348262aa6cd25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
 --- !u!225 &865974503014147833
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1356,7 +1355,6 @@ GameObject:
   - component: {fileID: 3864496346529100567}
   - component: {fileID: 217241093405859377}
   - component: {fileID: 2673468339071942453}
-  - component: {fileID: 3594037486227957078}
   m_Layer: 5
   m_Name: HomeButton
   m_TagString: Untagged
@@ -1466,7 +1464,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3594037486227957078}
+      - m_Target: {fileID: 8491821440805632810}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
         m_MethodName: LevelSelectorScreen
         m_Mode: 1
@@ -1478,19 +1476,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3594037486227957078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5923624826567309480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce691b7c67125147ac348262aa6cd25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
 --- !u!1 &6052948384805613415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,7 +1488,6 @@ GameObject:
   - component: {fileID: 6746241472517889507}
   - component: {fileID: 7530915337080845220}
   - component: {fileID: 1887266307758664917}
-  - component: {fileID: 6848481327732263597}
   m_Layer: 5
   m_Name: RestertButton
   m_TagString: Untagged
@@ -1613,7 +1597,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6848481327732263597}
+      - m_Target: {fileID: 8491821440805632810}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
         m_MethodName: RestartButton
         m_Mode: 1
@@ -1625,19 +1609,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6848481327732263597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6052948384805613415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce691b7c67125147ac348262aa6cd25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
 --- !u!1 &6517330553060960340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,6 +1694,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6795638684710140643}
+  - component: {fileID: 8491821440805632810}
   m_Layer: 5
   m_Name: TopLeft
   m_TagString: Untagged
@@ -1753,6 +1725,18 @@ RectTransform:
   m_AnchoredPosition: {x: 400, y: -225}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8491821440805632810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7547008068359533947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce691b7c67125147ac348262aa6cd25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7960102896761033002
 GameObject:
   m_ObjectHideFlags: 0

@@ -66,7 +66,7 @@ public class ButtonManager : MonoBehaviour
 
     public void LevelSelectorScreen()
     {
-        LevelSelectorScreen(SceneManager.GetActiveScene().buildIndex);
+        ChooseLevelSelectorScreen(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void StartSceneButton()
@@ -80,7 +80,7 @@ public class ButtonManager : MonoBehaviour
         Application.Quit();
     }
     
-    private void LevelSelectorScreen(int buildIndex)
+    private void ChooseLevelSelectorScreen(int buildIndex)
     {
         int index = buildIndex - firstLevelIndex;
         int screenNum = buildIndex / 5;
