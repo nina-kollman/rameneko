@@ -41,6 +41,8 @@ public class LevelManager : MonoBehaviour
                     break;
                 // The level is completed
                 case 1:
+                case 2:
+                case 3:
                     levelButtons.transform.GetChild(i).GetComponent<TextMeshProUGUI>().color =
                         new Color(1f, 1f, 1f, 1f); 
                     break;
@@ -62,7 +64,7 @@ public class LevelManager : MonoBehaviour
             if (PlayerPrefs.GetInt(key) == -1)
             {
                 string prevKey = "level_" + (levelBuildIndex[i] -1);
-                if (PlayerPrefs.GetInt(prevKey) == 1)
+                if (PlayerPrefs.GetInt(prevKey) != -1)
                 {
                     arrows.transform.GetChild(i).gameObject.SetActive(true);
                     return;
@@ -86,7 +88,7 @@ public class LevelManager : MonoBehaviour
         int keyIndex = levelIndex == 0 ? (levelBuildIndex[0] - 1) : levelBuildIndex[levelIndex - 1];
         string key = "level_" + keyIndex;
        // Debug.Log($"{key}, get int: {PlayerPrefs.GetInt(key)}");
-        if (PlayerPrefs.GetInt(key) == 1)
+        if (PlayerPrefs.GetInt(key) != -1)
         {
             SceneManager.LoadScene(levelBuildIndex[levelIndex]);
         }
