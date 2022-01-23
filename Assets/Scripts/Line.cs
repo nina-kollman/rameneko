@@ -33,11 +33,19 @@ public class Line : MonoBehaviour
      */
     public void ClickOnLine(Transform partTransform)
     {
+        // unbreakable line
         if (unbreakable)
         {
             foreach (LinePart part in lineParts)
             {
-                // TODO: play unbreakable animation
+                if (isVertical)
+                {
+                    part.myAnimator.Play("unbreakable-V");
+                }
+                else
+                {
+                    part.myAnimator.Play("unbreakable-H");
+                }
             }
 
             return;
