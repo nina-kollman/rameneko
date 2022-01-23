@@ -82,9 +82,8 @@ public class ButtonManager : MonoBehaviour
     
     private void ChooseLevelSelectorScreen(int buildIndex)
     {
-        int index = buildIndex - firstLevelIndex;
-        int screenNum = buildIndex / 5;
-        Debug.Log($"screen number {screenNum}");
-        SceneManager.LoadScene(screenNum);
+        int screenNum = (buildIndex - firstLevelIndex) / 5;
+        Debug.Log($"screen number {screenNum}, build index: {buildIndex}");
+        SceneManager.LoadScene(screenNum + 1);
     }
 }
