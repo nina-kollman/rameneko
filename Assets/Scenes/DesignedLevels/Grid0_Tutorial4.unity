@@ -935,7 +935,7 @@ PrefabInstance:
     - target: {fileID: 7863438916288796074, guid: f6a092a77e06c1d47a1d4a82df41e3ed, type: 3}
       propertyPath: starScreens.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1162065866}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6a092a77e06c1d47a1d4a82df41e3ed, type: 3}
 --- !u!4 &306935999 stripped
@@ -1657,11 +1657,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c492f4406a43b2c4db942422390460c2, type: 3}
---- !u!1 &659452540 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8265886601337747906, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
-  m_PrefabInstance: {fileID: 1162065863}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &675870321 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7667019526753227988, guid: c492f4406a43b2c4db942422390460c2, type: 3}
@@ -2286,24 +2281,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1545492538688635501, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2251091938219392320, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4152135032470376016, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6844456450862767105, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7361997415624265632, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8889294884224726226, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
@@ -2418,15 +2401,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9072848981956996203, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+--- !u!1 &1162065864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8889294885836833274, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+  m_PrefabInstance: {fileID: 1162065863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1162065865 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8889294885905932060, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+  m_PrefabInstance: {fileID: 1162065863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1162065866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6844456450862767105, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
   m_PrefabInstance: {fileID: 1162065863}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1162065867 stripped
@@ -3432,13 +3421,13 @@ MonoBehaviour:
   levelNum: 3
   maxClicksInLevel: 2
   nextLevelScreen: {fileID: 1162065865}
+  looseScreen: {fileID: 1162065864}
   duration: 250
   starScreens:
   - {fileID: 1162065868}
   - {fileID: 1162065869}
   - {fileID: 1162065867}
-  - {fileID: 659452540}
-  starClicks: 020000000200000002000000
+  - {fileID: 1162065866}
   clickCounter: 0
 --- !u!4 &1636344179
 Transform:

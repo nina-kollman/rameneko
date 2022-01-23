@@ -1252,7 +1252,7 @@ PrefabInstance:
     - target: {fileID: 7863438916288796074, guid: f6a092a77e06c1d47a1d4a82df41e3ed, type: 3}
       propertyPath: starScreens.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1043172615}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6a092a77e06c1d47a1d4a82df41e3ed, type: 3}
 --- !u!95 &298064501 stripped
@@ -2806,11 +2806,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
---- !u!1 &910498950 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8265886601337747906, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
-  m_PrefabInstance: {fileID: 910498949}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &913492399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3226,6 +3221,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecff28dbd9583f4796eecae937333f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1043172615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6844456450862767105, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+  m_PrefabInstance: {fileID: 910498949}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1076591406
 GameObject:
   m_ObjectHideFlags: 0
@@ -4350,9 +4350,9 @@ MonoBehaviour:
   - {fileID: 1236455198}
   - {fileID: 1173858784}
   - {fileID: 50048345}
-  - {fileID: 910498950}
-  starClicks: 060000000500000004000000
-  clickCounter: 0
+  - {fileID: 1043172615}
+  starClicks: 080000000600000004000000
+--- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

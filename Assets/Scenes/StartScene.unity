@@ -356,7 +356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce691b7c67125147ac348262aa6cd25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
 --- !u!114 &856933522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,7 +402,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 856933521}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: NextLevelButton
+        m_MethodName: LevelSelectorScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -654,10 +653,8 @@ MonoBehaviour:
   levelNum: 3
   maxClicksInLevel: 6
   nextLevelScreen: {fileID: 0}
+  looseScreen: {fileID: 0}
   duration: 0
-  starScreens: []
-  starClicks: 
-  clickCounter: 0
 --- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0
