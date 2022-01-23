@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,6 +18,25 @@ public class Player : MonoBehaviour
             win = true;
             Debug.Log("Win");
             AudioManager.Instance.Play("winLevelSound");
+            transform.GetChild(0).GetComponent<Animator>().Play("win");
+            other.gameObject.GetComponent<Animator>().Play("wingoal");
+            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+            string key = "level_" + sceneIndex;
+            Debug.Log(key);
+            PlayerPrefs.SetInt(key,1);
+            gameManager.SetStarScreen(); //Set StarScreen 
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Goal") && !win)
+        {
+            win = true;
+            Debug.Log("Win");
+            AudioManager.Instance.Play("winLevelSound");
+            transform.GetChild(0).GetComponent<Animator>().Play("win");
+            other.gameObject.GetComponentInChildren<Animator>().Play("wingoal");
             int sceneIndex = SceneManager.GetActiveScene().buildIndex;
             string key = "level_" + sceneIndex;
             Debug.Log(key);

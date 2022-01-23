@@ -316,7 +316,6 @@ GameObject:
   - component: {fileID: 856933524}
   - component: {fileID: 856933523}
   - component: {fileID: 856933522}
-  - component: {fileID: 856933521}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -344,19 +343,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.0050659, y: 0}
   m_SizeDelta: {x: 1920, y: 1168.44}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &856933521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856933519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce691b7c67125147ac348262aa6cd25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
 --- !u!114 &856933522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,8 +387,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 856933521}
-        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+      - m_Target: {fileID: 109590440}
+        m_TargetAssemblyTypeName: StartScript, Assembly-CSharp
         m_MethodName: NextLevelButton
         m_Mode: 1
         m_Arguments:
@@ -648,16 +634,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 307ca42d76109e6489d59f3fd0b0faa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 0}
   stepsCounterUI: {fileID: 0}
   player: {fileID: 0}
-  levelNum: 3
-  maxClicksInLevel: 6
-  nextLevelScreen: {fileID: 0}
-  duration: 0
   starScreens: []
   starClicks: 
-  clickCounter: 0
 --- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0

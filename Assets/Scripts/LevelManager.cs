@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private GameObject levelButtons;
+    private GameObject levelButtons;
     [SerializeField] private int[] levelBuildIndex;
-    [SerializeField] private GameObject arrows;
+    private GameObject arrows;
     private int firstLevelIndex = 4;
     private int numOfLevelSelectorScreens = 3;
     
@@ -18,6 +18,9 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         Debug.Log($"{levelBuildIndex.Length}, Start {SceneManager.GetActiveScene().buildIndex}");
+        arrows = GameObject.Find("arrows");
+        levelButtons = GameObject.Find("notes");
+        Debug.Log($"{arrows.name}, and {levelButtons.name}");
        // Debug.Log("LevelManagerStart");
         SetAllLevelButtons();
         SetArrowPosition();
