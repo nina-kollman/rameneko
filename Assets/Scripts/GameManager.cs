@@ -65,7 +65,10 @@ public class GameManager : MonoBehaviour
     public void AddClick()
     {
         clickCounter++;
-        stepsCounterUI.text = clickCounter.ToString();
+        if (stepsCounterUI)
+        {
+            stepsCounterUI.text = clickCounter.ToString();
+        }
     }
 
     public void ChangeGravityDirection(Direction direction)
