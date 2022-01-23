@@ -1524,6 +1524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineMng: {fileID: 1168571545}
   lineParts:
   - {fileID: 426257052}
   - {fileID: 2142987172}
@@ -1532,7 +1533,6 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
   isClicked: 0
 --- !u!1 &400685745
 GameObject:
@@ -3067,6 +3067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineMng: {fileID: 1168571545}
   lineParts:
   - {fileID: 1007195830}
   - {fileID: 29131616}
@@ -3075,7 +3076,6 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
   isClicked: 0
 --- !u!1001 &898645423
 PrefabInstance:
@@ -3523,6 +3523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineMng: {fileID: 1168571545}
   lineParts:
   - {fileID: 1243826917}
   - {fileID: 1039814343}
@@ -3531,7 +3532,6 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
   isClicked: 0
 --- !u!4 &971873104
 Transform:
@@ -3819,6 +3819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineMng: {fileID: 1168571545}
   lineParts:
   - {fileID: 1706298798}
   - {fileID: 898645425}
@@ -3827,7 +3828,6 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 972761615}
   rightMarkSquare: {fileID: 729675421}
-  unbreakable: 0
   isClicked: 0
 --- !u!1001 &1007195828
 PrefabInstance:
@@ -4162,6 +4162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineMng: {fileID: 1168571545}
   lineParts:
   - {fileID: 968948651}
   - {fileID: 38709017}
@@ -4170,7 +4171,6 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
   isClicked: 0
 --- !u!4 &1059824441
 Transform:
@@ -4402,12 +4402,17 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
 --- !u!1 &1162065864 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8265886601337747906, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8889294885836833274, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
   m_PrefabInstance: {fileID: 1162065863}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1162065865 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8889294885905932060, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+  m_PrefabInstance: {fileID: 1162065863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1162065866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6844456450862767105, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
   m_PrefabInstance: {fileID: 1162065863}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1162065867 stripped
@@ -4894,6 +4899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineMng: {fileID: 1168571545}
   lineParts:
   - {fileID: 845490965}
   - {fileID: 103551806}
@@ -4902,7 +4908,6 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 711165243}
   rightMarkSquare: {fileID: 1861115749}
-  unbreakable: 0
   isClicked: 0
 --- !u!1001 &1338445108
 PrefabInstance:
@@ -5231,6 +5236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineMng: {fileID: 1168571545}
   lineParts:
   - {fileID: 1190784080}
   - {fileID: 1044147990}
@@ -5239,7 +5245,6 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 5523}
   rightMarkSquare: {fileID: 201602410}
-  unbreakable: 0
   isClicked: 0
 --- !u!1 &1428397843
 GameObject:
@@ -5535,6 +5540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineMng: {fileID: 1168571545}
   lineParts:
   - {fileID: 1338445110}
   - {fileID: 1188365088}
@@ -5543,7 +5549,6 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 549869702}
   rightMarkSquare: {fileID: 1365141593}
-  unbreakable: 0
   isClicked: 0
 --- !u!1 &1522797163
 GameObject:
@@ -5900,13 +5905,13 @@ MonoBehaviour:
   levelNum: 3
   maxClicksInLevel: 8
   nextLevelScreen: {fileID: 1162065865}
+  looseScreen: {fileID: 1162065864}
   duration: 250
   starScreens:
   - {fileID: 1162065869}
   - {fileID: 1162065868}
   - {fileID: 1162065867}
-  - {fileID: 1162065864}
-  starClicks: 060000000500000004000000
+  - {fileID: 1162065866}
   clickCounter: 0
 --- !u!4 &1636344179
 Transform:
