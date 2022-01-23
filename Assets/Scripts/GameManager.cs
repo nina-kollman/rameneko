@@ -215,6 +215,8 @@ public class GameManager : MonoBehaviour
         // TODO: Netzer - i think we need to pu a dict with levelNum:starsNum
         int current = PlayerPrefs.GetInt("starCounter");
         PlayerPrefs.SetInt("StarCounter", current+stars);
+        string key = "level_" + SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt(key, stars);
     }
     
     /**
