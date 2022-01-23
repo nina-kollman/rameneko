@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     private int clickCounter;
     // the saved gameObject is a LinePart (and not Line)
-    public GameObject lastClickedPart;
+    private GameObject lastClickedPart;
     // saves the tutorial gameObject
     private bool isTutorialActivated;
     private bool win;

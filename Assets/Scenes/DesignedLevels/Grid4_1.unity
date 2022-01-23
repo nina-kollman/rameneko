@@ -3037,7 +3037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1613958898
 Transform:
   m_ObjectHideFlags: 0
@@ -3162,7 +3162,6 @@ MonoBehaviour:
   - {fileID: 1162065867}
   - {fileID: 1162065864}
   starClicks: 080000000600000005000000
-  lastClickedPart: {fileID: 0}
 --- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0
@@ -3452,7 +3451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1724266156
 Transform:
   m_ObjectHideFlags: 0

@@ -178,7 +178,7 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 0}
   rightMarkSquare: {fileID: 0}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1 &38186154
 GameObject:
@@ -498,7 +498,7 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 1078502861}
   rightMarkSquare: {fileID: 1286882408}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!114 &290684762 stripped
 MonoBehaviour:
@@ -625,7 +625,7 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 0}
   rightMarkSquare: {fileID: 0}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1 &402032276
 GameObject:
@@ -1674,7 +1674,7 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 0}
   rightMarkSquare: {fileID: 0}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1 &910220178
 GameObject:
@@ -1836,7 +1836,7 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 1386685817}
   rightMarkSquare: {fileID: 544791656}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1001 &1022112732
 PrefabInstance:
@@ -2334,7 +2334,7 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 0}
   rightMarkSquare: {fileID: 0}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1001 &1230848286
 PrefabInstance:
@@ -3282,7 +3282,7 @@ MonoBehaviour:
   - {fileID: 1162065868}
   - {fileID: 1162065867}
   - {fileID: 1162065864}
-  starClicks: 0c0000000a00000009000000
+  starClicks: 0a0000000900000007000000
 --- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0
@@ -3352,6 +3352,14 @@ PrefabInstance:
     - target: {fileID: 2584849050760097354, guid: 4a21fdf5e2077454498f0c16909c397e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584849051778406996, guid: 4a21fdf5e2077454498f0c16909c397e, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2007017
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584849051778406996, guid: 4a21fdf5e2077454498f0c16909c397e, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.10035086
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a21fdf5e2077454498f0c16909c397e, type: 3}
@@ -3498,7 +3506,7 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 402032276}
   rightMarkSquare: {fileID: 910220178}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1 &1722462393
 GameObject:
@@ -3553,7 +3561,7 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 0}
   rightMarkSquare: {fileID: 0}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1 &1882500796
 GameObject:
@@ -3644,7 +3652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3387485759792691884, guid: f61d31af1d90c0f4e92048792e1baa79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.35
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 3387485759792691884, guid: f61d31af1d90c0f4e92048792e1baa79, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3886,7 +3894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3387485759792691884, guid: 6c31db00d0d8cce448c2ceb29a210193, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.3313487
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 3387485759792691884, guid: 6c31db00d0d8cce448c2ceb29a210193, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4164,5 +4172,5 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 0}
   rightMarkSquare: {fileID: 0}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
