@@ -2335,7 +2335,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
 --- !u!1 &1162065864 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8889294885836833274, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8265886601337747906, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
   m_PrefabInstance: {fileID: 1162065863}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1162065865 stripped
@@ -3540,14 +3540,13 @@ MonoBehaviour:
   levelNum: 3
   maxClicksInLevel: 8
   nextLevelScreen: {fileID: 1162065865}
-  looseScreen: {fileID: 1162065864}
   duration: 250
   starScreens:
   - {fileID: 784076131}
   - {fileID: 1812846173}
   - {fileID: 1041664339}
-  - {fileID: 0}
-  starClicks: 
+  - {fileID: 1162065864}
+  starClicks: 050000000400000003000000
   clickCounter: 0
 --- !u!4 &1636344179
 Transform:

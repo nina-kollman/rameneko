@@ -3677,17 +3677,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
 --- !u!1 &861410359 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8889294885836833274, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8265886601337747906, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
   m_PrefabInstance: {fileID: 861410358}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &861410360 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8889294885905932060, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
-  m_PrefabInstance: {fileID: 861410358}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &861410361 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6844456450862767105, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
   m_PrefabInstance: {fileID: 861410358}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &861410362 stripped
@@ -4087,7 +4082,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 795896778}
   - {fileID: 1041015227}
@@ -4095,6 +4089,7 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 1386685817}
   rightMarkSquare: {fileID: 544791656}
+  unbreakable: 0
   isClicked: 0
 --- !u!1 &1039090162
 GameObject:
@@ -4821,7 +4816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 1828442007}
   - {fileID: 439373428}
@@ -4830,6 +4824,7 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
+  unbreakable: 0
   isClicked: 0
 --- !u!1001 &1230848286
 PrefabInstance:
@@ -5072,7 +5067,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 1983932461}
   - {fileID: 741537648}
@@ -5081,6 +5075,7 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
+  unbreakable: 0
   isClicked: 0
 --- !u!1 &1334284264
 GameObject:
@@ -5731,7 +5726,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 1119646186}
   - {fileID: 654281464}
@@ -5740,6 +5734,7 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
+  unbreakable: 0
   isClicked: 0
 --- !u!1001 &1488795586
 PrefabInstance:
@@ -6046,13 +6041,13 @@ MonoBehaviour:
   levelNum: 3
   maxClicksInLevel: 6
   nextLevelScreen: {fileID: 861410360}
-  looseScreen: {fileID: 861410359}
   duration: 250
   starScreens:
   - {fileID: 861410364}
   - {fileID: 861410363}
   - {fileID: 861410362}
-  - {fileID: 861410361}
+  - {fileID: 861410359}
+  starClicks: 060000000400000003000000
   clickCounter: 0
 --- !u!4 &1636344179
 Transform:
@@ -6420,7 +6415,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 173568876}
   - {fileID: 51623197}
@@ -6428,6 +6422,7 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 402032276}
   rightMarkSquare: {fileID: 910220178}
+  unbreakable: 0
   isClicked: 0
 --- !u!1 &1705302180
 GameObject:
@@ -6552,7 +6547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 70293574}
   - {fileID: 1599018306}
@@ -6561,6 +6555,7 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
+  unbreakable: 0
   isClicked: 0
 --- !u!114 &1828442007 stripped
 MonoBehaviour:
@@ -7167,7 +7162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 1919129780}
   - {fileID: 0}
@@ -7176,6 +7170,7 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 2022673583}
   rightMarkSquare: {fileID: 823737406}
+  unbreakable: 0
   isClicked: 0
 --- !u!95 &2000585014 stripped
 Animator:
@@ -7859,7 +7854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24152b4fdab9d8445a47dfd43ea289e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMng: {fileID: 1882500799}
   lineParts:
   - {fileID: 266291927}
   - {fileID: 1378618812}
@@ -7867,4 +7861,5 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 1392873651}
   rightMarkSquare: {fileID: 1894021661}
+  unbreakable: 0
   isClicked: 0

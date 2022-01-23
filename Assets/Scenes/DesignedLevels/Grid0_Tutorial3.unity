@@ -1761,7 +1761,7 @@ PrefabInstance:
     - target: {fileID: 7863438916288796074, guid: f6a092a77e06c1d47a1d4a82df41e3ed, type: 3}
       propertyPath: starScreens.Array.data[3]
       value: 
-      objectReference: {fileID: 1162065866}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6a092a77e06c1d47a1d4a82df41e3ed, type: 3}
 --- !u!1 &303711034
@@ -5467,6 +5467,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8265886601337747906, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8889294884224726226, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5581,7 +5585,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1162065866 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6844456450862767105, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8265886601337747906, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
   m_PrefabInstance: {fileID: 1162065863}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1162065867 stripped
@@ -7863,7 +7867,8 @@ MonoBehaviour:
   - {fileID: 1162065868}
   - {fileID: 1162065867}
   - {fileID: 1162065866}
-  starClicks: 
+  starClicks: 040000000300000002000000
+  clickCounter: 0
 --- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0
