@@ -35,7 +35,10 @@ public class GameManager : MonoBehaviour
     {
         lastClickedPart = null;
         clickCounter = 0;
-        stepsCounterUI.text = clickCounter.ToString();
+        if (stepsCounterUI)
+        {
+            stepsCounterUI.text = clickCounter.ToString();
+        }
         // handle Tutorial clause and script
         isTutorialActivated = GameObject.Find("Tutorial") != null;
         tutorial = isTutorialActivated ? GameObject.Find("Tutorial").GetComponent<Tutorial>() : null;

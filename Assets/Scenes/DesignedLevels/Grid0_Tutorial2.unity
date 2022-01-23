@@ -1243,7 +1243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5741459847863382059, guid: d0a3da48b7bca3d44935c0bb6143f26f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5741459847863382068, guid: d0a3da48b7bca3d44935c0bb6143f26f, type: 3}
       propertyPath: m_RootOrder
@@ -3051,7 +3051,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineList: []
-  gameManager: {fileID: 1636344178}
   catAnimator: {fileID: 2000585014}
 --- !u!1 &1894021661
 GameObject:
