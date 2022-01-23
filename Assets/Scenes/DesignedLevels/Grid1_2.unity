@@ -4344,8 +4344,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 307ca42d76109e6489d59f3fd0b0faa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineMng: {fileID: 0}
   stepsCounterUI: {fileID: 1441972386}
   player: {fileID: 2082650558}
+  levelNum: 3
+  maxClicksInLevel: 8
+  nextLevelScreen: {fileID: 0}
+  duration: 250
   starScreens:
   - {fileID: 1236455198}
   - {fileID: 1173858784}
@@ -4353,6 +4358,7 @@ MonoBehaviour:
   - {fileID: 910498950}
   starClicks: 060000000500000004000000
   clickCounter: 0
+--- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

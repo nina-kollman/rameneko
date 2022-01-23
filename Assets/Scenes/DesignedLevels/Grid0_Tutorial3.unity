@@ -5573,6 +5573,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+--- !u!1 &1162065864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8889294885836833274, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+  m_PrefabInstance: {fileID: 1162065863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1162065865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8889294885905932060, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
+  m_PrefabInstance: {fileID: 1162065863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1162065866 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8265886601337747906, guid: c1059da3496abec41bf2a33019bc18e4, type: 3}
@@ -7844,8 +7854,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 307ca42d76109e6489d59f3fd0b0faa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineMng: {fileID: 1882500799}
   stepsCounterUI: {fileID: 1441972386}
   player: {fileID: 2082650558}
+  levelNum: 3
+  maxClicksInLevel: 100
+  nextLevelScreen: {fileID: 1162065865}
+  looseScreen: {fileID: 1162065864}
+  duration: 250
   starScreens:
   - {fileID: 1162065869}
   - {fileID: 1162065868}

@@ -7,10 +7,13 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
+    private int lastLevelBuildIndex = 9;
     private bool win = false;
-    
+
+
     private void OnCollisionEnter2D(Collision2D other)
     {
+       // Debug.Log($"player Collide with {other}");
         if (other.gameObject.CompareTag("Goal") && !win)
         {
             win = true;
@@ -20,8 +23,10 @@ public class Player : MonoBehaviour
             string key = "level_" + sceneIndex;
             Debug.Log(key);
             PlayerPrefs.SetInt(key,1);
-            // BUG: jumping to the winning scene
-            gameManager.SetStarScreen(); // Set StarScreen 
+            if (sceneIndex == lastLevelBuildIndex)
+                gameManager.SetScene(lastLevelBuildIndex + 1); // End Game screen
+            else
+                gameManager.SetStarScreen(); //Set StarScreen 
         }
     }
 
