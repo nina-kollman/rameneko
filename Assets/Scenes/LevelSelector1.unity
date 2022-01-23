@@ -1220,8 +1220,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 210478703}
-  transitionTime: 2
-  screenCanvas: {fileID: 284395697}
 --- !u!114 &354737919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2608,8 +2606,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 210478703}
-  transitionTime: 2
-  screenCanvas: {fileID: 0}
 --- !u!114 &1615737027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2656,7 +2652,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1615737026}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: PreviousLevelButton
+        m_MethodName: PrevLevelSelectorButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

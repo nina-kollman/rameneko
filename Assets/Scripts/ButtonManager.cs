@@ -10,8 +10,8 @@ public class ButtonManager : MonoBehaviour
     private AudioManager audioManager;
     private int firstLevelIndex = 4;
     [SerializeField] private Animator transition;
-    [SerializeField] private float transitionTime = 1f;
-    [SerializeField] private GameObject screenCanvas;
+    private float transitionTime = 0.3f;
+    //[SerializeField] private GameObject screenCanvas;
 
     private Tween fadeTween;
     
@@ -29,6 +29,12 @@ public class ButtonManager : MonoBehaviour
     public void NextLevelSelectorButton()
     {
        StartCoroutine(LoadScreen(SceneManager.GetActiveScene().buildIndex + 1));
+       
+    }
+    
+    public void PrevLevelSelectorButton()
+    {
+        StartCoroutine(LoadScreen(SceneManager.GetActiveScene().buildIndex - 1));
        
     }
 
