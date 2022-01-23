@@ -222,6 +222,7 @@ public class GameManager : MonoBehaviour
      */
     public void SetStarScreen()
     {
+        win = true;
         if (clickCounter <= starClicks[2])
         {
             starScreens[3].SetActive(true);
