@@ -12,21 +12,12 @@ using Object = System.Object;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private LineManager lineMng;
     [SerializeField] private TextMeshProUGUI stepsCounterUI;
     [SerializeField] private Player player;
-    [SerializeField] private int levelNum;
-    [SerializeField] private int maxClicksInLevel;
-    [SerializeField] private GameObject nextLevelScreen;
-    [SerializeField] private float duration;
     [SerializeField] private GameObject[] starScreens;
-    
     [SerializeField] private int[] starClicks;
 
-    
-
-    private Vector3 nextLevelPosition = new Vector3(-1, 0, 0);
-    public int clickCounter;
+    private int clickCounter;
     // the saved gameObject is a LinePart (and not Line)
     private GameObject lastClickedPart;
     // saves the tutorial gameObject
@@ -44,7 +35,7 @@ public class GameManager : MonoBehaviour
     {
         lastClickedPart = null;
         clickCounter = 0;
-        stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
+        stepsCounterUI.text = clickCounter.ToString();
         // handle Tutorial clause and script
         isTutorialActivated = GameObject.Find("Tutorial") != null;
         tutorial = isTutorialActivated ? GameObject.Find("Tutorial").GetComponent<Tutorial>() : null;
@@ -71,7 +62,7 @@ public class GameManager : MonoBehaviour
     public void AddClick()
     {
         clickCounter++;
-        stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
+        stepsCounterUI.text = clickCounter.ToString();
     }
 
     public void ChangeGravityDirection(Direction direction)
@@ -160,7 +151,6 @@ public class GameManager : MonoBehaviour
             {
                 // get the TouchDetect object
                 partHit = hit[i].collider.transform;
-               // Debug.Log($"{partHit} Found the touch");
                 break;
             }
         }
@@ -208,31 +198,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-    public void SetNextLevelScreen()
-    {
-        win = true;
-        nextLevelScreen.SetActive(true);
-        nextLevelScreen.transform.DOMove(nextLevelPosition, duration).SetEase(Ease.InOutFlash);
-    }
-
-    public void SetScene(int index)
-    {
-        SceneManager.LoadScene(index);
-    }
-
-    public void UpdateStarCounter(int stars)
-    {
-        // TODO: Netzer - i think we need to pu a dict with levelNum:starsNum
-        int current = PlayerPrefs.GetInt("starCounter");
-        PlayerPrefs.SetInt("StarCounter", current+stars);
-    }
-    
     /**
      * This function sets the correct NextLevelScreen according to the number of stars the player deserves 
      */
     public void SetStarScreen()
     {
+        win = true;
         if (clickCounter <= starClicks[2])
         {
             starScreens[3].SetActive(true);
@@ -252,6 +223,13 @@ public class GameManager : MonoBehaviour
         {
             starScreens[0].SetActive(true);
         }
-        
     }
+
+    private void UpdateStarCounter(int stars)
+    {
+        // TODO: Netzer - i think we need to pu a dict with levelNum:starsNum
+        int current = PlayerPrefs.GetInt("starCounter");
+        PlayerPrefs.SetInt("StarCounter", current+stars);
+    }
+
 }
