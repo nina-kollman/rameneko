@@ -9,7 +9,7 @@ public class ButtonManager : MonoBehaviour
 {
     private AudioManager audioManager;
     private int firstLevelIndex = 4;
-    [SerializeField] private Animator transition;
+    private Animator transition;
     private float transitionTime = 0.3f;
     //[SerializeField] private GameObject screenCanvas;
 
@@ -19,6 +19,8 @@ public class ButtonManager : MonoBehaviour
     {
         
         AudioManager.Instance.Play("backGroundSound");
+        transition = GameObject.Find("FadeImage").GetComponent<Animator>();
+        Debug.Log($"BManager {transition.name}");
     }
     
     public void NextLevelButton()
