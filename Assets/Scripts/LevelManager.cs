@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("LevelManagerStart");
+       // Debug.Log("LevelManagerStart");
         SetAllLevelButtons();
         SetArrowPosition();
     }
@@ -28,7 +28,7 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             string key = "level_" + levelBuildIndex[i]; // The index is the build index of the level
-            Debug.Log($"{key}, value {PlayerPrefs.GetInt(key)}");
+           // Debug.Log($"{key}, value {PlayerPrefs.GetInt(key)}");
             switch (PlayerPrefs.GetInt(key))
             {
                 // First level setting
@@ -81,7 +81,7 @@ public class LevelManager : MonoBehaviour
         // Else the level before must be completed
         int keyIndex = levelIndex == 0 ? (levelBuildIndex[0] - 1) : levelBuildIndex[levelIndex - 1];
         string key = "level_" + keyIndex;
-        Debug.Log($"{key}, get int: {PlayerPrefs.GetInt(key)}");
+       // Debug.Log($"{key}, get int: {PlayerPrefs.GetInt(key)}");
         if (PlayerPrefs.GetInt(key) == 1)
         {
             SceneManager.LoadScene(levelBuildIndex[levelIndex]);
