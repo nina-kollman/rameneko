@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour
     
     void Start()
     {
+        Debug.Log($"{levelBuildIndex.Length}, Start {SceneManager.GetActiveScene().buildIndex}");
        // Debug.Log("LevelManagerStart");
         SetAllLevelButtons();
         SetArrowPosition();
