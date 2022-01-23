@@ -14,7 +14,7 @@ public class LinePart : MonoBehaviour
     [SerializeField] private Vector2 bottom;
     
     private Line lineParent;
-    private Animator myAnimator;
+    public Animator myAnimator;
     private Collider2D myCollider;
     private Sprite lastSprite;
     private bool linePartMarked;
