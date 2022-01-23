@@ -743,7 +743,7 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 1078502861}
   rightMarkSquare: {fileID: 1286882408}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!114 &290684762 stripped
 MonoBehaviour:
@@ -1129,6 +1129,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1700606610}
     m_Modifications:
+    - target: {fileID: 3506163369484004649, guid: 1a667baa686406d4a883a04935e3b967, type: 3}
+      propertyPath: m_Size.x
+      value: 5.348507
+      objectReference: {fileID: 0}
+    - target: {fileID: 3506163369484004649, guid: 1a667baa686406d4a883a04935e3b967, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.075746536
+      objectReference: {fileID: 0}
     - target: {fileID: 3506163369484004650, guid: 1a667baa686406d4a883a04935e3b967, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1342,7 +1350,7 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1 &910220178
 GameObject:
@@ -1504,7 +1512,7 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 1386685817}
   rightMarkSquare: {fileID: 544791656}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!114 &1041015227 stripped
 MonoBehaviour:
@@ -1786,7 +1794,7 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1001 &1230848286
 PrefabInstance:
@@ -2640,7 +2648,7 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1001 &1501031383
 PrefabInstance:
@@ -2887,7 +2895,8 @@ MonoBehaviour:
   - {fileID: 8889294885085677430}
   - {fileID: 8889294885085677429}
   - {fileID: 8889294885085677428}
-  starClicks: 070000000600000005000000
+  starClicks: 080000000600000005000000
+  lastClickedPart: {fileID: 0}
 --- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0
@@ -3202,7 +3211,7 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 402032276}
   rightMarkSquare: {fileID: 910220178}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1 &1722462393
 GameObject:
@@ -3259,7 +3268,7 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1 &1732083052
 GameObject:
@@ -4269,7 +4278,7 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 1392873651}
   rightMarkSquare: {fileID: 1894021661}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1001 &8889294885085677427
 PrefabInstance:

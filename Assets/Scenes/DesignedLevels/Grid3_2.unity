@@ -1098,7 +1098,7 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!4 &353763974
 Transform:
@@ -1173,7 +1173,7 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 889207269}
   rightMarkSquare: {fileID: 110550938}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1 &381401383
 GameObject:
@@ -1641,7 +1641,7 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 1790543827}
   rightMarkSquare: {fileID: 866680953}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1 &564338204
 GameObject:
@@ -2337,7 +2337,7 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!4 &878164331
 Transform:
@@ -3191,7 +3191,7 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1001 &1247008152
 PrefabInstance:
@@ -3707,7 +3707,7 @@ MonoBehaviour:
   - {fileID: 593945666}
   - {fileID: 1027679711}
   - {fileID: 1897698285}
-  starClicks: 060000000400000003000000
+  starClicks: 070000000500000004000000
 --- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0
@@ -4199,7 +4199,7 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 1466410384}
   rightMarkSquare: {fileID: 83801478}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1 &1872291580
 GameObject:
@@ -4532,7 +4532,7 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1 &2082129221
 GameObject:
@@ -4589,7 +4589,7 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 381401383}
   rightMarkSquare: {fileID: 1738044119}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!114 &2082650558 stripped
 MonoBehaviour:

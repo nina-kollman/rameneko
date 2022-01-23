@@ -826,7 +826,7 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!4 &334415111
 Transform:
@@ -1514,7 +1514,7 @@ MonoBehaviour:
   eraseDirection: 0
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!4 &859524354
 Transform:
@@ -2327,7 +2327,7 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!114 &1199866366 stripped
 MonoBehaviour:
@@ -2507,7 +2507,7 @@ MonoBehaviour:
   eraseDirection: 3
   leftMarkSquare: {fileID: 1900445056}
   rightMarkSquare: {fileID: 877162814}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1001 &1294163283
 PrefabInstance:
@@ -3230,7 +3230,7 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 116473899}
   rightMarkSquare: {fileID: 116473899}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!114 &1567240560 stripped
 MonoBehaviour:
@@ -3537,7 +3537,8 @@ MonoBehaviour:
   - {fileID: 1162065868}
   - {fileID: 1162065867}
   - {fileID: 1162065864}
-  starClicks: 050000000400000003000000
+  starClicks: 080000000600000004000000
+  lastClickedPart: {fileID: 0}
 --- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0
@@ -3546,7 +3547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636344177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.97049123, y: 2.0214047, z: -0.18495333}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3955,7 +3956,7 @@ MonoBehaviour:
   eraseDirection: 1
   leftMarkSquare: {fileID: 1620132133}
   rightMarkSquare: {fileID: 1232376935}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1 &1900445056
 GameObject:
@@ -4154,13 +4155,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6286901141029364313, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6286901141029364319, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
       propertyPath: m_Name
       value: v3_1Collider
       objectReference: {fileID: 0}
     - target: {fileID: 7791603284774378451, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
@@ -4221,7 +4226,7 @@ MonoBehaviour:
   eraseDirection: 2
   leftMarkSquare: {fileID: 448384019}
   rightMarkSquare: {fileID: 1798322131}
-  unbreakable: 0
+  unClickable: 0
   isClicked: 0
 --- !u!1 &2067466886
 GameObject:
@@ -4337,7 +4342,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineList: []
-  gameManager: {fileID: 1636344178}
   catAnimator: {fileID: 2000585014}
 --- !u!4 &2074797480
 Transform:
