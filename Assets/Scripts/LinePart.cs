@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
@@ -15,27 +16,24 @@ public class LinePart : MonoBehaviour
     private Line lineParent;
     private Animator myAnimator;
     private Collider2D myCollider;
-    private Color lastColor;
     private Sprite lastSprite;
-    private bool lineMarked;
+    private bool linePartMarked;
     private Stopwatch stopWatch;
-    private Color whiteColor = new Color(1f, 1f, 1f ,1f);
-    private Color greyColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
     private ParticleSystem poof;
     
     private void Awake()
     {
-        lineParent = GetComponentInParent<Line>();
+        lineParent = transform.GetComponentInParent<Line>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        myCollider = transform.parent.GetComponent<BoxCollider2D>();
+        // this line changed due to the prefab change
+        myCollider = transform.parent.parent.GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
-        lineMarked = false;
-        lastColor = spriteRenderer.color;
+        linePartMarked = false;
     }
 
     private void Start()
     {
-        poof = this.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
+        poof = transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
     }
 
     public void ClickOnPart()
@@ -44,14 +42,15 @@ public class LinePart : MonoBehaviour
     }
 
     /**
-     * Called when the player clicked on another point on the board.
+     * Called when the player clicked on another point on the board or second time on the part before activating.
      * Rests all the lines that were marked when clicked on the line for the first time. 
      */
     public void UnClickPart(bool isClickedNeedToTurnOff)
     {
-        //myAnimator.StopPlayback();
-
-        lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;        
+        // get the lines out of firstClick mode
+        lineParent.UnBlinkParts();
+        // update parent isClicked
+        lineParent.isClicked = isClickedNeedToTurnOff ? false : lineParent.isClicked;
         lineParent.MarkLines(false);
         lineParent.MarkSquares(false);
     }
@@ -83,7 +82,6 @@ public class LinePart : MonoBehaviour
         if (activateCommand)
         {
             // activate part
-           // Debug.Log(this)
            if (lineParent.isVertical)
                 myAnimator.Play("V-DtoE");
             else 
@@ -98,7 +96,6 @@ public class LinePart : MonoBehaviour
             if (myCollider.isTrigger != true)
                 poof.Play();
             // deactivate part
-           // AudioManager.Instance.Play("bambooOff");
             if (!myCollider.isTrigger)
             {
                 if (lineParent.isVertical)
@@ -119,34 +116,31 @@ public class LinePart : MonoBehaviour
      */
     public void MarkPartToBeDeleted(bool toDelete)
     {
-        Color myColor = spriteRenderer.color;
-        
         if (toDelete)
         {
-            lineMarked = true;
-            //lastColor = spriteRenderer.color;
-            //lastSprite = spriteRenderer.sprite;
+            linePartMarked = true;
             if (!myCollider.isTrigger) // line part is white and active
             {
-                var opacityColor = spriteRenderer.color;
-
-                if(lineParent.isVertical)
+                if (lineParent.isVertical)
                     myAnimator.Play("shake-V");
                 else
                     myAnimator.Play("shake-H");
             }
-                
         }
-        else if (lineMarked)
+        else if (linePartMarked)
         {
-            lineMarked = false;
+            linePartMarked = false;
             if (!myCollider.isTrigger) // Set back the active line to white
             {
-                if(lineParent.isVertical)
+                if (lineParent.isVertical)
                     myAnimator.Play("shake-V-stop");
                 else
                     myAnimator.Play("shake-H-stop");
             }
+        }
+        else
+        {
+            // myAnimator.Play("idle");
         }
     }
     
@@ -199,31 +193,50 @@ public class LinePart : MonoBehaviour
     {
         if (lineParent.isVertical)
         {
-            // TODO: add oneClick animation
-            // if (!myCollider.isTrigger)
-            // {
-            //     Debug.Log($"hover_enable_V {this}");
-            //     Debug.Log($"{spriteRenderer.sprite.name}");
-            //     myAnimator.Play("hover_enable_V");
-            // }
-            // else
-            // {
-            //     Debug.Log($"hover_disable_V {this}");
-            //     myAnimator.Play("hover_disable_V");
-            // }
+            if (!myCollider.isTrigger)
+            {
+                myAnimator.Play("hover_enable_V");
+            }
+            else
+            {
+                myAnimator.Play("hover_disable_V");
+            }
         }
         else
         {
             if (!myCollider.isTrigger) // line part is active
             {
-                // Debug.Log($"hover_enable_H {this}");
-                // Debug.Log($"{spriteRenderer.sprite.name}");
-                // myAnimator.Play("hover_enable_H");
+                myAnimator.Play("hover_enable_H");
             }
             else
             {
-                Debug.Log($"hover_disable_H {this}");
                 myAnimator.Play("hover_disable_H");
+            }
+        }
+    }
+
+    public void UnClickFirstClick()
+    {
+        if (lineParent.isVertical)
+        {
+            if (!myCollider.isTrigger)
+            {
+                myAnimator.Play("idle-V-E");
+            }
+            else
+            {
+                myAnimator.Play("idle-V-D");
+            }
+        }
+        else
+        {
+            if (!myCollider.isTrigger) // line part is active
+            {
+                myAnimator.Play("idle-H-E");
+            }
+            else
+            {
+                myAnimator.Play("idle-H-D");
             }
         }
     }

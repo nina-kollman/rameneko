@@ -6,12 +6,13 @@ using UnityEngine;
 
 public class Line : MonoBehaviour
 {
-    [SerializeField] private LineManager lineMng;
     [SerializeField] private List<LinePart> lineParts;
     [SerializeField] public bool isVertical;
     [SerializeField] private EraseDirection eraseDirection;
     [SerializeField] private GameObject leftMarkSquare;
     [SerializeField] private GameObject rightMarkSquare;
+    [SerializeField] private bool unbreakable;
+    private LineManager lineMng;
 
 
     private Vector2 top;
@@ -21,9 +22,10 @@ public class Line : MonoBehaviour
     private void Awake()
     {
         // init full line top and bottom by his parts
-        top = lineParts[lineParts.Count - 1].GetTop();
-        bottom = lineParts[0].GetBottom();
+        top = lineParts.Last().GetTop();
+        bottom = lineParts.First().GetBottom();
         isClicked = false;
+        lineMng = GetComponentInParent<LineManager>();
     }
 
     /**
@@ -31,6 +33,15 @@ public class Line : MonoBehaviour
      */
     public void ClickOnLine(Transform partTransform)
     {
+        if (unbreakable)
+        {
+            foreach (LinePart part in lineParts)
+            {
+                // TODO: play unbreakable animation
+            }
+
+            return;
+        }
         // 1. add one more click to click count
         if (isClicked)
         {
@@ -42,7 +53,8 @@ public class Line : MonoBehaviour
                 part.ActivateCommandPart(true);
             }
         }
-        else //first click
+        // first click
+        else 
         {
             foreach (LinePart part in lineParts)
             {
@@ -73,14 +85,8 @@ public class Line : MonoBehaviour
         }
     }
 
-    public bool GetVertical()
-    {
-        return isVertical;
-    }
-
-    
     /**
-     * toMark:true - Marks all the line that will be deleted upon selecting the line.
+     * toMark:true - Marks all the lines that will be deleted upon selecting the line.
      * toMark:false - Sets the MarkLines function from the line manager 
      */
     public void MarkLines(bool toMark)
@@ -100,8 +106,23 @@ public class Line : MonoBehaviour
 
     public void MarkSquares(bool active)
     {
-        leftMarkSquare.SetActive(active);
-        rightMarkSquare.SetActive(active);
+        if (leftMarkSquare && rightMarkSquare)
+        {
+            leftMarkSquare.SetActive(active);
+            rightMarkSquare.SetActive(active);
+        }
+    }
+
+    /**
+     * (let's say the line is already clicked - first click)
+     * when clicking on another element, decline the blinking animation.
+     */
+    public void UnBlinkParts()
+    {
+        foreach (var part in lineParts)
+        {
+            part.UnClickFirstClick();
+        }
     }
     
 }

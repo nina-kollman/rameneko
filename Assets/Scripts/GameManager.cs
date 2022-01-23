@@ -12,24 +12,19 @@ using Object = System.Object;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private LineManager lineMng;
     [SerializeField] private TextMeshProUGUI stepsCounterUI;
     [SerializeField] private Player player;
-    [SerializeField] private int levelNum;
-    [SerializeField] private int maxClicksInLevel;
-    [SerializeField] private GameObject nextLevelScreen;
-    [SerializeField] private GameObject looseScreen;
-    [SerializeField] private float duration;
-    
-    
+    [SerializeField] private GameObject[] starScreens;
+    [SerializeField] private int[] starClicks;
 
-    private Vector3 nextLevelPosition = new Vector3(-1, 0, 0);
     private int clickCounter;
     // the saved gameObject is a LinePart (and not Line)
     private GameObject lastClickedPart;
     // saves the tutorial gameObject
     private bool isTutorialActivated;
-
+    private bool win;
+    private Tutorial tutorial;
+    
     private void Awake()
     {
         // Gravity Down
@@ -40,21 +35,23 @@ public class GameManager : MonoBehaviour
     {
         lastClickedPart = null;
         clickCounter = 0;
-        stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
+        stepsCounterUI.text = clickCounter.ToString();
+        // handle Tutorial clause and script
         isTutorialActivated = GameObject.Find("Tutorial") != null;
+        tutorial = isTutorialActivated ? GameObject.Find("Tutorial").GetComponent<Tutorial>() : null;
+        win = false;
     }
 
     private void Update()
     {
-        PlayTestKeyPress();
-
-        if (Input.GetMouseButtonDown(0) && !isTutorialActivated)
+        if (Input.GetMouseButtonDown(0) && !win)
         {
-            if (clickCounter > maxClicksInLevel)
+            // check for Tutorial click activation
+            if (isTutorialActivated)
             {
-                Debug.Log("YOU LOST!");
-                looseScreen.SetActive(true);
+                tutorial.TutorialClicksManager();
             }
+            // regular click on the screen
             else
             {
                 ClickOnScreen();
@@ -65,7 +62,7 @@ public class GameManager : MonoBehaviour
     public void AddClick()
     {
         clickCounter++;
-        stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
+        stepsCounterUI.text = clickCounter.ToString();
     }
 
     public void ChangeGravityDirection(Direction direction)
@@ -137,7 +134,7 @@ public class GameManager : MonoBehaviour
         throw new Exception("Invalid direction calculation");
     }
 
-    /**
+   /**
      * when clicking on the screen - analyze the click place and check for on-line-part's click.
      */
     private void ClickOnScreen()
@@ -145,14 +142,26 @@ public class GameManager : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
             
-        RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+        RaycastHit2D[] hit = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
+        Transform partHit = null;
 
-        if (hit.collider)
+        for (int i = 0; i < hit.Length; i++)
         {
-            GameObject linePartObject = hit.collider.transform.GetChild(0).gameObject;
+            if (hit[i].collider.CompareTag("TouchDetect"))
+            {
+                // get the TouchDetect object
+                partHit = hit[i].collider.transform;
+               // Debug.Log($"{partHit} Found the touch");
+                break;
+            }
+        }
+
+        if (partHit)
+        {
+            GameObject linePartObject = partHit.GetChild(0).gameObject;
             // if we clicked on the same line as before = double click
             string lastClickedLineName = lastClickedPart ? lastClickedPart.GetComponentInParent<Line>().transform.name: null;
-            string clickedParentLineName = hit.collider.transform.parent.name;
+            string clickedParentLineName = partHit.parent.parent.name;
             if (lastClickedPart && lastClickedLineName == clickedParentLineName)
             {
                 // after the second time - clear the 'hover' indication
@@ -190,98 +199,42 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ResetLevel()
+   public void SetScene(int index)
     {
-        Physics2D.gravity = new Vector2(0, -300f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(index);
     }
 
-    public void LoadHome()
+    public void UpdateStarCounter(int stars)
     {
-        Physics2D.gravity = new Vector2(0, -300f);
-        SceneManager.LoadScene(1);
+        // TODO: Netzer - i think we need to pu a dict with levelNum:starsNum
+        int current = PlayerPrefs.GetInt("starCounter");
+        PlayerPrefs.SetInt("StarCounter", current+stars);
     }
-
+    
     /**
-     * Change the level by number keys - for a quick play-test feel
+     * This function sets the correct NextLevelScreen according to the number of stars the player deserves 
      */
-    private void PlayTestKeyPress()
+    public void SetStarScreen()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (clickCounter <= starClicks[2])
         {
-            ResetLevel();
+            starScreens[3].SetActive(true);
+            UpdateStarCounter(3);
         }
-
-        if (Input.GetKeyDown(KeyCode.L))
+        else if (clickCounter <= starClicks[1])
         {
-            LoadHome();
+            starScreens[2].SetActive(true);
+            UpdateStarCounter(2);
         }
-            
-
-        if (Input.GetKeyDown(KeyCode.Alpha0))
+        else if (clickCounter <= starClicks[0])
         {
-            SceneManager.LoadScene(0);
+            starScreens[1].SetActive(true);
+            UpdateStarCounter(1);
         }
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        else // Zero stars
         {
-            SceneManager.LoadScene(1);
+            starScreens[0].SetActive(true);
         }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SceneManager.LoadScene(2);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SceneManager.LoadScene(3);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            SceneManager.LoadScene(4);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            SceneManager.LoadScene(5);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            SceneManager.LoadScene(6);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            SceneManager.LoadScene(7);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            SceneManager.LoadScene(8);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha9))
-        {
-            SceneManager.LoadScene(9);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Minus))
-        {
-            SceneManager.LoadScene(10);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Plus))
-        {
-            SceneManager.LoadScene(11);
-        }
-    }
-
-    public void SetScreen()
-    {
-        nextLevelScreen.SetActive(true);
-        nextLevelScreen.transform.DOMove(nextLevelPosition, duration).SetEase(Ease.InOutFlash);
+        
     }
 }
