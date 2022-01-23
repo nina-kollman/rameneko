@@ -3431,7 +3431,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.044614315, y: 0.09}
@@ -3487,7 +3487,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 34054448, guid: bf52afcdba88c674081768191108ae24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4194,7 +4194,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineParts:
   - {fileID: 1977118374}
-  - {fileID: 0}
   - {fileID: 1707743225}
   isVertical: 0
   eraseDirection: 3
@@ -4231,16 +4230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07445c83c1d48c44fa6bada49fad9f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList:
-  - {fileID: 2047160764}
-  - {fileID: 2082129223}
-  - {fileID: 1854739104}
-  - {fileID: 353763973}
-  - {fileID: 1246486886}
-  - {fileID: 548881218}
-  - {fileID: 358142533}
-  - {fileID: 878164330}
-  gameManager: {fileID: 1636344178}
+  lineList: []
   catAnimator: {fileID: 2000585014}
 --- !u!4 &1872291582
 Transform:

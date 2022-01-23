@@ -6669,7 +6669,6 @@ MonoBehaviour:
   - {fileID: 2124635862}
   - {fileID: 988293786}
   - {fileID: 1722462395}
-  gameManager: {fileID: 1636344178}
   catAnimator: {fileID: 2000585014}
 --- !u!1 &1894021661
 GameObject:
@@ -7210,7 +7209,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineParts:
   - {fileID: 1919129780}
-  - {fileID: 0}
   - {fileID: 1247318918}
   isVertical: 0
   eraseDirection: 3
