@@ -12,22 +12,12 @@ using Object = System.Object;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private LineManager lineMng;
     [SerializeField] private TextMeshProUGUI stepsCounterUI;
     [SerializeField] private Player player;
-    [SerializeField] private int levelNum;
-    [SerializeField] private int maxClicksInLevel;
-    [SerializeField] private GameObject nextLevelScreen;
-    [SerializeField] private GameObject looseScreen;
-    [SerializeField] private float duration;
     [SerializeField] private GameObject[] starScreens;
-    
     [SerializeField] private int[] starClicks;
 
-    
-
-    private Vector3 nextLevelPosition = new Vector3(-1, 0, 0);
-    public int clickCounter;
+    private int clickCounter;
     // the saved gameObject is a LinePart (and not Line)
     private GameObject lastClickedPart;
     // saves the tutorial gameObject
@@ -45,7 +35,7 @@ public class GameManager : MonoBehaviour
     {
         lastClickedPart = null;
         clickCounter = 0;
-        stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
+        stepsCounterUI.text = clickCounter.ToString();
         // handle Tutorial clause and script
         isTutorialActivated = GameObject.Find("Tutorial") != null;
         tutorial = isTutorialActivated ? GameObject.Find("Tutorial").GetComponent<Tutorial>() : null;
@@ -56,14 +46,8 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !win)
         {
-            // check for lose condition
-            if (clickCounter - maxClicksInLevel >= 0)
-            {
-                Debug.Log("YOU LOST!");
-                looseScreen.SetActive(true);
-            }
             // check for Tutorial click activation
-            else if (isTutorialActivated)
+            if (isTutorialActivated)
             {
                 tutorial.TutorialClicksManager();
             }
@@ -78,7 +62,7 @@ public class GameManager : MonoBehaviour
     public void AddClick()
     {
         clickCounter++;
-        stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
+        stepsCounterUI.text = clickCounter.ToString();
     }
 
     public void ChangeGravityDirection(Direction direction)
@@ -167,7 +151,7 @@ public class GameManager : MonoBehaviour
             {
                 // get the TouchDetect object
                 partHit = hit[i].collider.transform;
-                Debug.Log($"{partHit} Found the touch");
+               // Debug.Log($"{partHit} Found the touch");
                 break;
             }
         }
@@ -215,15 +199,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-    public void SetNextLevelScreen()
-    {
-        win = true;
-        nextLevelScreen.SetActive(true);
-        nextLevelScreen.transform.DOMove(nextLevelPosition, duration).SetEase(Ease.InOutFlash);
-    }
-
-    public void SetScene(int index)
+   public void SetScene(int index)
     {
         SceneManager.LoadScene(index);
     }
