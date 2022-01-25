@@ -8,10 +8,12 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     private GameObject levelButtons;
+    private GameObject lvlStars;
     [SerializeField] private int[] levelBuildIndex;
     private GameObject arrows;
     private int firstLevelIndex = 4;
     private int numOfLevelSelectorScreens = 3;
+    
     
     
     
@@ -20,6 +22,8 @@ public class LevelManager : MonoBehaviour
         Debug.Log($"{levelBuildIndex.Length}, Start {SceneManager.GetActiveScene().buildIndex}");
         arrows = GameObject.Find("arrows");
         levelButtons = GameObject.Find("notes");
+        lvlStars = GameObject.Find("LevelStars");
+        Debug.Log(lvlStars);
         Debug.Log($"{arrows.name}, and {levelButtons.name}");
        // Debug.Log("LevelManagerStart");
         SetAllLevelButtons();
@@ -47,6 +51,36 @@ public class LevelManager : MonoBehaviour
                         new Color(1f, 1f, 1f, 1f); 
                     break;
             }
+
+            key = key = "star_" + levelBuildIndex[i];
+            GameObject star = lvlStars.transform.GetChild(i).gameObject;
+            switch (PlayerPrefs.GetInt(key))
+            { 
+                    
+                case 0:
+                    star.SetActive(false);
+                    break;
+                case 1:
+                    ActivateStars(star);
+                    break;
+                case 2:
+                    ActivateStars(star);
+                    break;
+                case 3:
+                    ActivateStars(star);
+                    break;
+                
+            }
+            
+        }
+    }
+
+    private void ActivateStars(GameObject star)
+    {
+        star.SetActive(true);
+        for (int j = 0; j < 3; j++)
+        {
+            star.transform.GetChild(j).gameObject.SetActive(true);
         }
     }
 

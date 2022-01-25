@@ -213,7 +213,10 @@ public class GameManager : MonoBehaviour
     {
         int current = PlayerPrefs.GetInt("starCounter");
         PlayerPrefs.SetInt("StarCounter", current + stars);
-        string key = "level_" + SceneManager.GetActiveScene().buildIndex;
+        int buildIndex = SceneManager.GetActiveScene().buildIndex;
+        string key = "level_" + buildIndex;
+        PlayerPrefs.SetInt(key, stars);
+        key = "star_" + buildIndex;
         PlayerPrefs.SetInt(key, stars);
     }
     

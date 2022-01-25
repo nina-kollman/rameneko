@@ -1024,6 +1024,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'level3_stars '
       objectReference: {fileID: 0}
+    - target: {fileID: 1154588028984549434, guid: 8a4258b9837234644af0adbc4221a975, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2966205602920368679, guid: 8a4258b9837234644af0adbc4221a975, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1913,6 +1917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'level4_stars  '
       objectReference: {fileID: 0}
+    - target: {fileID: 1154588028984549434, guid: 8a4258b9837234644af0adbc4221a975, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2966205602920368679, guid: 8a4258b9837234644af0adbc4221a975, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2129,6 +2137,10 @@ PrefabInstance:
     - target: {fileID: 1154588028984549434, guid: 8a4258b9837234644af0adbc4221a975, type: 3}
       propertyPath: m_Name
       value: level2_stars
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154588028984549434, guid: 8a4258b9837234644af0adbc4221a975, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2966205602920368679, guid: 8a4258b9837234644af0adbc4221a975, type: 3}
       propertyPath: m_Pivot.x
@@ -2725,6 +2737,10 @@ PrefabInstance:
     - target: {fileID: 1154588028984549434, guid: 8a4258b9837234644af0adbc4221a975, type: 3}
       propertyPath: m_Name
       value: level1_stars
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154588028984549434, guid: 8a4258b9837234644af0adbc4221a975, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2966205602920368679, guid: 8a4258b9837234644af0adbc4221a975, type: 3}
       propertyPath: m_Pivot.x
