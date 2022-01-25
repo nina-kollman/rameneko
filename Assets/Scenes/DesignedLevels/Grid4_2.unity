@@ -3089,7 +3089,7 @@ MonoBehaviour:
   - {fileID: 1162065868}
   - {fileID: 1162065867}
   - {fileID: 1162065864}
-  starClicks: 070000000500000004000000
+  starClicks: 080000000700000006000000
 --- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0
