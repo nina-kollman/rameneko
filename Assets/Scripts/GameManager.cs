@@ -206,12 +206,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-   public void SetScene(int index)
-    {
-        SceneManager.LoadScene(index);
-    }
-
-    public void UpdateStarCounter(int stars)
+   public void UpdateStarCounter(int stars)
     {
         int current = PlayerPrefs.GetInt("starCounter");
         PlayerPrefs.SetInt("StarCounter", current + stars);
@@ -225,25 +220,25 @@ public class GameManager : MonoBehaviour
     /**
      * This function sets the correct NextLevelScreen according to the number of stars the player deserves 
      */
-    public void SetStarScreen(GameObject starParticle)
+    public void SetStarScreen(GameObject starParticle, bool lose=false)
     {
         win = true;
         
-        //Turn on ster particle system 
-        if(clickCounter <= starClicks[0])
+        // Turn on star particle system 
+        if(clickCounter <= starClicks[0] && !lose)
             starParticle.SetActive(true);
             
-        if (clickCounter <= starClicks[2])
+        if (clickCounter <= starClicks[2] && !lose)
         {
             starScreens[3].SetActive(true);
             UpdateStarCounter(3);
         }
-        else if (clickCounter <= starClicks[1])
+        else if (clickCounter <= starClicks[1] && !lose)
         {
             starScreens[2].SetActive(true);
             UpdateStarCounter(2);
         }
-        else if (clickCounter <= starClicks[0])
+        else if (clickCounter <= starClicks[0] && !lose)
         {
             starScreens[1].SetActive(true);
             UpdateStarCounter(1);
