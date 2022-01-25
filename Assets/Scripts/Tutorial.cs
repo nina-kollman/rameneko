@@ -84,6 +84,11 @@ public class Tutorial : MonoBehaviour
             // if we clicked on the wonted line - for the first time
             else if (tutorialLine)
             {
+                if (lastClickedPart)
+                {
+                    // un-click the previous line
+                    lastClickedPart.GetComponent<LinePart>().UnClickPart(true);
+                }
                 // save the new line, and then click on it
                 lastClickedPart = linePartObject;
                 lastClickedPart.GetComponent<LinePart>().ClickOnPart();
