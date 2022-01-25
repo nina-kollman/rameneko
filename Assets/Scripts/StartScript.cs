@@ -6,13 +6,28 @@ using UnityEngine. SceneManagement;
 
 public class StartScript : MonoBehaviour
 {
+    [SerializeField] private Animator leftDoor;
+    [SerializeField] private Animator rightDoor;
+
     private void Awake()
     {
-        PlayerPrefs.DeleteAll();
+        // PlayerPrefs.DeleteAll();
     }
     
     public void NextLevelButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  
+        StartCoroutine(LoadScreen(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    IEnumerator LoadScreen(int index)
+    {
+        
+        Debug.Log("Transition");
+        leftDoor.SetTrigger("move");
+        rightDoor.SetTrigger("move");
+
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(index);
+
     }
 }

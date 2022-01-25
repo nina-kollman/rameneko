@@ -12,11 +12,14 @@ using Object = System.Object;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI stepsCounterUI;
-    [SerializeField] private ParticleSystem clickCounterPoof;
+    [SerializeField] private GameObject stepsCounterObject;
     [SerializeField] private Player player;
     [SerializeField] private GameObject[] starScreens;
     [SerializeField] private int[] starClicks;
+    
+    private TextMeshProUGUI stepsCounterUI;
+    private ParticleSystem clickCounterPoof;
+    private Animator stepsCounterAnimator;
 
     private int clickCounter;
     // the saved gameObject is a LinePart (and not Line)
@@ -34,6 +37,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        stepsCounterUI = stepsCounterObject.GetComponentInChildren<TextMeshProUGUI>();
+        clickCounterPoof = stepsCounterObject.GetComponentInChildren<ParticleSystem>();
+        stepsCounterAnimator = stepsCounterObject.GetComponent<Animator>();
         lastClickedPart = null;
         clickCounter = 0;
         if (stepsCounterUI)
@@ -70,6 +76,7 @@ public class GameManager : MonoBehaviour
         {
             stepsCounterUI.text = clickCounter.ToString();
             clickCounterPoof.Play();
+            stepsCounterAnimator.Play("move");
         }
     }
 
@@ -212,7 +219,8 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("StarCounter", current + stars);
         int buildIndex = SceneManager.GetActiveScene().buildIndex;
         string key = "level_" + buildIndex;
-        PlayerPrefs.SetInt(key, stars);
+        stars = Math.Max(PlayerPrefs.GetInt(key, 0), stars);
+        PlayerPrefs.SetInt(key, 1);
         key = "star_" + buildIndex;
         PlayerPrefs.SetInt(key, stars);
     }

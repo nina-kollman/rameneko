@@ -13,12 +13,13 @@ public class LevelManager : MonoBehaviour
     private GameObject arrows;
     private int firstLevelIndex = 4;
     private int numOfLevelSelectorScreens = 3;
-    
-    
-    
+    //[SerializeField] private Animator leftDoor;
+    //[SerializeField] private Animator rightDoor;
+
     
     void Start()
     {
+      //  SetDoorAnimation();
         Debug.Log($"{levelBuildIndex.Length}, Start {SceneManager.GetActiveScene().buildIndex}");
         arrows = GameObject.Find("arrows");
         levelButtons = GameObject.Find("notes");
@@ -27,6 +28,7 @@ public class LevelManager : MonoBehaviour
         Debug.Log($"{arrows.name}, and {levelButtons.name}");
         SetAllLevelButtons();
         SetArrowPosition();
+       
     }
 
     /*
@@ -56,7 +58,7 @@ public class LevelManager : MonoBehaviour
                     break;
             }
 
-            key = key = "star_" + levelBuildIndex[i];
+            key = "star_" + levelBuildIndex[i];
             GameObject star = lvlStars.transform.GetChild(i).gameObject;
             // star collection view
             switch (PlayerPrefs.GetInt(key))
@@ -150,6 +152,14 @@ public class LevelManager : MonoBehaviour
         }
 
     }
+
+    // private void SetDoorAnimation()
+    // {
+    //     Debug.Log("Transition");
+    //     leftDoor.SetTrigger("out");
+    //     rightDoor.SetTrigger("out");
+    // }
+        
 
    
 }
