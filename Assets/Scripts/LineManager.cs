@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,22 @@ using UnityEngine;
 public class LineManager : MonoBehaviour
 {
     [SerializeField] private List<Line> lineList;
-    [SerializeField] private GameManager gameManager;
+    private GameManager gameManager;
     [SerializeField] private Animator catAnimator;
+
+    private void Awake()
+    {
+        // get GameManager
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        // get Lines
+        foreach(Transform child in transform)
+        {
+            foreach (Transform lineObject in child)
+            {
+                lineList.Add(lineObject.GetComponent<Line>());
+            }
+        }
+    }
 
     public void AddClick()
     {
@@ -50,5 +65,4 @@ public class LineManager : MonoBehaviour
         }
         catAnimator.Play("leave_squish");
     }
-    
 }

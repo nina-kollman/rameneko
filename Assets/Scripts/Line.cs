@@ -6,14 +6,14 @@ using UnityEngine;
 
 public class Line : MonoBehaviour
 {
-    [SerializeField] private LineManager lineMng;
     [SerializeField] private List<LinePart> lineParts;
     [SerializeField] public bool isVertical;
     [SerializeField] private EraseDirection eraseDirection;
     [SerializeField] private GameObject leftMarkSquare;
     [SerializeField] private GameObject rightMarkSquare;
-
-
+    public bool unClickable;
+    
+    private LineManager lineMng;
     private Vector2 top;
     private Vector2 bottom;
     public bool isClicked;
@@ -24,6 +24,7 @@ public class Line : MonoBehaviour
         top = lineParts.Last().GetTop();
         bottom = lineParts.First().GetBottom();
         isClicked = false;
+        lineMng = GetComponentInParent<LineManager>();
     }
 
     /**
@@ -95,15 +96,22 @@ public class Line : MonoBehaviour
 
     public void MarkSquares(bool active)
     {
-        leftMarkSquare.SetActive(active);
-        rightMarkSquare.SetActive(active);
+        if (leftMarkSquare && rightMarkSquare)
+        {
+            leftMarkSquare.SetActive(active);
+            rightMarkSquare.SetActive(active);
+        }
     }
 
+    /**
+     * (let's say the line is already clicked - first click)
+     * when clicking on another element, decline the blinking animation.
+     */
     public void UnBlinkParts()
     {
         foreach (var part in lineParts)
         {
-            part.myAnimator.Play("idle");
+            part.UnClickFirstClick();
         }
     }
     

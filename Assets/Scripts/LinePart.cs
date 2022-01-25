@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
@@ -13,7 +14,7 @@ public class LinePart : MonoBehaviour
     [SerializeField] private Vector2 bottom;
     
     private Line lineParent;
-    public Animator myAnimator;
+    private Animator myAnimator;
     private Collider2D myCollider;
     private Sprite lastSprite;
     private bool linePartMarked;
@@ -22,9 +23,10 @@ public class LinePart : MonoBehaviour
     
     private void Awake()
     {
-        lineParent = GetComponentInParent<Line>();
+        lineParent = transform.GetComponentInParent<Line>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        myCollider = transform.parent.GetComponent<BoxCollider2D>();
+        // this line changed due to the prefab change
+        myCollider = transform.parent.parent.GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
         linePartMarked = false;
     }
@@ -36,7 +38,22 @@ public class LinePart : MonoBehaviour
 
     public void ClickOnPart()
     {
-        lineParent.ClickOnLine(transform);
+        // clicked on unbreakable line
+        if (lineParent.unClickable)
+        {
+            if (lineParent.isVertical)
+            {
+                myAnimator.Play("unClickable-V");
+            }
+            else
+            {
+                myAnimator.Play("unClickable-H");
+            }
+        }
+        else
+        {
+            lineParent.ClickOnLine(transform);
+        }
     }
 
     /**
@@ -193,13 +210,10 @@ public class LinePart : MonoBehaviour
         {
             if (!myCollider.isTrigger)
             {
-                Debug.Log($"hover_enable_V {this}");
-                Debug.Log($"{spriteRenderer.sprite.name}");
                 myAnimator.Play("hover_enable_V");
             }
             else
             {
-                Debug.Log($"hover_disable_V {this}");
                 myAnimator.Play("hover_disable_V");
             }
         }
@@ -207,15 +221,44 @@ public class LinePart : MonoBehaviour
         {
             if (!myCollider.isTrigger) // line part is active
             {
-                Debug.Log($"hover_enable_H {this}");
-                Debug.Log($"{spriteRenderer.sprite.name}");
                 myAnimator.Play("hover_enable_H");
             }
             else
             {
-                Debug.Log($"hover_disable_H {this}");
                 myAnimator.Play("hover_disable_H");
             }
         }
+    }
+
+    public void UnClickFirstClick()
+    {
+        if (lineParent.isVertical)
+        {
+            if (!myCollider.isTrigger)
+            {
+                myAnimator.Play("idle-V-E");
+            }
+            else
+            {
+                myAnimator.Play("idle-V-D");
+            }
+        }
+        else
+        {
+            if (!myCollider.isTrigger) // line part is active
+            {
+                myAnimator.Play("idle-H-E");
+            }
+            else
+            {
+                myAnimator.Play("idle-H-D");
+            }
+        }
+    }
+    
+    
+    public bool IsParentUnClickable()
+    {
+        return lineParent.unClickable;
     }
 }

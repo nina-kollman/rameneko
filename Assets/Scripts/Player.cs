@@ -1,31 +1,30 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
-    private int lastLevelBuildIndex = 9;
     private bool win = false;
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"player Collide with {other}");
-        if (other.gameObject.CompareTag("Goal") && !win)
+        if (other.CompareTag("Goal") && !win)
         {
             win = true;
             Debug.Log("Win");
-            AudioManager.Instance.Play("winLevelSound");
-            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-            string key = "level_" + (sceneIndex - 1);
-            Debug.Log(key);
-            PlayerPrefs.SetInt(key,1);
-            if (sceneIndex == lastLevelBuildIndex)
-                gameManager.SetScene(lastLevelBuildIndex + 1);
-            else
-                gameManager.SetNextLevelScreen();
+            transform.GetChild(0).GetComponent<Animator>().Play("win");
+            //other.gameObject.transform.GetChild(1).gameObject.SetActive(true); // star particle system
+            other.gameObject.GetComponentInChildren<Animator>().Play("wingoal");
+            gameManager.SetStarScreen(other.gameObject.transform.GetChild(1).gameObject); //Set StarScreen 
+        }
+        else if (other.CompareTag("BoardSide"))
+        {
+            Debug.Log("Lose");
+            gameManager.SetStarScreen(null, true);
         }
     }
 
@@ -33,4 +32,6 @@ public class Player : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().constraints = isVertical ?  RigidbodyConstraints2D.FreezePositionX : RigidbodyConstraints2D.FreezePositionY;
     }
+
+    
 }
