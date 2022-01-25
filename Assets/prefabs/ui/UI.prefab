@@ -1987,19 +1987,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1780986617628030485, guid: 8f87d0550020db34cb629e74ca475638, type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 1
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 1780986617628030485, guid: 8f87d0550020db34cb629e74ca475638, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 200
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1780986617628030485, guid: 8f87d0550020db34cb629e74ca475638, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 200
+      value: 2.65
       objectReference: {fileID: 0}
     - target: {fileID: 1780986617628030485, guid: 8f87d0550020db34cb629e74ca475638, type: 3}
       propertyPath: InitialModule.startSize.minScalar
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1780986617628030485, guid: 8f87d0550020db34cb629e74ca475638, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -2007,7 +2007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780986617628030485, guid: 8f87d0550020db34cb629e74ca475638, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2135994580544101705, guid: 8f87d0550020db34cb629e74ca475638, type: 3}
       propertyPath: m_RootOrder

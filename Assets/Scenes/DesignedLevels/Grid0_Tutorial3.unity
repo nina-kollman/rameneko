@@ -6910,6 +6910,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!198 &1441972387 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 252186595984941291, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+  m_PrefabInstance: {fileID: 1441972385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1473203080
 GameObject:
   m_ObjectHideFlags: 0
@@ -7654,6 +7659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepsCounterUI: {fileID: 1441972386}
+  clickCounterPoof: {fileID: 1441972387}
   player: {fileID: 2082650558}
   starScreens:
   - {fileID: 1162065869}
