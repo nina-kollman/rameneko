@@ -11,7 +11,7 @@ public class StartScript : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.DeleteAll();
+        // PlayerPrefs.DeleteAll();
     }
     
     public void NextLevelButton()
