@@ -246,7 +246,7 @@ public class GameManager : MonoBehaviour
             starScreens[1].SetActive(true);
             UpdateStarCounter(1);
         }
-        else // Zero stars
+        else // Lose - Zero stars
         {
             starScreens[0].SetActive(true);
         }

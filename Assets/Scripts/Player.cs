@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         else if (other.CompareTag("BoardSide"))
         {
             Debug.Log("Lose");
-            gameManager.SetStarScreen(other.gameObject.transform.GetChild(1).gameObject, true);
+            gameManager.SetStarScreen(null, true);
         }
     }
 
