@@ -12,6 +12,7 @@ TagManager:
   - Vertical_3
   - Goal
   - TouchDetect
+  - BoardSide
   layers:
   - Default
   - TransparentFX

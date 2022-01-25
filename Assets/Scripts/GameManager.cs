@@ -13,6 +13,7 @@ using Object = System.Object;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI stepsCounterUI;
+    [SerializeField] private ParticleSystem clickCounterPoof;
     [SerializeField] private Player player;
     [SerializeField] private GameObject[] starScreens;
     [SerializeField] private int[] starClicks;
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
         if (stepsCounterUI)
         {
             stepsCounterUI.text = clickCounter.ToString();
+            clickCounterPoof.Play();
         }
     }
 
@@ -204,41 +206,47 @@ public class GameManager : MonoBehaviour
         }
     }
 
-   public void SetScene(int index)
-    {
-        SceneManager.LoadScene(index);
-    }
-
-    public void UpdateStarCounter(int stars)
+   public void UpdateStarCounter(int stars)
     {
         int current = PlayerPrefs.GetInt("starCounter");
         PlayerPrefs.SetInt("StarCounter", current + stars);
-        string key = "level_" + SceneManager.GetActiveScene().buildIndex;
+        int buildIndex = SceneManager.GetActiveScene().buildIndex;
+        string key = "level_" + buildIndex;
+        PlayerPrefs.SetInt(key, stars);
+        key = "star_" + buildIndex;
         PlayerPrefs.SetInt(key, stars);
     }
-    
-    /**
+
+   /**
      * This function sets the correct NextLevelScreen according to the number of stars the player deserves 
      */
-    public void SetStarScreen()
-    {
-        win = true;
-        if (clickCounter <= starClicks[2])
+   public void SetStarScreen(GameObject starParticle, bool lose = false)
+   {
+       win = true;
+
+       // In case of win - Turn on star particle system 
+       if (clickCounter <= starClicks[0] && !lose)
+       { 
+           starParticle.SetActive(true); 
+           AudioManager.Instance.Play("winLevelSound");
+       }
+
+        if (clickCounter <= starClicks[2] && !lose)
         {
             starScreens[3].SetActive(true);
             UpdateStarCounter(3);
         }
-        else if (clickCounter <= starClicks[1])
+        else if (clickCounter <= starClicks[1] && !lose)
         {
             starScreens[2].SetActive(true);
             UpdateStarCounter(2);
         }
-        else if (clickCounter <= starClicks[0])
+        else if (clickCounter <= starClicks[0] && !lose)
         {
             starScreens[1].SetActive(true);
             UpdateStarCounter(1);
         }
-        else // Zero stars
+        else // Lose - Zero stars
         {
             starScreens[0].SetActive(true);
         }

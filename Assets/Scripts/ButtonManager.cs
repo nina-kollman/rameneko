@@ -10,17 +10,15 @@ public class ButtonManager : MonoBehaviour
     private AudioManager audioManager;
     private int firstLevelIndex = 4;
     private Animator transition;
-    private float transitionTime = 0.3f;
+    private float transitionTime = 0.2f;
     //[SerializeField] private GameObject screenCanvas;
 
     private Tween fadeTween;
     
     private void Start()
     {
-        
         AudioManager.Instance.Play("backGroundSound");
         transition = GameObject.Find("FadeImage").GetComponent<Animator>();
-        Debug.Log($"BManager {transition.name}");
     }
     
     public void NextLevelButton()

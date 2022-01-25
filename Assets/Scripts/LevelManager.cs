@@ -8,10 +8,12 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     private GameObject levelButtons;
+    private GameObject lvlStars;
     [SerializeField] private int[] levelBuildIndex;
     private GameObject arrows;
     private int firstLevelIndex = 4;
     private int numOfLevelSelectorScreens = 3;
+    
     
     
     
@@ -20,19 +22,25 @@ public class LevelManager : MonoBehaviour
         Debug.Log($"{levelBuildIndex.Length}, Start {SceneManager.GetActiveScene().buildIndex}");
         arrows = GameObject.Find("arrows");
         levelButtons = GameObject.Find("notes");
+        lvlStars = GameObject.Find("LevelStars");
+        Debug.Log(lvlStars);
         Debug.Log($"{arrows.name}, and {levelButtons.name}");
-       // Debug.Log("LevelManagerStart");
         SetAllLevelButtons();
         SetArrowPosition();
     }
 
+    /*
+     * Sets the correct view of the level selector cards:
+     * 1. If the level is completed the number will be white
+     * 2. If the level is completed the number of stars collected will be presented
+     */
     private void SetAllLevelButtons()
     {
 
         for (int i = 0; i < 5; i++)
         {
-            string key = "level_" + levelBuildIndex[i]; // The index is the build index of the level
-           // Debug.Log($"{key}, value {PlayerPrefs.GetInt(key)}");
+            string key = "level_" + levelBuildIndex[i]; 
+            // level completeness view
             switch (PlayerPrefs.GetInt(key))
             {
                 // First level setting
@@ -47,9 +55,53 @@ public class LevelManager : MonoBehaviour
                         new Color(1f, 1f, 1f, 1f); 
                     break;
             }
+
+            key = key = "star_" + levelBuildIndex[i];
+            GameObject star = lvlStars.transform.GetChild(i).gameObject;
+            // star collection view
+            switch (PlayerPrefs.GetInt(key))
+            {
+                case 0:
+                    star.SetActive(false);
+                    break;
+                case 1:
+                    ActivateStars(star);
+                    star.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                    break;
+                case 2:
+                    ActivateStars(star);
+                    star.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                    star.transform.GetChild(1).gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                    break;
+                case 3:
+                    ActivateStars(star);
+                    star.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                    star.transform.GetChild(1).gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                    star.transform.GetChild(2).gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                    break;
+                
+            }
+            
         }
     }
 
+    /*
+     * Activates the LevelStar GameObject
+     */
+    private void ActivateStars(GameObject star)
+    {
+        star.SetActive(true);
+        for (int j = 0; j < 3; j++)
+        {
+            star.transform.GetChild(j).gameObject.SetActive(true);
+        }
+    }
+
+    /*
+     * Sets the level indication arrow in the correct position:
+     * 1. The arrow will point on the first un completed level in the screen
+     * 2. If all the level are completed the arrow will not be presented
+     */
     private void SetArrowPosition()
     {
         if (levelBuildIndex[0] == firstLevelIndex && PlayerPrefs.GetInt(("level_" + levelBuildIndex[0])) == -1)
@@ -73,6 +125,10 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    /*
+     * The function is called by the level buttons. The desired level will be loaded if the level was already
+     * completed or the level before it was completed, else nothing will happen when clicking on the button
+     */
     public void LoadLevel(int levelIndex)
     {
         if (levelIndex == 0)
