@@ -36,9 +36,6 @@ EditorBuildSettings:
     path: Assets/Scenes/DesignedLevels/Grid1_1.unity
     guid: 5ad881276485e0d4092e08b6217307b8
   - enabled: 1
-    path: Assets/Scenes/DesignedLevels/Grid1_2.unity
-    guid: 128f2518382de68429e103c4c292ccad
-  - enabled: 1
     path: Assets/Scenes/DesignedLevels/Grid1_3.unity
     guid: 19fd19cc0faab334f80ab5e52d3aaa4c
   - enabled: 1
@@ -62,9 +59,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DesignedLevels/Grid5_1.unity
     guid: c6aca3439a8d2364687c34a2c9dc1c6a
-  - enabled: 1
-    path: Assets/Scenes/DesignedLevels/Grid5_2.unity
-    guid: 5029f42549c4eaa4da9403b7520bbf08
   - enabled: 1
     path: Assets/Scenes/DesignedLevels/Grid7_1.unity
     guid: b3218c61d7b46c4408e708d3956b70a0
