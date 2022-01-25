@@ -13,6 +13,7 @@ using Object = System.Object;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI stepsCounterUI;
+    [SerializeField] private ParticleSystem clickCounterPoof;
     [SerializeField] private Player player;
     [SerializeField] private GameObject[] starScreens;
     [SerializeField] private int[] starClicks;
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
         if (stepsCounterUI)
         {
             stepsCounterUI.text = clickCounter.ToString();
+            clickCounterPoof.Play();
         }
     }
 

@@ -2592,6 +2592,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+--- !u!198 &954814485 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 252186595984941291, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+  m_PrefabInstance: {fileID: 954814484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &978648388
 GameObject:
   m_ObjectHideFlags: 0
@@ -4845,6 +4850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepsCounterUI: {fileID: 718671875}
+  clickCounterPoof: {fileID: 954814485}
   player: {fileID: 2082650558}
   starScreens:
   - {fileID: 1162065869}
