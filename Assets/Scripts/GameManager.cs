@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI stepsCounterUI;
     [SerializeField] private ParticleSystem clickCounterPoof;
+    [SerializeField] private Animator stepsCounterAnimator;
+    [SerializeField] private GameObject stepsCounterObject;
     [SerializeField] private Player player;
     [SerializeField] private GameObject[] starScreens;
     [SerializeField] private int[] starClicks;
@@ -34,6 +36,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        stepsCounterUI = stepsCounterObject.GetComponentInChildren<TextMeshProUGUI>();
+        clickCounterPoof = stepsCounterObject.GetComponentInChildren<ParticleSystem>();
+        stepsCounterAnimator = stepsCounterObject.GetComponent<Animator>();
         lastClickedPart = null;
         clickCounter = 0;
         if (stepsCounterUI)
@@ -70,6 +75,7 @@ public class GameManager : MonoBehaviour
         {
             stepsCounterUI.text = clickCounter.ToString();
             clickCounterPoof.Play();
+            stepsCounterAnimator.Play("move");
         }
     }
 
