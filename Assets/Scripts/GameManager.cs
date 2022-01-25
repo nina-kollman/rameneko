@@ -223,9 +223,14 @@ public class GameManager : MonoBehaviour
     /**
      * This function sets the correct NextLevelScreen according to the number of stars the player deserves 
      */
-    public void SetStarScreen()
+    public void SetStarScreen(GameObject starParticle)
     {
         win = true;
+        
+        //Turn on ster particle system 
+        if(clickCounter <= starClicks[0])
+            starParticle.SetActive(true);
+            
         if (clickCounter <= starClicks[2])
         {
             starScreens[3].SetActive(true);
