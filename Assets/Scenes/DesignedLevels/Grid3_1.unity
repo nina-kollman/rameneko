@@ -5964,7 +5964,7 @@ MonoBehaviour:
   - {fileID: 861410363}
   - {fileID: 861410362}
   - {fileID: 861410359}
-  starClicks: 050000000400000003000000
+  starClicks: 060000000500000004000000
 --- !u!4 &1636344179
 Transform:
   m_ObjectHideFlags: 0
