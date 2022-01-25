@@ -10,7 +10,7 @@ public class ButtonManager : MonoBehaviour
     private AudioManager audioManager;
     private int firstLevelIndex = 4;
     private Animator transition;
-    private float transitionTime = 0.3f;
+    private float transitionTime = 0.2f;
     //[SerializeField] private GameObject screenCanvas;
 
     private Tween fadeTween;
