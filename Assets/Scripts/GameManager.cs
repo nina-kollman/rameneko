@@ -12,13 +12,14 @@ using Object = System.Object;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI stepsCounterUI;
-    [SerializeField] private ParticleSystem clickCounterPoof;
-    [SerializeField] private Animator stepsCounterAnimator;
     [SerializeField] private GameObject stepsCounterObject;
     [SerializeField] private Player player;
     [SerializeField] private GameObject[] starScreens;
     [SerializeField] private int[] starClicks;
+    
+    private TextMeshProUGUI stepsCounterUI;
+    private ParticleSystem clickCounterPoof;
+    private Animator stepsCounterAnimator;
 
     private int clickCounter;
     // the saved gameObject is a LinePart (and not Line)
