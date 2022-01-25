@@ -26,7 +26,7 @@ public class StartScript : MonoBehaviour
         leftDoor.SetTrigger("move");
         rightDoor.SetTrigger("move");
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(index);
 
     }
