@@ -1,31 +1,47 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
-    private int lastLevelBuildIndex = 9;
     private bool win = false;
+
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log($"player Collide with {other}");
         if (other.gameObject.CompareTag("Goal") && !win)
         {
             win = true;
             Debug.Log("Win");
             AudioManager.Instance.Play("winLevelSound");
+            transform.GetChild(0).GetComponent<Animator>().Play("win");
+            other.gameObject.GetComponent<Animator>().Play("wingoal");
             int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-            string key = "level_" + (sceneIndex - 1);
+            string key = "level_" + sceneIndex;
             Debug.Log(key);
             PlayerPrefs.SetInt(key,1);
-            if (sceneIndex == lastLevelBuildIndex)
-                gameManager.SetScene(lastLevelBuildIndex + 1);
-            else
-                gameManager.SetNextLevelScreen();
+            gameManager.SetStarScreen(); //Set StarScreen 
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Goal") && !win)
+        {
+            win = true;
+            Debug.Log("Win");
+            AudioManager.Instance.Play("winLevelSound");
+            transform.GetChild(0).GetComponent<Animator>().Play("win");
+            other.gameObject.GetComponentInChildren<Animator>().Play("wingoal");
+            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+            string key = "level_" + sceneIndex;
+            Debug.Log(key);
+            PlayerPrefs.SetInt(key,1);
+            gameManager.SetStarScreen(); //Set StarScreen 
         }
     }
 
@@ -33,4 +49,6 @@ public class Player : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().constraints = isVertical ?  RigidbodyConstraints2D.FreezePositionX : RigidbodyConstraints2D.FreezePositionY;
     }
+
+    
 }

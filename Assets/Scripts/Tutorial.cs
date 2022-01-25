@@ -49,15 +49,26 @@ public class Tutorial : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
-        RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-        
-        if (hit.collider)
+        RaycastHit2D[] hit = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
+        Transform partHit = null;
+
+        for (int i = 0; i < hit.Length; i++)
         {
-            GameObject linePartObject = hit.collider.transform.GetChild(0).gameObject;
+            if (hit[i].collider.CompareTag("TouchDetect"))
+            {
+                // get the TouchDetect object
+                partHit = hit[i].collider.transform;
+                break;
+            }
+        }
+        
+        if (partHit)
+        {
+            GameObject linePartObject = partHit.GetChild(0).gameObject;
             // if we clicked on the wanted line in the tutorial -> double click
             string lastClickedLineName =
                 lastClickedPart ? lastClickedPart.GetComponentInParent<Line>().transform.name : null;
-            string clickedParentLineName = hit.collider.transform.parent.name;
+            string clickedParentLineName = partHit.parent.parent.name;
             // tutorial - check for the specific wanted card
             bool tutorialLine = tutorialLevel == 4 || tutorialLineList[clicksOnLine / 2].name == clickedParentLineName;
             if (lastClickedPart && lastClickedLineName == clickedParentLineName && tutorialLine)

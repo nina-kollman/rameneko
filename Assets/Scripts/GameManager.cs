@@ -12,18 +12,11 @@ using Object = System.Object;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private LineManager lineMng;
     [SerializeField] private TextMeshProUGUI stepsCounterUI;
     [SerializeField] private Player player;
-    [SerializeField] private int levelNum;
-    [SerializeField] private int maxClicksInLevel;
-    [SerializeField] private GameObject nextLevelScreen;
-    [SerializeField] private GameObject looseScreen;
-    [SerializeField] private float duration;
-    
-    
+    [SerializeField] private GameObject[] starScreens;
+    [SerializeField] private int[] starClicks;
 
-    private Vector3 nextLevelPosition = new Vector3(-1, 0, 0);
     private int clickCounter;
     // the saved gameObject is a LinePart (and not Line)
     private GameObject lastClickedPart;
@@ -31,6 +24,7 @@ public class GameManager : MonoBehaviour
     private bool isTutorialActivated;
     private bool win;
     private Tutorial tutorial;
+    
     private void Awake()
     {
         // Gravity Down
@@ -41,7 +35,10 @@ public class GameManager : MonoBehaviour
     {
         lastClickedPart = null;
         clickCounter = 0;
-        stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
+        if (stepsCounterUI)
+        {
+            stepsCounterUI.text = clickCounter.ToString();
+        }
         // handle Tutorial clause and script
         isTutorialActivated = GameObject.Find("Tutorial") != null;
         tutorial = isTutorialActivated ? GameObject.Find("Tutorial").GetComponent<Tutorial>() : null;
@@ -52,14 +49,8 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !win)
         {
-            // check for lose condition
-            if (clickCounter - maxClicksInLevel >= 0)
-            {
-                Debug.Log("YOU LOST!");
-                looseScreen.SetActive(true);
-            }
             // check for Tutorial click activation
-            else if (isTutorialActivated)
+            if (isTutorialActivated)
             {
                 tutorial.TutorialClicksManager();
             }
@@ -74,7 +65,10 @@ public class GameManager : MonoBehaviour
     public void AddClick()
     {
         clickCounter++;
-        stepsCounterUI.text = (maxClicksInLevel - clickCounter).ToString();
+        if (stepsCounterUI)
+        {
+            stepsCounterUI.text = clickCounter.ToString();
+        }
     }
 
     public void ChangeGravityDirection(Direction direction)
@@ -146,7 +140,7 @@ public class GameManager : MonoBehaviour
         throw new Exception("Invalid direction calculation");
     }
 
-    /**
+   /**
      * when clicking on the screen - analyze the click place and check for on-line-part's click.
      */
     private void ClickOnScreen()
@@ -154,14 +148,25 @@ public class GameManager : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
             
-        RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+        RaycastHit2D[] hit = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
+        Transform partHit = null;
 
-        if (hit.collider)
+        for (int i = 0; i < hit.Length; i++)
         {
-            GameObject linePartObject = hit.collider.transform.GetChild(0).gameObject;
+            if (hit[i].collider.CompareTag("TouchDetect"))
+            {
+                // get the TouchDetect object
+                partHit = hit[i].collider.transform;
+                break;
+            }
+        }
+
+        if (partHit)
+        {
+            GameObject linePartObject = partHit.GetChild(0).gameObject;
             // if we clicked on the same line as before = double click
             string lastClickedLineName = lastClickedPart ? lastClickedPart.GetComponentInParent<Line>().transform.name: null;
-            string clickedParentLineName = hit.collider.transform.parent.name;
+            string clickedParentLineName = partHit.parent.parent.name;
             if (lastClickedPart && lastClickedLineName == clickedParentLineName)
             {
                 // after the second time - clear the 'hover' indication
@@ -170,7 +175,7 @@ public class GameManager : MonoBehaviour
                 lastClickedPart.GetComponent<LinePart>().ClickOnPart();
                 lastClickedPart = null;
             }
-            // if we clicked on another line
+            // if we clicked on a line for the first time, or another line
             else
             {
                 if (lastClickedPart)
@@ -181,8 +186,8 @@ public class GameManager : MonoBehaviour
                 if (linePartObject.GetComponent<LinePart>())
                 {
                     // save the new line, and then click on it
-                    lastClickedPart = linePartObject;
-                    lastClickedPart.GetComponent<LinePart>().ClickOnPart();
+                    lastClickedPart = linePartObject.GetComponent<LinePart>().IsParentUnClickable() ? null : linePartObject;
+                    linePartObject.GetComponent<LinePart>().ClickOnPart();
                 }
             }
         }
@@ -199,16 +204,44 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-    public void SetNextLevelScreen()
-    {
-        win = true;
-        nextLevelScreen.SetActive(true);
-        nextLevelScreen.transform.DOMove(nextLevelPosition, duration).SetEase(Ease.InOutFlash);
-    }
-
-    public void SetScene(int index)
+   public void SetScene(int index)
     {
         SceneManager.LoadScene(index);
+    }
+
+    public void UpdateStarCounter(int stars)
+    {
+        int current = PlayerPrefs.GetInt("starCounter");
+        PlayerPrefs.SetInt("StarCounter", current + stars);
+        string key = "level_" + SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt(key, stars);
+    }
+    
+    /**
+     * This function sets the correct NextLevelScreen according to the number of stars the player deserves 
+     */
+    public void SetStarScreen()
+    {
+        win = true;
+        if (clickCounter <= starClicks[2])
+        {
+            starScreens[3].SetActive(true);
+            UpdateStarCounter(3);
+        }
+        else if (clickCounter <= starClicks[1])
+        {
+            starScreens[2].SetActive(true);
+            UpdateStarCounter(2);
+        }
+        else if (clickCounter <= starClicks[0])
+        {
+            starScreens[1].SetActive(true);
+            UpdateStarCounter(1);
+        }
+        else // Zero stars
+        {
+            starScreens[0].SetActive(true);
+        }
+        
     }
 }
