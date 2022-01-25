@@ -6,9 +6,6 @@ using UnityEngine. SceneManagement;
 
 public class StartScript : MonoBehaviour
 {
-    [SerializeField] private Animator doorLeft;
-    [SerializeField] private Animator doorRight;
-
     private void Awake()
     {
         PlayerPrefs.DeleteAll();
@@ -16,8 +13,6 @@ public class StartScript : MonoBehaviour
     
     public void NextLevelButton()
     {
-        doorLeft.Play("slide inB");
-        doorRight.Play("slide inA");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  
     }
 }
