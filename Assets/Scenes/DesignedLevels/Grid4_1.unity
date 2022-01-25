@@ -4021,7 +4021,7 @@ MonoBehaviour:
   lineParts:
   - {fileID: 266291927}
   isVertical: 1
-  eraseDirection: 1
+  eraseDirection: 2
   leftMarkSquare: {fileID: 0}
   rightMarkSquare: {fileID: 0}
   unClickable: 0
