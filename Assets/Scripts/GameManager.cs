@@ -216,18 +216,21 @@ public class GameManager : MonoBehaviour
         key = "star_" + buildIndex;
         PlayerPrefs.SetInt(key, stars);
     }
-    
-    /**
+
+   /**
      * This function sets the correct NextLevelScreen according to the number of stars the player deserves 
      */
-    public void SetStarScreen(GameObject starParticle, bool lose=false)
-    {
-        win = true;
-        
-        // Turn on star particle system 
-        if(clickCounter <= starClicks[0] && !lose)
-            starParticle.SetActive(true);
-            
+   public void SetStarScreen(GameObject starParticle, bool lose = false)
+   {
+       win = true;
+
+       // In case of win - Turn on star particle system 
+       if (clickCounter <= starClicks[0] && !lose)
+       { 
+           starParticle.SetActive(true); 
+           AudioManager.Instance.Play("winLevelSound");
+       }
+
         if (clickCounter <= starClicks[2] && !lose)
         {
             starScreens[3].SetActive(true);

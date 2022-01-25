@@ -19,7 +19,6 @@ public class ButtonManager : MonoBehaviour
     {
         AudioManager.Instance.Play("backGroundSound");
         transition = GameObject.Find("FadeImage").GetComponent<Animator>();
-        Debug.Log($"BManager {transition.name}");
     }
     
     public void NextLevelButton()

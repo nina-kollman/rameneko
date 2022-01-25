@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
         {
             win = true;
             Debug.Log("Win");
-            AudioManager.Instance.Play("winLevelSound");
             transform.GetChild(0).GetComponent<Animator>().Play("win");
             //other.gameObject.transform.GetChild(1).gameObject.SetActive(true); // star particle system
             other.gameObject.GetComponentInChildren<Animator>().Play("wingoal");
