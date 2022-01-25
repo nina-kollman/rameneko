@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
     private int numOfLevelSelectorScreens = 3;
     [SerializeField] private Animator leftDoor;
     [SerializeField] private Animator rightDoor;
-    
+
     
     void Start()
     {
@@ -58,7 +58,7 @@ public class LevelManager : MonoBehaviour
                     break;
             }
 
-            key = key = "star_" + levelBuildIndex[i];
+            key = "star_" + levelBuildIndex[i];
             GameObject star = lvlStars.transform.GetChild(i).gameObject;
             // star collection view
             switch (PlayerPrefs.GetInt(key))
