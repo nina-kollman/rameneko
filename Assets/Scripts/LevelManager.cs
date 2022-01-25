@@ -12,10 +12,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int[] levelBuildIndex;
     private GameObject arrows;
     private int firstLevelIndex = 4;
-    private int numOfLevelSelectorScreens = 3;
-    
-    
-    
     
     void Start()
     {
@@ -56,7 +52,7 @@ public class LevelManager : MonoBehaviour
                     break;
             }
 
-            key = key = "star_" + levelBuildIndex[i];
+            key = "star_" + levelBuildIndex[i];
             GameObject star = lvlStars.transform.GetChild(i).gameObject;
             // star collection view
             switch (PlayerPrefs.GetInt(key))
