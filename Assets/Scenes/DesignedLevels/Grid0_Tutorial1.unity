@@ -1912,17 +1912,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5716045389060208466, guid: c492f4406a43b2c4db942422390460c2, type: 3}
   m_PrefabInstance: {fileID: 699206863}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &718671875 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1426783868569424438, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
-  m_PrefabInstance: {fileID: 954814484}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &738813292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2600,9 +2589,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
---- !u!198 &954814485 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 252186595984941291, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+--- !u!1 &954814485 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1426783867706011365, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
   m_PrefabInstance: {fileID: 954814484}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &978648388
@@ -4857,8 +4846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 307ca42d76109e6489d59f3fd0b0faa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepsCounterUI: {fileID: 718671875}
-  clickCounterPoof: {fileID: 954814485}
+  stepsCounterObject: {fileID: 954814485}
   player: {fileID: 2082650558}
   starScreens:
   - {fileID: 1162065869}

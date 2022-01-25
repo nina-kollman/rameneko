@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 1426783867706011360}
   - component: {fileID: 1426783867706011367}
   m_Layer: 5
-  m_Name: moves
+  m_Name: movesParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

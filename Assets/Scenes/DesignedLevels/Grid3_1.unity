@@ -3343,20 +3343,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
---- !u!114 &844252462 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1426783868569424438, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
-  m_PrefabInstance: {fileID: 844252461}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!198 &844252463 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 252186595984941291, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
+--- !u!1 &844252462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1426783867706011365, guid: 7cb518c442574474dbcd0ac94be7f101, type: 3}
   m_PrefabInstance: {fileID: 844252461}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &850826237
@@ -5968,8 +5957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 307ca42d76109e6489d59f3fd0b0faa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepsCounterUI: {fileID: 844252462}
-  clickCounterPoof: {fileID: 844252463}
+  stepsCounterObject: {fileID: 844252462}
   player: {fileID: 2082650558}
   starScreens:
   - {fileID: 861410364}
