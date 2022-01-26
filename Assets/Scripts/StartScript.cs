@@ -10,8 +10,8 @@ public class StartScript : MonoBehaviour
     [SerializeField] private Animator rightDoor;
 
     private void Awake()
-    {
-        // PlayerPrefs.DeleteAll();
+    { 
+        PlayerPrefs.DeleteAll();
     }
     
     public void NextLevelButton()
