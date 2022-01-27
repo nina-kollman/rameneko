@@ -114,6 +114,7 @@ public class LevelManager : MonoBehaviour
     {
         if (levelBuildIndex[0] == firstLevelIndex && PlayerPrefs.GetInt(("star_" + levelBuildIndex[0])) == 0)
         {
+            lvlLocks.transform.GetChild(0).gameObject.SetActive(false);
             arrows.transform.GetChild(0).gameObject.SetActive(true);
             return;
         }
@@ -126,6 +127,7 @@ public class LevelManager : MonoBehaviour
                 string prevKey = "star_" + (levelBuildIndex[i] -1);
                 if (PlayerPrefs.GetInt(prevKey) != 0)
                 {
+                    lvlLocks.transform.GetChild(i).gameObject.SetActive(false);
                     arrows.transform.GetChild(i).gameObject.SetActive(true);
                     return;
                 }
