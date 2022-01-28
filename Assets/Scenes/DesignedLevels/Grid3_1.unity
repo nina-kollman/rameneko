@@ -1449,7 +1449,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'NOTICE THE JUMP DIRECTION
+  m_text: 'BEWARE OF FALLING FROM THE SCREEN
 
 '
   m_isRightToLeft: 0
