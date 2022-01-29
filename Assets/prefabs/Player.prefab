@@ -243,9 +243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  star1Clicks: 0
-  star2Clicks: 0
-  star3Clicks: 0
 --- !u!50 &7863438916288796075
 Rigidbody2D:
   serializedVersion: 4

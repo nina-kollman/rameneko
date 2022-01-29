@@ -2590,6 +2590,18 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5141085116714823538, guid: bbb5c48c86da07943a6598fe9895b30b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141085116714823538, guid: bbb5c48c86da07943a6598fe9895b30b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141085116714823538, guid: bbb5c48c86da07943a6598fe9895b30b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141085116714823538, guid: bbb5c48c86da07943a6598fe9895b30b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.65
       objectReference: {fileID: 0}
@@ -2632,6 +2644,22 @@ PrefabInstance:
     - target: {fileID: 5141085116714823550, guid: bbb5c48c86da07943a6598fe9895b30b, type: 3}
       propertyPath: m_Name
       value: Goal controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141085117337394188, guid: bbb5c48c86da07943a6598fe9895b30b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -554072938, guid: 9a4c22ea43083fb43bbd1afc8f7458d6, type: 3}
+    - target: {fileID: 5141085117337394189, guid: bbb5c48c86da07943a6598fe9895b30b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141085117337394189, guid: bbb5c48c86da07943a6598fe9895b30b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141085117337394189, guid: bbb5c48c86da07943a6598fe9895b30b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbb5c48c86da07943a6598fe9895b30b, type: 3}
