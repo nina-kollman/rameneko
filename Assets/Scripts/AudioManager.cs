@@ -26,4 +26,16 @@ public class AudioManager : Singleton<AudioManager>
             _sounds[name].Play();
         }
     }
+
+    public void Stop(string name)
+    {
+        if(!_sounds.ContainsKey(name)){
+            Debug.LogWarning("Missing Sound:" + name);
+            return;
+        }
+        if (_sounds[name].IsPlaying())
+        {
+            _sounds[name].Stop();
+        } 
+    }
 }

@@ -9,11 +9,12 @@ public class StartScript : MonoBehaviour
     [SerializeField] private Animator leftDoor;
     [SerializeField] private Animator rightDoor;
 
-    private void Awake()
-    { 
-        //PlayerPrefs.DeleteAll();
+    private void Start()
+    {
+        AudioManager.Instance.Play("opening");
+        Debug.Log("OPen");
     }
-    
+
     public void NextLevelButton()
     {
         StartCoroutine(LoadScreen(SceneManager.GetActiveScene().buildIndex + 1));

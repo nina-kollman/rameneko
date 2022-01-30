@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine. SceneManagement;
 
@@ -11,13 +12,14 @@ public class ButtonManager : MonoBehaviour
     private int firstLevelIndex = 4;
     private Animator transition;
     private float transitionTime = 0.2f;
-    //[SerializeField] private GameObject screenCanvas;
+    private LevelManager lvlManager;
 
     private Tween fadeTween;
     
     private void Start()
     {
-        AudioManager.Instance.Play("backGroundSound");
+        AudioManager.Instance.Stop("opening");
+        AudioManager.Instance.Play("gameTrack");
         transition = GameObject.Find("FadeImage").GetComponent<Animator>();
     }
     
@@ -87,4 +89,5 @@ public class ButtonManager : MonoBehaviour
         Debug.Log($"screen number {screenNum}, build index: {buildIndex}");
         SceneManager.LoadScene(screenNum + 1);
     }
+    
 }

@@ -36,28 +36,9 @@ public class LevelManager : MonoBehaviour
      * 1. If the level is completed the number will be white
      * 2. If the level is completed the number of stars collected will be presented
      */
-    private void SetAllLevelButtons()
+    public void SetAllLevelButtons()
     {
-
-        // for (int i = 0; i < 5; i++)
-        // {
-        //     string key = "level_" + levelBuildIndex[i]; 
-        //     // level completeness view
-        //     switch (PlayerPrefs.GetInt(key))
-        //     {
-        //         // First level setting
-        //         case 0:
-        //             PlayerPrefs.SetInt(key, -1); 
-        //             break;
-        //         // The level is completed
-        //         case 1:
-        //         case 2:
-        //         case 3:
-        //             levelButtons.transform.GetChild(i).GetComponent<TextMeshProUGUI>().color =
-        //                 new Color(1f, 1f, 1f, 1f); 
-        //             break;
-        //     }
-
+        
         for (int i = 0; i < 5; i++)
         {
             string key = "star_" + levelBuildIndex[i];
@@ -110,7 +91,7 @@ public class LevelManager : MonoBehaviour
      * 1. The arrow will point on the first un completed level in the screen
      * 2. If all the level are completed the arrow will not be presented
      */
-    private void SetArrowPosition()
+    public void SetArrowPosition()
     {
         if (levelBuildIndex[0] == firstLevelIndex && PlayerPrefs.GetInt(("star_" + levelBuildIndex[0])) == 0)
         {
@@ -159,6 +140,12 @@ public class LevelManager : MonoBehaviour
             SceneManager.LoadScene(levelBuildIndex[levelIndex]);
         }
 
+    }
+    
+    public void RestartGameButton()
+    { 
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(1);
     }
    
 }
