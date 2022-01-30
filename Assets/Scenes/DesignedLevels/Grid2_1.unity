@@ -1945,6 +1945,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: v1_3
       objectReference: {fileID: 0}
+    - target: {fileID: 6286901140392889787, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
     - target: {fileID: 6286901141029364312, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1999,6 +2003,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6286901141029364312, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286901141029364313, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6286901141029364319, guid: 7064b901cab223740ae717f46b3a062e, type: 3}

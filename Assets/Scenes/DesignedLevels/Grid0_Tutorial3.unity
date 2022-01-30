@@ -1332,7 +1332,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A CHOSEN LINE HALVES THE SCREEN \n"
+  m_text: "A CHOSEN LINE SPLITS THE SCREEN \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 45c1327cb7c22d44e8f1128e1523fdc7, type: 2}
   m_sharedMaterial: {fileID: 4137710189385432133, guid: 45c1327cb7c22d44e8f1128e1523fdc7, type: 2}
@@ -2176,6 +2176,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2144322293105473919, guid: c492f4406a43b2c4db942422390460c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572372826774977834, guid: c492f4406a43b2c4db942422390460c2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+    - target: {fileID: 6870012813845851172, guid: c492f4406a43b2c4db942422390460c2, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7629180838215888178, guid: c492f4406a43b2c4db942422390460c2, type: 3}
@@ -3193,7 +3201,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8140368137366678138, guid: d68fdd4c64f377349b6a68b61ee06fee, type: 3}
       propertyPath: m_text
-      value: TAP THE LINE TO HALVE THE SCREEN
+      value: TAP THE LINE TO SPLIT THE SCREEN
       objectReference: {fileID: 0}
     - target: {fileID: 8140368137366678139, guid: d68fdd4c64f377349b6a68b61ee06fee, type: 3}
       propertyPath: m_SizeDelta.x
@@ -8275,6 +8283,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4572372826774977834, guid: c492f4406a43b2c4db942422390460c2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+    - target: {fileID: 6870012813845851172, guid: c492f4406a43b2c4db942422390460c2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7629180838215888178, guid: c492f4406a43b2c4db942422390460c2, type: 3}
       propertyPath: m_Name
       value: h4_3Collider
@@ -8963,6 +8979,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2144322293105473919, guid: c492f4406a43b2c4db942422390460c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572372826774977834, guid: c492f4406a43b2c4db942422390460c2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1345306975, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+    - target: {fileID: 6870012813845851172, guid: c492f4406a43b2c4db942422390460c2, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7629180838215888178, guid: c492f4406a43b2c4db942422390460c2, type: 3}
@@ -10069,6 +10093,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: v1_1
       objectReference: {fileID: 0}
+    - target: {fileID: 6286901140392889787, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1726549474, guid: f8442e4b3d695a748b781e40e50250f4, type: 3}
+    - target: {fileID: 6286901140392889787, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6286901141029364312, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -10123,6 +10155,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6286901141029364312, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286901141029364313, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6286901141029364319, guid: 7064b901cab223740ae717f46b3a062e, type: 3}
