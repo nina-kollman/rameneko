@@ -23,25 +23,26 @@ public class ButtonManager : MonoBehaviour
         transition = GameObject.Find("FadeImage").GetComponent<Animator>();
     }
     
+    /**
+     * Sets the next scene
+     */
     public void NextLevelButton()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  
         StartCoroutine(LoadScreen(SceneManager.GetActiveScene().buildIndex+1));
+    }
 
-    }
-    
-    public void NextLevelSelectorButton()
-    {
-       StartCoroutine(LoadScreen(SceneManager.GetActiveScene().buildIndex + 1));
-       
-    }
-    
+    /**
+     * Sets the previous scene
+     */
     public void PrevLevelSelectorButton()
     {
         StartCoroutine(LoadScreen(SceneManager.GetActiveScene().buildIndex - 1));
        
     }
 
+    /**
+     * Triggers the Load scene animation and sets the next scene after it
+     */
     IEnumerator LoadScreen(int index)
     {
         
@@ -55,34 +56,36 @@ public class ButtonManager : MonoBehaviour
 
     }
 
-
-    public void PreviousLevelButton()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);  
-    }
-
+    /**
+     * Restarts the current scene
+     */
     public void RestartButton()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         StartCoroutine(LoadScreen(SceneManager.GetActiveScene().buildIndex));
     }
 
+    /**
+     * Home button on each level - loads the correct level selector screen  
+     */
     public void LevelSelectorScreen()
     {
         ChooseLevelSelectorScreen(SceneManager.GetActiveScene().buildIndex);
     }
+    
 
-    public void StartSceneButton()
-    {
-        SceneManager.LoadScene(0);
-    }
-
+    /**
+     * Stops the game 
+     */
     public void EndGameButton()
     {
         Debug.Log("QUIT");
         Application.Quit();
     }
     
+    /**
+     * Sets the correct level selector screen according to the game level it was directed from.
+     * The level selector screen will show the last level that was played
+     */
     private void ChooseLevelSelectorScreen(int buildIndex)
     {
         int screenNum = (buildIndex - firstLevelIndex) / 5;

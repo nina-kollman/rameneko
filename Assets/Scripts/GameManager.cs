@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     
     private void Awake()
     {
-        // Gravity Down
+        // Set gravity Down
         Physics2D.gravity = new Vector2(0, -300f);
     }
 
@@ -69,6 +69,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /**
+     * Adds a screen click to the click counter, if the UI click element is activates it updates it accordingly
+     */
     public void AddClick()
     {
         clickCounter++;
@@ -80,6 +83,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /**
+     * Changes the game gravity direction according to the given direction
+     */
     public void ChangeGravityDirection(Direction direction)
     {
         if (direction == Direction.Up)
@@ -122,6 +128,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /**
+     * Returns the required jump direction of the player according to the selected bamboo in respect to the current
+     * player position
+     */
     public Direction GetJumpDirection(Transform transform, bool isVertical)
     {
         if (isVertical)
@@ -213,20 +223,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-   public void UpdateStarCounter(int stars)
+   /**
+    * Updates the star counter according to the stars collected in the game level
+    */
+   private void UpdateStarCounter(int stars)
     {
         int current = PlayerPrefs.GetInt("starCounter");
         PlayerPrefs.SetInt("StarCounter", current + stars);
         int buildIndex = SceneManager.GetActiveScene().buildIndex;
-      //  string key = "level_" + buildIndex;
-       // PlayerPrefs.SetInt(key, 1);
         string key = "star_" + buildIndex;
         stars = Math.Max(PlayerPrefs.GetInt(key, 0), stars);
         PlayerPrefs.SetInt(key, stars);
     }
 
    /**
-     * This function sets the correct NextLevelScreen according to the number of stars the player deserves 
+     * Sets the correct NextLevelScreen according to the number of stars the player deserves 
      */
    public void SetStarScreen(GameObject starParticle, bool lose = false)
    {

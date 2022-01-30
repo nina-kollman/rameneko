@@ -134,7 +134,6 @@ public class LevelManager : MonoBehaviour
         // Else the level before must be completed
         int keyIndex = levelIndex == 0 ? (levelBuildIndex[0] - 1) : levelBuildIndex[levelIndex - 1];
         string key = "star_" + keyIndex;
-       // Debug.Log($"{key}, get int: {PlayerPrefs.GetInt(key)}");
         if (PlayerPrefs.GetInt(key) != 0)
         {
             SceneManager.LoadScene(levelBuildIndex[levelIndex]);
@@ -142,6 +141,9 @@ public class LevelManager : MonoBehaviour
 
     }
     
+    /**
+     * Restarts the Game entirely: The level completeness is restarted
+     */
     public void RestartGameButton()
     { 
         PlayerPrefs.DeleteAll();

@@ -94,6 +94,9 @@ public class Line : MonoBehaviour
         }
     }
 
+    /**
+     * Sets the bamboo mark squares (black and white)
+     */
     public void MarkSquares(bool active)
     {
         if (leftMarkSquare && rightMarkSquare)

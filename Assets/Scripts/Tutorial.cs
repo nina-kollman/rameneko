@@ -123,6 +123,9 @@ public class Tutorial : MonoBehaviour
         }
     }
     
+    /**
+     * Plays the tutorial animation according to the designed order
+     */
     private void PlayTutorialAnimations()
     {
         int stage = emptyClicks + clicksOnLine;
@@ -208,6 +211,7 @@ public class Tutorial : MonoBehaviour
             throw new Exception("Unknown tutorial level");
         }
     }
+    
     
     private void UpdateClickCount(bool increase)
     {

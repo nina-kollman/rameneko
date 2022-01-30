@@ -7,7 +7,9 @@ public class SetResolutionScript : MonoBehaviour
         
     private const float landscapeRatio =  1920f/1080f;
 
-    // Start is called before the first frame update
+    /**
+     * Adapts the screen resolution to the current device playing the game
+     */
     void Start()
     {
         Debug.Log("Resolution, width: " + Screen.width + ", height: " + Screen.height);

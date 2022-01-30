@@ -35,7 +35,8 @@ public class LinePart : MonoBehaviour
     {
         poof = transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
     }
-
+    
+   
     public void ClickOnPart()
     {
         // clicked on unbreakable line

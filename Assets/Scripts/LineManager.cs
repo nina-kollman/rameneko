@@ -23,11 +23,17 @@ public class LineManager : MonoBehaviour
         }
     }
 
+    /**
+     * Adds a click to the click counter
+     */
     public void AddClick()
     {
         gameManager.AddClick();
     }
     
+    /**
+     * Changes game gravity direction according to the selected line
+     */
     public void ChangeGravityDirection(Transform transform, bool isVertical)
     {
         Direction jumpDirection = gameManager.GetJumpDirection(transform, isVertical);

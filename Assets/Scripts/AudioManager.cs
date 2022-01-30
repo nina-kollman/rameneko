@@ -10,12 +10,16 @@ public class AudioManager : Singleton<AudioManager>
 
     private void Awake()
     {
+        // Loads all SoundSo 
         foreach (SoundSO s in Resources.LoadAll<SoundSO>("Sounds")){
             _sounds[s.soundName] = s;
             s.AddSource(gameObject.AddComponent<AudioSource>());
         }
     }
     
+    /**
+     * The function plays the audio file according to its given name
+     */
     public void Play(string name){
         if(!_sounds.ContainsKey(name)){
             Debug.LogWarning("Missing Sound:" + name);
@@ -27,6 +31,9 @@ public class AudioManager : Singleton<AudioManager>
         }
     }
 
+    /**
+     * The function stops the audio file according to its given name
+     */
     public void Stop(string name)
     {
         if(!_sounds.ContainsKey(name)){

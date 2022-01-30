@@ -10,6 +10,11 @@ public class Player : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     private bool win = false;
 
+    /**
+     * Defines the player behavior when colliding with a trigger component:
+     * 1. Goal - Sets the winning conditions
+     * 2. BoardSide - Sets the loosing condition
+     */
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Goal") && !win)
@@ -28,6 +33,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    /**
+     * Changes the movement condition according to the isVertical parameter
+     */
     public void ChangeMovementConstraints(bool isVertical)
     {
         GetComponent<Rigidbody2D>().constraints = isVertical ?  RigidbodyConstraints2D.FreezePositionX : RigidbodyConstraints2D.FreezePositionY;

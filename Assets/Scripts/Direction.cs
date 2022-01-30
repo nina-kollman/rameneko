@@ -1,4 +1,7 @@
 ﻿
+/**
+ * Direction Enums
+ */
 public enum Direction
 {
     Up = 0,
