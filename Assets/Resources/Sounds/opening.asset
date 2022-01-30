@@ -15,7 +15,7 @@ MonoBehaviour:
   soundName: opening
   clip: {fileID: 8300000, guid: 400f448f308127640b771c84250f106f, type: 3}
   volume: 1
-  pitch: 0.39
-  loop: 0
+  pitch: 1
+  loop: 1
   overlap: 0
   source: {fileID: 0}

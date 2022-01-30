@@ -15,7 +15,7 @@ MonoBehaviour:
   soundName: gameTrack
   clip: {fileID: 8300000, guid: e6c81889863a52748a4244985e478a1b, type: 3}
   volume: 0.188
-  pitch: 0.46
+  pitch: 1
   loop: 1
   overlap: 0
   source: {fileID: 0}
