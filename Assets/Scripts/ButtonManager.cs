@@ -74,12 +74,11 @@ public class ButtonManager : MonoBehaviour
     
 
     /**
-     * Stops the game 
+     * Sets the level selector screen
      */
     public void EndGameButton()
     {
-        Debug.Log("QUIT");
-        Application.Quit();
+        SceneManager.LoadScene(1);
     }
     
     /**
